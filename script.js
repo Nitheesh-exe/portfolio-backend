@@ -4,7 +4,7 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 const chatToggle = document.getElementById('chat-toggle');
-const chatClose = document.getElementById('chat-close'); 
+const chatClose = document.getElementById('chat-close');
 const chatWindow = document.getElementById('chat-window');
 const chatInput = document.getElementById('chat-input');
 const chatMessages = document.getElementById('chat-messages');
@@ -28,7 +28,7 @@ if (chatClose && chatWindow) {
 function appendMessage(text, sender) {
     const msgDiv = document.createElement('div');
     msgDiv.className = `msg ${sender}-msg`;
-    
+
     if (sender === 'bot') {
         const icon = document.createElement('i');
         icon.className = 'fa-solid fa-robot bot-icon';
@@ -38,10 +38,10 @@ function appendMessage(text, sender) {
     const contentDiv = document.createElement('div');
     contentDiv.className = 'msg-content';
     contentDiv.textContent = text;
-    
+
     msgDiv.appendChild(contentDiv);
     chatMessages.appendChild(msgDiv);
-    
+
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
@@ -54,14 +54,14 @@ async function handleChat() {
     chatInput.value = '';
 
     try {
-        const response = await fetch('http://localhost:8080/api/chat', {
+        const response = await fetch('https://portfolio-api-mt7w.onrender.com/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'text/plain' },
             body: text
         });
 
-        const reply = response.ok 
-            ? await response.text() 
+        const reply = response.ok
+            ? await response.text()
             : "Sorry, I had trouble processing that request.";
         appendMessage(reply, 'bot');
     } catch {
