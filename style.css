@@ -203,15 +203,12 @@ section {
 }
 
 /* Individual Slides */
-.slide,
 .proj-slide {
-    flex: 0 0 33.333333%;
-    width: 33.333333%;
-    min-width: 0;
+    flex: 0 0 100%;
+    width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
+    object-fit: contain; /* Forces the entire image to fit inside the box */
+    background-color: var(--primary-dark-alt); 
 }
 
 /* Keyframes to move 3 images automatically */
@@ -535,41 +532,22 @@ section {
 
 /* Responsive */
 @media (max-width: 900px) {
-    section {
-        flex-direction: column;
-        text-align: center;
-        padding: 60px 5%;
+    /* ... your existing mobile styles ... */
+    
+    body, html {
+        overflow-x: hidden; /* Prevents the screen from sliding sideways */
     }
 
-    #hero .hero-content,
-    #hero .slider-container {
-        width: 100%;
-        height: auto;
+    .logo {
+        margin-left: 0; /* Removes the massive gap on the left */
     }
 
-    .nav-links {
-        display: none;
-    }
-
-    #projects {
-        flex-direction: column;
-        height: auto;
-    }
-
-    #projects .project-content,
-    #projects .project-image {
-        width: 100%;
-        flex: 1 1 100%;
-    }
-
-    #projects .project-content {
-        padding: 60px 5%;
-    }
-
-    #projects .project-image {
-        height: 400px;
+    .profile-badge {
+        margin: 0 auto 20px auto; /* Centers the image perfectly */
+        display: block;
     }
 }
+
 /* Chatbot Loading Animation */
 .typing-indicator {
     display: flex;
