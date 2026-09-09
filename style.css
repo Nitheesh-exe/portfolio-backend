@@ -99,8 +99,10 @@ p {
     padding: 20px 5%;
     background-color: var(--primary-dark);
     color: var(--text-light);
-    position: sticky;
+    position: fixed; /* Changed from sticky to fixed */
     top: 0;
+    left: 0;         /* Ensures it aligns to the left edge */
+    width: 100%;     /* Forces it to span the full width */
     z-index: 100;
     transition: box-shadow 0.3s ease;
 }
