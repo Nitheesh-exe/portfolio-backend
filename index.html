@@ -6,15 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nitheesh Kumar VSM - Portfolio</title>
     <meta name="description" content="Nitheesh Kumar VSM's portfolio showcasing full-stack Java development, Spring Boot, JavaFX, SQL, and web application projects.">
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- 1. Preload the LCP Image (Highest Priority Download) -->
+    <link rel="preload" as="image" href="./source/DP.webp" fetchpriority="high">
+
+    <!-- 2. Preconnect to Font CDNs -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+
+    <!-- 3. Non-Blocking Google Font Loading -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+
+    <!-- 4. Critical Main Stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" media="print" onload="this.media='all'" />
+
+    <!-- 5. Asynchronous Icon Fonts (Non-Render-Blocking) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    
     <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </noscript>
@@ -38,14 +50,16 @@
 
     <section id="hero" class="hero bg-dark">
         <div class="hero-content">
-            <img src="./source/DP.webp" alt="Nitheesh Kumar" class="profile-badge" width="700" height="700" fetchpriority="high" decoding="async">
+            <!-- Dimensions aligned with display size (240x240) -->
+            <img src="./source/DP.webp" alt="Nitheesh Kumar" class="profile-badge" width="240" height="240" fetchpriority="high" decoding="async">
             <h1>Hi, I'm Nitheesh Kumar</h1>
             <p>Full Stack Java Developer passionate about building high-quality desktop and web applications.</p>
             <a href="#projects" class="btn btn-primary">View My Work &rarr;</a>
         </div>
         <div class="slider-container">
             <div class="hero-track">
-                <img src="./source/image-1.webp" class="slide" alt="Nitheesh presenting a software project" width="1400" height="1050" decoding="async">
+                <!-- Added loading="lazy" so this does not fight DP.webp for mobile bandwidth -->
+                <img src="./source/image-1.webp" class="slide" alt="Nitheesh presenting a software project" width="1400" height="1050" loading="lazy" decoding="async">
                 <img src="./source/image-2.webp" class="slide" alt="Software project presentation screen" width="1400" height="1051" loading="lazy" decoding="async">
                 <img src="./source/image-3.webp" class="slide" alt="Technology project workspace" width="1400" height="956" loading="lazy" decoding="async">
             </div>
