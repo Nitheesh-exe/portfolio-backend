@@ -168,11 +168,12 @@ section {
     padding: 0;
     gap: 0;
 }
+
 #hero .hero-content {
     width: 45%;
     padding-left: 5%;
     padding-right: 4%;
-    padding-top: 90px; 
+    padding-top: 120px; /* Pushes the DP below the fixed navbar */
     padding-bottom: 100px;
     z-index: 10;
 }
@@ -306,11 +307,15 @@ section {
     border-radius: 12px;
     object-fit: contain;
 }
+.skills-image {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .skills-content { 
-    flex: 1; 
-    width: 100%; 
-    /* Removed max-width so the 6 boxes have room to stretch */
+    width: 50%; 
 }
 
 .skills-content h2 {
@@ -320,7 +325,7 @@ section {
 
 .skills-grid { 
     display: grid; 
-    grid-template-columns: repeat(6, 1fr); /* Forces exactly 1 row of 6 on desktop */
+    grid-template-columns: repeat(3, 1fr); /* Changed to 3 columns to fit 50% width */
     gap: 15px; 
 }
 
@@ -634,9 +639,9 @@ section {
         flex-direction: column;
     }
 
-    #hero .hero-content {
+   #hero .hero-content {
         width: 100%;
-        padding: 0;
+        padding: 100px 5% 20px 5%; 
     }
 
     .profile-badge {
@@ -673,7 +678,26 @@ section {
     #projects .project-image {
         height: 400px;
     }
+    .skills-image, 
+    .skills-content {
+        width: 100%; /* Ensures they take full width on mobile */
+    }
+
     .skills-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columns for phones */
+        gap: 10px; /* Slightly smaller gap to save space */
+        width: 100%;
+    }
+    
+    .skill-card {
+        padding: 15px 5px; /* Reduced padding */
+        aspect-ratio: auto; /* Removes the strict square shape */
+        min-height: 120px; /* Ensures they still look like tall cards */
+    }
+
+    .skill-card span {
+        font-size: 0.85rem; /* Scales text down slightly so it doesn't overflow */
+        margin-top: 8px;
+        line-height: 1.2;
     }
 }
