@@ -106,7 +106,9 @@ p {
     justify-content: space-between; /* Pushes Logo, Links, and Button apart */
     align-items: center;
     padding: 20px 5%;
-    background-color: var(--primary-dark);
+    background-color: rgba(4, 56, 115, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     color: var(--text-light);
     position: fixed; /* DESKTOP ONLY: Locks the navbar to the top of the screen */
     top: 0;
@@ -183,7 +185,7 @@ section {
     width: 45%;
     padding-left: 5%;
     padding-right: 4%;
-    padding-top: 120px; /* IMPORTANT: Pushes your profile picture down below the fixed navbar */
+    padding-top: 140px; /* Keeps the profile picture clear of the fixed navbar */
     padding-bottom: 100px;
     z-index: 10;
 }
@@ -724,7 +726,7 @@ section {
 
     #hero .hero-content {
         width: 100%;
-        padding: 100px 5% 20px 5%; /* Adds safe space at the top so DP isn't cut off on phones */
+        padding: 120px 5% 20px 5%; /* Adds safe space at the top so DP isn't cut off on phones */
     }
 
     .profile-badge {
