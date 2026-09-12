@@ -6,9 +6,6 @@
 =============================================================
 */
 
-/* Imports the 'Inter' font from Google Fonts for a clean, modern look */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
 /* --- CSS VARIABLES --- 
    These store your color palette. If you want to change a color globally, 
    just change it here and it updates everywhere! */

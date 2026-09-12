@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nitheesh Kumar VSM - Portfolio</title>
+    <meta name="description" content="Nitheesh Kumar VSM's portfolio showcasing full-stack Java development, Spring Boot, JavaFX, SQL, and web application projects.">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -28,16 +34,16 @@
 
     <section id="hero" class="hero bg-dark">
         <div class="hero-content">
-            <img src="./source/DP.jpeg" alt="Nitheesh Kumar" class="profile-badge">
+            <img src="./source/DP.jpeg" alt="Nitheesh Kumar" class="profile-badge" width="1349" height="1349" fetchpriority="high" decoding="async">
             <h1>Hi, I'm Nitheesh Kumar</h1>
             <p>Full Stack Java Developer passionate about building high-quality desktop and web applications.</p>
             <a href="#projects" class="btn btn-primary">View My Work &rarr;</a>
         </div>
         <div class="slider-container">
             <div class="hero-track">
-                <img src="./source/image-1.jpg" class="slide" alt="Hero Slide 1">
-                <img src="./source/image-2.jpg" class="slide" alt="Hero Slide 2">
-                <img src="./source/image-3.jpg" class="slide" alt="Hero Slide 3">
+                <img src="./source/image-1.jpg" class="slide" alt="Nitheesh presenting a software project" width="2602" height="1951" decoding="async">
+                <img src="./source/image-2.jpg" class="slide" alt="Software project presentation screen" width="4021" height="3016" loading="lazy" decoding="async">
+                <img src="./source/image-3.jpg" class="slide" alt="Technology project workspace" width="1546" height="1055" loading="lazy" decoding="async">
             </div>
 
             <div class="slider-text-overlay">
@@ -50,7 +56,7 @@
     <section id="about" class="about bg-white">
         <div class="about-image">
             <div class="image-placeholder">
-                <img src="./source/roadmap.PNG" id="bg-road">
+                <img src="./source/roadmap.PNG" id="bg-road" alt="Education and career roadmap" width="1856" height="2304" loading="lazy" decoding="async">
             </div>
         </div>
         <div class="about-content">
@@ -125,9 +131,9 @@
 
         <div class="project-image">
             <div class="project-slider-container">
-                <img src="./source/ui-image-1.png" class="proj-slide" alt="Gym UI 1">
-                <img src="./source/ui-image-2.png" class="proj-slide" alt="Gym UI 2">
-                <img src="./source/image-4.jpg" class="proj-slide" alt="Gym UI 3">
+                <img src="./source/ui-image-1.png" class="proj-slide" alt="Gym management dashboard interface" width="3456" height="2234" loading="lazy" decoding="async">
+                <img src="./source/ui-image-2.png" class="proj-slide" alt="Gym management member interface" width="3456" height="2234" loading="lazy" decoding="async">
+                <img src="./source/image-4.jpg" class="proj-slide" alt="Gym management application screen" width="1683" height="1835" loading="lazy" decoding="async">
             </div>
         </div>
     </section>
@@ -150,7 +156,7 @@
     </footer>
 
     <div class="chatbot-wrapper">
-        <button id="chat-toggle" class="chat-fab">
+        <button id="chat-toggle" class="chat-fab" type="button" aria-label="Open chat">
             <i class="fa-solid fa-message"></i>
         </button>
 
@@ -160,7 +166,7 @@
                     <h4>Nitheesh's AI</h4>
                     <span class="status-indicator">Powered by Gemini 3.6</span>
                 </div>
-                <button id="chat-close" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+                <button id="chat-close" class="close-btn" type="button" aria-label="Close chat"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="chat-messages" id="chat-messages">
                 <div class="msg bot-msg">
@@ -170,12 +176,12 @@
             </div>
             <div class="chat-input-area">
                 <input type="text" id="chat-input" placeholder="Type your question...">
-                <button id="chat-send" class="btn-send"><i class="fa-solid fa-paper-plane"></i></button>
+                <button id="chat-send" class="btn-send" type="button" aria-label="Send message"><i class="fa-solid fa-paper-plane"></i></button>
             </div>
         </div>
     </div>
     
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>
