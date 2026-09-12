@@ -212,15 +212,17 @@ section {
 @media (min-width: 901px) {
     .about {
         align-items: stretch;
+        height: 700px;
+        box-sizing: border-box;
     }
 
     .about-image {
-        flex: 2;
+        flex: 1.75;
         display: flex;
     }
 
     .about-content {
-        flex: 3;
+        flex: 3.25;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -483,7 +485,8 @@ section {
     width: 380px;
     height: 550px;
     background: var(--bg-white);
-    border-radius: 16px;
+    border-radius: 20px;
+    overflow: hidden;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
@@ -648,6 +651,70 @@ section {
 
     .nav-links {
         display: none; /* Hides desktop navigation links on mobile */
+    }
+
+    .footer {
+        padding: 60px 16px;
+    }
+
+    .footer h2 {
+        font-size: 2rem;
+    }
+
+    .contact-info p {
+        flex-wrap: wrap;
+        overflow-wrap: anywhere;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .social-links a {
+        padding: 8px 12px;
+    }
+
+    .chatbot-wrapper {
+        right: 12px;
+        bottom: 16px;
+    }
+
+    .chat-fab {
+        width: 54px;
+        height: 54px;
+    }
+
+    #chat-window {
+        right: 0;
+        width: min(380px, calc(100vw - 24px));
+        height: min(550px, calc(100vh - 100px));
+        max-height: calc(100vh - 100px);
+    }
+
+    .chat-header {
+        padding: 12px 14px;
+    }
+
+    .header-info {
+        min-width: 0;
+    }
+
+    .status-indicator {
+        display: block;
+        overflow-wrap: anywhere;
+    }
+
+    .chat-messages {
+        padding: 14px;
+    }
+
+    .chat-input-area {
+        padding: 10px;
+    }
+
+    #chat-input {
+        min-width: 0;
     }
 
     #hero {
