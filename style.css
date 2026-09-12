@@ -168,13 +168,22 @@ section {
     padding: 0;
     gap: 0;
 }
-
 #hero .hero-content {
     width: 45%;
     padding-left: 5%;
     padding-right: 4%;
+    padding-top: 90px; 
     padding-bottom: 100px;
     z-index: 10;
+}
+
+.about {
+    flex-direction: column;
+}
+
+.about-image, 
+.about-content {
+    width: 100%; 
 }
 
 .profile-badge {
@@ -209,7 +218,6 @@ section {
     animation: cssAutoSlide 12s infinite ease-in-out;
 }
 
-/* 2. ADDED MISSING .slide RULE */
 .slide,
 .proj-slide {
     flex: 0 0 100%;
@@ -601,12 +609,17 @@ section {
 
 /* 4. RESTORED MOBILE STACKING RULES */
 @media (max-width: 900px) {
+    .navbar {
+        position: absolute; 
+    }
+
     section {
         flex-direction: column;
         text-align: center;
         padding: 60px 5%;
         gap: 40px;
     }
+    
 
     .logo {
         margin-left: 0;
