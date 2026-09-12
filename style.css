@@ -6,8 +6,12 @@
 =============================================================
 */
 
+/* Imports the 'Inter' font from Google Fonts for a clean, modern look */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
+/* --- CSS VARIABLES --- 
+   These store your color palette. If you want to change a color globally, 
+   just change it here and it updates everywhere! */
 :root {
     --primary-dark: #043873;
     --primary-dark-alt: #032b59;
@@ -19,25 +23,29 @@
     --text-light: #FFFFFF;
 }
 
+/* --- UNIVERSAL RESET --- 
+   Removes default browser spacing and applies your custom font */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ensures padding doesn't increase element widths */
     font-family: 'Inter', sans-serif;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Creates the smooth sliding effect when clicking nav links */
 }
 
-/* 1. STRICT GLOBAL LOCK (Fixes horizontal scroll error on all devices) */
+/* --- GLOBAL LOCK --- 
+   Fixes the dreaded horizontal scroll bug by strictly locking the width to the viewport */
 html,
 body {
     background-color: var(--bg-white);
     color: var(--text-dark);
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Hides anything that pushes past the right edge of the screen */
     width: 100%;
     max-width: 100vw;
 }
 
+/* --- TYPOGRAPHY --- */
 h1 {
     font-size: 3.5rem;
     font-weight: 700;
@@ -59,14 +67,15 @@ p {
     opacity: 0.9;
 }
 
-/* Buttons */
+/* --- BUTTONS --- 
+   Base styles for all buttons, plus specific primary/secondary variations */
 .btn {
     display: inline-block;
     padding: 12px 24px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; /* Makes hover effects smooth */
     white-space: nowrap;
 }
 
@@ -87,23 +96,23 @@ p {
 }
 
 .btn-secondary:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* Makes the button "lift" when hovered */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Navigation */
+/* --- NAVIGATION BAR --- */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Pushes Logo, Links, and Button apart */
     align-items: center;
     padding: 20px 5%;
     background-color: var(--primary-dark);
     color: var(--text-light);
-    position: fixed; /* Changed from sticky to fixed */
+    position: fixed; /* DESKTOP ONLY: Locks the navbar to the top of the screen */
     top: 0;
-    left: 0;         /* Ensures it aligns to the left edge */
-    width: 100%;     /* Forces it to span the full width */
-    z-index: 100;
+    left: 0;         
+    width: 100%;     
+    z-index: 100;    /* Ensures the navbar always stays on top of other content */
     transition: box-shadow 0.3s ease;
 }
 
@@ -120,7 +129,7 @@ p {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 40px;
+    gap: 40px; /* Spacing between navigation links */
     margin: 0 auto;
     padding: 0;
 }
@@ -136,7 +145,8 @@ p {
     color: var(--primary-light);
 }
 
-/* Layout Basics */
+/* --- GLOBAL SECTION LAYOUT --- 
+   Default layout for major sections (About, Skills, etc.) */
 section {
     display: flex;
     align-items: center;
@@ -158,11 +168,11 @@ section {
 
 .bg-light {
     background-color: var(--bg-light);
-    display: block;
+    display: block; /* Overrides the flexbox in standard sections */
     padding-bottom: 120px;
 }
 
-/* Hero Section */
+/* --- HERO SECTION --- */
 #hero {
     height: 700px;
     padding: 0;
@@ -173,18 +183,9 @@ section {
     width: 45%;
     padding-left: 5%;
     padding-right: 4%;
-    padding-top: 120px; /* Pushes the DP below the fixed navbar */
+    padding-top: 120px; /* IMPORTANT: Pushes your profile picture down below the fixed navbar */
     padding-bottom: 100px;
     z-index: 10;
-}
-
-.about {
-    flex-direction: column;
-}
-
-.about-image, 
-.about-content {
-    width: 100%; 
 }
 
 .profile-badge {
@@ -197,7 +198,18 @@ section {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* CSS-Only Auto Sliders */
+/* --- ABOUT (EDUCATION) SECTION --- */
+.about {
+    flex-direction: column; /* Forces the image and text to stack on top of each other */
+}
+
+.about-image, 
+.about-content {
+    width: 100%; /* Makes the roadmap image and the text take up the full width */
+}
+
+/* --- CSS-ONLY AUTO SLIDERS --- 
+   Powers the moving images in Hero and Projects without using JavaScript */
 .slider-container,
 .project-image {
     position: relative;
@@ -207,7 +219,7 @@ section {
 }
 
 #hero .slider-container {
-    width: 55%;
+    width: 55%; /* The images take up the remaining 55% of the screen next to the 45% text */
     height: 700px;
 }
 
@@ -216,48 +228,33 @@ section {
     display: flex;
     width: 100%;
     height: 100%;
-    animation: cssAutoSlide 12s infinite ease-in-out;
+    animation: cssAutoSlide 12s infinite ease-in-out; /* Triggers the slide animation */
 }
 
 .slide,
 .proj-slide {
-    flex: 0 0 100%;
+    flex: 0 0 100%; /* Ensures each image takes exactly 100% of the container width */
     width: 100%;
     height: 100%;
 }
 
 .slide {
-    object-fit: cover;
+    object-fit: cover; /* Crops the image to fill the space perfectly */
 }
 
 .proj-slide {
-    object-fit: contain;
+    object-fit: contain; /* Prevents project screenshots from getting cropped */
     background-color: var(--primary-dark-alt);
 }
 
 @keyframes cssAutoSlide {
-
-    0%,
-    25% {
-        transform: translateX(0);
-    }
-
-    33%,
-    58% {
-        transform: translateX(-100%);
-    }
-
-    66%,
-    91% {
-        transform: translateX(-200%);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
+    0%, 25% { transform: translateX(0); } /* Shows Image 1 */
+    33%, 58% { transform: translateX(-100%); } /* Slides to Image 2 */
+    66%, 91% { transform: translateX(-200%); } /* Slides to Image 3 */
+    100% { transform: translateX(0); } /* Snaps back to start */
 }
 
-/* Overlays */
+/* --- HERO SLIDER OVERLAYS --- */
 .slider-text-overlay {
     position: absolute;
     bottom: 40px;
@@ -270,7 +267,7 @@ section {
 .slider-text-overlay h3 {
     font-size: 1.8rem;
     font-weight: 700;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Adds shadow so text is readable over images */
     margin-bottom: 5px;
 }
 
@@ -280,7 +277,7 @@ section {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
-/* About & Skills */
+/* --- IMAGE PLACEHOLDERS & SIDE IMAGES --- */
 .image-placeholder {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.05);
@@ -299,7 +296,6 @@ section {
     object-fit: contain;
 }
 
-/* 3. ADDED MISSING .side-image RULE */
 .side-image {
     width: 100%;
     max-width: 100%;
@@ -307,15 +303,17 @@ section {
     border-radius: 12px;
     object-fit: contain;
 }
+
+/* --- TECHNICAL SKILLS SECTION --- */
 .skills-image {
-    width: 50%;
+    width: 50%; /* DESKTOP ONLY: Forces the image to take exactly half the screen */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .skills-content { 
-    width: 50%; 
+    width: 50%; /* DESKTOP ONLY: Forces the skill boxes to take the other half */
 }
 
 .skills-content h2 {
@@ -325,16 +323,8 @@ section {
 
 .skills-grid { 
     display: grid; 
-    grid-template-columns: repeat(3, 1fr); /* Changed to 3 columns to fit 50% width */
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns for the skill cards on Desktop */
     gap: 15px; 
-}
-
-.proj-slide {
-    flex: 0 0 100%; 
-    width: 100%; 
-    height: 100%;
-    object-fit: cover; /* 'cover' forces every image to fill the exact same ratio */
-    background-color: var(--primary-dark-alt); 
 }
 
 .skill-card {
@@ -349,11 +339,11 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 1; /* Keeps the cards perfectly square on desktop */
 }
 
 .skill-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Hop effect on hover */
 }
 
 .skill-icons {
@@ -364,9 +354,9 @@ section {
     margin-bottom: 10px;
 }
 
-/* Projects Section */
+/* --- PROJECTS SECTION --- */
 #projects {
-    padding: 0 !important;
+    padding: 0 !important; /* Removes default section padding */
     margin: 0;
     height: 700px;
     display: flex;
@@ -387,7 +377,7 @@ section {
     background-color: var(--primary-dark-alt);
 }
 
-/* Footer */
+/* --- FOOTER --- */
 .footer {
     background-color: var(--primary-dark-alt);
     color: var(--text-light);
@@ -429,12 +419,12 @@ section {
     color: var(--text-light);
 }
 
-/* Chatbot Styles */
+/* --- CHATBOT WIDGET --- */
 .chatbot-wrapper {
-    position: fixed;
+    position: fixed; /* Keeps the chat button locked to the bottom right */
     bottom: 30px;
     right: 30px;
-    z-index: 1000;
+    z-index: 1000; /* Ensures chat is above literally everything else */
 }
 
 .chat-fab {
@@ -469,7 +459,7 @@ section {
 .chat-hidden {
     opacity: 0 !important;
     transform: scale(0.9) translateY(20px) !important;
-    pointer-events: none;
+    pointer-events: none; /* Prevents users from clicking invisible chat elements */
 }
 
 .chat-header {
@@ -486,7 +476,7 @@ section {
     content: '';
     width: 8px;
     height: 8px;
-    background-color: #4ade80;
+    background-color: #4ade80; /* Green dot indicating "online" */
     border-radius: 50%;
     display: inline-block;
     margin-right: 5px;
@@ -501,9 +491,9 @@ section {
 }
 
 .chat-messages {
-    flex: 1;
+    flex: 1; /* Makes the message area take up available vertical space */
     padding: 20px;
-    overflow-y: auto;
+    overflow-y: auto; /* Allows scrolling inside the chat window */
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -517,14 +507,14 @@ section {
 }
 
 .bot-msg {
-    align-self: flex-start;
+    align-self: flex-start; /* Aligns bot messages to the left */
     gap: 10px;
 }
 
 .bot-msg .msg-content {
     background: var(--bg-white);
     padding: 12px 16px;
-    border-radius: 4px 16px 16px 16px;
+    border-radius: 4px 16px 16px 16px; /* Funky border radius for chat bubbles */
     border: 1px solid #eee;
 }
 
@@ -535,7 +525,7 @@ section {
 }
 
 .user-msg {
-    align-self: flex-end;
+    align-self: flex-end; /* Aligns your messages to the right */
 }
 
 .user-msg .msg-content {
@@ -574,7 +564,7 @@ section {
     justify-content: center;
 }
 
-/* Chatbot Loading Animation */
+/* --- CHATBOT ANIMATIONS --- */
 .typing-indicator {
     display: flex;
     gap: 5px;
@@ -591,47 +581,38 @@ section {
     animation: typing 1.4s infinite ease-in-out both;
 }
 
-.typing-dot:nth-child(1) {
-    animation-delay: -0.32s;
-}
-
-.typing-dot:nth-child(2) {
-    animation-delay: -0.16s;
-}
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
 
 @keyframes typing {
-
-    0%,
-    80%,
-    100% {
-        transform: scale(0);
-    }
-
-    40% {
-        transform: scale(1);
-    }
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
 }
 
-/* 4. RESTORED MOBILE STACKING RULES */
+/* ==========================================================
+   MOBILE MEDIA QUERY
+   Everything below this line ONLY applies to screens smaller 
+   than 900px (Tablets and Phones)
+   ========================================================== */
 @media (max-width: 900px) {
+    
     .navbar {
-        position: absolute; 
+        position: absolute; /* MOBILE ONLY: Un-fixes the navbar so it scrolls away naturally */
     }
 
     section {
-        flex-direction: column;
+        flex-direction: column; /* MOBILE ONLY: Forces all side-by-side elements to stack vertically */
         text-align: center;
         padding: 60px 5%;
         gap: 40px;
     }
-    
 
     .logo {
         margin-left: 0;
     }
 
     .nav-links {
-        display: none;
+        display: none; /* Hides desktop navigation links on mobile */
     }
 
     #hero {
@@ -639,25 +620,25 @@ section {
         flex-direction: column;
     }
 
-   #hero .hero-content {
+    #hero .hero-content {
         width: 100%;
-        padding: 100px 5% 20px 5%; 
+        padding: 100px 5% 20px 5%; /* Adds safe space at the top so DP isn't cut off on phones */
     }
 
     .profile-badge {
         margin: 0 auto 20px auto;
-        display: block;
+        display: block; /* Centers the profile picture */
     }
 
     #hero .slider-container {
         width: 100%;
-        height: 400px;
+        height: 400px; /* Reduces slider height on mobile */
         margin-top: 20px;
     }
 
     .about,
     .skills {
-        flex-direction: column-reverse;
+        flex-direction: column-reverse; /* Swaps the order so text appears above images on mobile */
     }
 
     #projects {
@@ -678,25 +659,27 @@ section {
     #projects .project-image {
         height: 400px;
     }
+
+    /* --- MOBILE SKILLS FIXES --- */
     .skills-image, 
     .skills-content {
-        width: 100%; /* Ensures they take full width on mobile */
+        width: 100%; /* Overrides the 50% desktop split, forcing 100% width on mobile */
     }
 
     .skills-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for phones */
-        gap: 10px; /* Slightly smaller gap to save space */
+        grid-template-columns: repeat(2, 1fr); /* Changes from 3 columns to 2 columns for smaller screens */
+        gap: 10px; 
         width: 100%;
     }
     
     .skill-card {
-        padding: 15px 5px; /* Reduced padding */
-        aspect-ratio: auto; /* Removes the strict square shape */
-        min-height: 120px; /* Ensures they still look like tall cards */
+        padding: 15px 5px; /* Reduces padding so text doesn't overflow */
+        aspect-ratio: auto; /* Removes the strict square shape so tall text wraps cleanly */
+        min-height: 120px; 
     }
 
     .skill-card span {
-        font-size: 0.85rem; /* Scales text down slightly so it doesn't overflow */
+        font-size: 0.85rem; /* Shrinks the label text slightly to fit mobile cards */
         margin-top: 8px;
         line-height: 1.2;
     }
