@@ -4,197 +4,720 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nitheesh Kumar VSM - Portfolio</title>
-    <meta name="description" content="Nitheesh Kumar VSM's portfolio showcasing full-stack Java development, Spring Boot, JavaFX, SQL, and web application projects.">
+    <title>Nitheesh Kumar VSM - Java Software Developer & Systems Engineer</title>
+    <meta name="description" content="Portfolio of Nitheesh Kumar VSM, Java Software Developer & Systems Engineer specializing in JDK 17/21/25, Spring Boot 3.3, JavaFX Desktop ERP Architecture, PostgreSQL, and Software Analysis.">
+    <meta name="author" content="Nitheesh Kumar VSM">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0b1329">
+    <link rel="canonical" href="https://nitheesh-exe.github.io/portfolio-backend/">
 
-    <!-- 1. Preload the LCP Image (Highest Priority Download) -->
-    <link rel="preload" as="image" href="./source/DP.webp" fetchpriority="high">
+    <!-- Favicon (Crisp inline SVG + WebP Apple Touch Icon) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b1329'/%3E%3Cpath d='M30 72V28h9.6l20.4 28.5V28H70v44h-9.6L40 43.5V72H30z' fill='%2338bdf8'/%3E%3Ccircle cx='75' cy='72' r='5' fill='%2310b981'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="./source/nitheesh-profile.webp">
 
-    <!-- 2. Preconnect to Font CDNs -->
+    <!-- Open Graph / LinkedIn / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nitheesh Kumar VSM - Java Software Developer & Systems Engineer">
+    <meta property="og:description" content="Enterprise backends with Spring Boot 3.3 & PostgreSQL, offline-first desktop ERP architecture with JavaFX & SQLite, and robust software analysis.">
+    <meta property="og:image" content="./source/nitheesh-profile.webp">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Nitheesh Kumar VSM - Java Software Developer & Systems Engineer">
+    <meta name="twitter:description" content="Enterprise backends with Spring Boot 3.3 & PostgreSQL, offline-first desktop ERP architecture with JavaFX & SQLite, and robust software analysis.">
+    <meta name="twitter:image" content="./source/nitheesh-profile.webp">
+
+    <!-- Preload LCP Profile Image -->
+    <link rel="preload" as="image" href="./source/nitheesh-profile.webp" fetchpriority="high">
+
+    <!-- DNS Prefetch & Preconnect for Fast Connection Setup -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://portfolio-api-mt7w.onrender.com" crossorigin>
+    <link rel="dns-prefetch" href="https://portfolio-api-mt7w.onrender.com">
 
-    <!-- 3. Non-Blocking Google Font Loading -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <!-- Non-Blocking Google Fonts Loading -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
 
-    <!-- 4. Critical Main Stylesheet -->
+    <!-- Critical Main Stylesheet -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- 5. Asynchronous Icon Fonts (Non-Render-Blocking) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </noscript>
+    <!-- Structured Data (JSON-LD) for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://nitheesh-exe.github.io/portfolio-backend/#person",
+          "name": "Nitheesh Kumar VSM",
+          "jobTitle": "Java Software Developer & Systems Engineer",
+          "description": "Java Software Developer specializing in JDK 17/21/25, Spring Boot 3.3, JavaFX Desktop ERP Systems, PostgreSQL, REST APIs, and Software Analysis.",
+          "image": "./source/nitheesh-profile.webp",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Madurai",
+            "addressRegion": "Tamil Nadu",
+            "addressCountry": "India"
+          },
+          "email": "nitheesh.exe@gmail.com",
+          "telephone": "+919345507516",
+          "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Anna University"
+          },
+          "sameAs": [
+            "https://linkedin.com/in/nitheeshkumar2003",
+            "https://github.com/Nitheesh-exe",
+            "https://github.com/nitheeeshh"
+          ],
+          "knowsAbout": [
+            "Java (JDK 17/21/25)",
+            "Spring Boot 3.3",
+            "Spring Security (RBAC)",
+            "Spring Data JPA",
+            "PostgreSQL",
+            "JavaFX (FXML)",
+            "JDBC Architecture",
+            "Clean Architecture & DAO Pattern",
+            "SQLite",
+            "jpackage & WiX Toolset",
+            "Software Analysis (BMC, RGD, SAD)",
+            "Figma UI/UX"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://nitheesh-exe.github.io/portfolio-backend/#website",
+          "name": "Nitheesh Kumar VSM Portfolio",
+          "url": "https://nitheesh-exe.github.io/portfolio-backend/",
+          "publisher": { "@id": "https://nitheesh-exe.github.io/portfolio-backend/#person" }
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body id="home">
-    <nav class="navbar">
-        <div class="logo">Nitheesh<span>.Portfolio</span></div>
-        <div class="nav-bot">
+    <!-- Accessible Skip to Main Content Link -->
+    <a href="#hero" class="skip-link">Skip to main content</a>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar" aria-label="Main navigation">
+        <a href="#home" class="logo" aria-label="Nitheesh Dev Home">Nitheesh<span>.Dev</span></a>
+        <div class="nav-bot" id="nav-menu">
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#about">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
             </ul>
         </div>
         <div class="nav-buttons">
             <a href="#contact" class="btn btn-secondary">Contact Me</a>
         </div>
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
     </nav>
 
+    <!-- HERO SECTION - Aligned for 16:10 Ratio with Half-Size Slider -->
     <section id="hero" class="hero bg-dark">
         <div class="hero-content">
-            <!-- Dimensions aligned with display size (240x240) -->
-            <img src="./source/DP.webp" alt="Nitheesh Kumar" class="profile-badge" width="240" height="240" fetchpriority="high" decoding="async">
-            <h1>Hi, I'm Nitheesh Kumar</h1>
-            <p>Full Stack Java Developer passionate about building high-quality desktop and web applications.</p>
-            <a href="#projects" class="btn btn-primary">View My Work &rarr;</a>
-        </div>
-        <div class="slider-container">
-            <div class="hero-track">
-                <!-- Added loading="lazy" so this does not fight DP.webp for mobile bandwidth -->
-                <img src="./source/image-1.webp" class="slide" alt="Nitheesh presenting a software project" width="1400" height="1050" loading="lazy" decoding="async">
-                <img src="./source/image-2.webp" class="slide" alt="Software project presentation screen" width="1400" height="1051" loading="lazy" decoding="async">
-                <img src="./source/image-3.webp" class="slide" alt="Technology project workspace" width="1400" height="956" loading="lazy" decoding="async">
+            <div class="profile-badge-wrapper">
+                <img src="./source/nitheesh-profile.webp" alt="Nitheesh Kumar VSM" class="profile-badge" width="220" height="220" fetchpriority="high" decoding="async">
+                <span class="badge-status-dot" title="Available for Java Software Developer & Systems Engineer roles"></span>
             </div>
+            <div class="hero-tag-row">
+                <span class="hero-tag">Java Software Developer & Systems Engineer</span>
+                <span class="location-tag">
+                    <svg class="svg-inline-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                    Madurai, India
+                </span>
+            </div>
+            <h1>Hi, I'm Nitheesh Kumar VSM</h1>
+            <p class="hero-summary">
+                Engineering high-throughput backend services with <strong>Spring Boot 3.3 & PostgreSQL</strong>, resilient offline-first desktop systems with <strong>JavaFX (JDK 25) & SQLite</strong>, and translating complex operational domains into scalable systems via rigorous software analysis (BMC, RGD, SAD).
+            </p>
+            <div class="hero-stats">
+                <div class="stat-badge">
+                    <strong>1,200+</strong>
+                    <span>Active ERP Records</span>
+                </div>
+                <div class="stat-badge">
+                    <strong>2,624+</strong>
+                    <span>Live Catalog SKUs</span>
+                </div>
+                <div class="stat-badge">
+                    <strong>JDK 25</strong>
+                    <span>Desktop ERP System</span>
+                </div>
+                <div class="stat-badge">
+                    <strong>2025</strong>
+                    <span>Anna Univ. B.E. Graduate</span>
+                </div>
+            </div>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">View Featured Projects &rarr;</a>
+                <a href="mailto:nitheesh.exe@gmail.com?subject=Resume%20Request%20-%20Nitheesh%20Kumar%20VSM" class="btn btn-outline">
+                    <svg class="svg-inline-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                    Request Resume
+                </a>
+            </div>
+        </div>
 
-            <div class="slider-text-overlay">
-                <h3>Building Scalable Solutions</h3>
-                <p>Java &bull; Spring Boot &bull; PostgreSQL</p>
+        <!-- Half-Size 16:10 Slider Showcase -->
+        <div class="hero-slider-wrapper">
+            <div class="slider-container">
+                <div class="hero-track">
+                    <img src="./source/aim-gym-deploy.webp" class="slide" alt="Nitheesh Kumar VSM deploying AIM Fitness Park ERP system on-site" width="1200" height="1500" fetchpriority="high" decoding="async">
+                    <img src="./source/shasha-store.webp" class="slide" alt="Nitheesh Kumar VSM operating Shasha Enterprises B2B inventory platform" width="1400" height="842" loading="lazy" decoding="async">
+                    <img src="./source/aim-gym-present.webp" class="slide" alt="Nitheesh Kumar VSM presenting JavaFX ERP architecture and system settings" width="1200" height="1350" loading="lazy" decoding="async">
+                    <img src="./source/shasha-catalog-ui.webp" class="slide" alt="Shasha Enterprises Product Catalog Pro UI with 2,624 products" width="1200" height="2133" loading="lazy" decoding="async">
+                </div>
+
+                <div class="slider-text-overlay">
+                    <h3>Enterprise Systems Architecture</h3>
+                    <p>Spring Boot 3.3 &bull; JavaFX (JDK 25) &bull; PostgreSQL &bull; SQLite &bull; WiX Native Packaging</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- ABOUT & EXPERIENCE SECTION -->
     <section id="about" class="about bg-white">
-        <div class="about-image">
-            <div class="image-placeholder">
-                <img src="./source/roadmap.webp" id="bg-road" alt="Education and career roadmap" width="800" height="994" loading="lazy" decoding="async">
+        <div class="about-container">
+            <div class="about-image">
+                <div class="roadmap-card">
+                    <img src="./source/roadmap.webp" id="bg-road" alt="Nitheesh Kumar VSM's Education and Systems Engineering Roadmap" width="800" height="994" loading="lazy" decoding="async">
+                </div>
             </div>
-        </div>
-        <div class="about-content">
-            <h2>Education & Experience</h2>
-            <p>"Hi, I'm a web developer focused on crafting responsive, user-centric applications. From solving complex
-                logic puzzles to deploying interactive web projects, I love the entire process of building software. I
-                am currently looking for an opportunity to apply my hands-on technical training and dedication to
-                continuous learning to help a team build great products.</p>
-            <a href="#" class="btn btn-primary">Download Resume &rarr;</a>
+            <div class="about-content">
+                <div class="section-tag">Engineering Background</div>
+                <h2>Systems Engineering & Experience</h2>
+                <p>
+                    Java Software Developer & Systems Engineer with a <strong>B.E. in Electrical & Electronics Engineering from Anna University (CGPA: 7.2, 2025)</strong>. Experienced in Clean Architecture, DAO patterns, multithreaded desktop systems, enterprise REST backends, and full-lifecycle software requirements engineering (BMC, RGD, SAD).
+                </p>
+                
+                <div class="about-milestones">
+                    <div class="milestone-item">
+                        <div class="milestone-icon-wrapper">
+                            <svg class="svg-inline-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                        </div>
+                        <div>
+                            <div class="milestone-header">
+                                <strong>Java Software Developer & Systems Engineer (Freelance)</strong>
+                                <span class="milestone-date">2026 – Present</span>
+                            </div>
+                            <span class="milestone-desc">Architected AIM Fitness Park (offline-first JavaFX ERP managing 1,200+ active members, eliminating recurring SaaS fees) and Shasha Enterprises (Spring Boot 3.3 B2B inventory platform managing 2,624+ products). Led software analysis (BMC, RGD, SAD), Figma UI prototypes, and native runtime bundling.</span>
+                        </div>
+                    </div>
+                    <div class="milestone-item">
+                        <div class="milestone-icon-wrapper">
+                            <svg class="svg-inline-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a10.99 10.99 0 00-.25 2.349c0 3.866 2.388 7.085 5.5 7.6 3.112-.515 5.5-3.734 5.5-7.6 0-.8-.09-1.58-.25-2.349l2.644-1.131a1 1 0 000-1.84l-7-3zM10 4.162l4.896 2.098L10 8.358 5.104 6.26 10 4.162z"/></svg>
+                        </div>
+                        <div>
+                            <div class="milestone-header">
+                                <strong>B.E. in Electrical & Electronics Engineering</strong>
+                                <span class="milestone-date">Anna University (2021–2025)</span>
+                            </div>
+                            <span class="milestone-desc">University College of Engineering Dindigul &bull; CGPA: 7.2 | Computational systems, electrical modeling, concurrency, algorithmic problem solving, and low-level architecture.</span>
+                        </div>
+                    </div>
+                    <div class="milestone-item">
+                        <div class="milestone-icon-wrapper">
+                            <svg class="svg-inline-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7zm6 7a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-3 3a1 1 0 100 2h.01a1 1 0 100-2H10zm-4 1a1 1 0 011-1h.01a1 1 0 110 2H7a1 1 0 01-1-1zm1-4a1 1 0 100 2h.01a1 1 0 100-2H7zm2 1a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm4-1a1 1 0 100 2h.01a1 1 0 100-2H13zM7 8a1 1 0 011-1h.01a1 1 0 110 2H8a1 1 0 01-1-1zm3 0a1 1 0 011-1h.01a1 1 0 110 2H11a1 1 0 01-1-1zm3 0a1 1 0 011-1h.01a1 1 0 110 2H14a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+                        </div>
+                        <div>
+                            <div class="milestone-header">
+                                <strong>Enterprise Java & Systems Engineering Program</strong>
+                                <span class="milestone-date">Magizhchi Software (2026)</span>
+                            </div>
+                            <span class="milestone-desc">Deep engineering curriculum in Java (JDK 17/21/25), Spring Boot 3.3, Spring Security (RBAC), Spring Data JPA, Hibernate, multithreading, and RESTful microservices.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-actions">
+                    <a href="#projects" class="btn btn-primary">Explore Featured Projects &rarr;</a>
+                    <a href="#skills" class="btn btn-outline-dark">Technical Skills Matrix</a>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- TECHNICAL SKILLS SECTION - Structured 5-Category Matrix -->
     <section id="skills" class="skills bg-light">
         <div class="skills-content">
-            <h2>Technical Skills</h2>
+            <div class="section-tag center">Core Competencies</div>
+            <h2>Technical Skills Matrix</h2>
+            <p class="skills-subtitle">Rigorous software engineering disciplines across modern Java, enterprise frameworks, desktop ERP systems, databases, and analysis</p>
             <div class="skills-grid">
+                <!-- Skill Card 1: Core & Advanced Java -->
                 <div class="skill-card">
-                    <div class="skill-icons">
-                        <i class="devicon-java-plain colored"></i>
+                    <span class="skill-category">Language & Runtime</span>
+                    <div class="skill-icons-row">
+                        <span class="custom-badge-icon badge-java" title="Java (JDK 17/21/25)">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M7.74 15.65c0 .08.2.14.44.14.25 0 .45-.06.45-.14 0-.08-.2-.15-.45-.15-.24 0-.44.07-.44.15zm.88.58c-.46 0-.84.1-.84.22 0 .13.38.23.84.23.46 0 .84-.1.84-.23 0-.12-.38-.22-.84-.22zm-2.04-.37c-.31 0-.56.07-.56.16 0 .09.25.17.56.17.3 0 .55-.08.55-.17 0-.09-.25-.16-.55-.16zm2.08 1.16c-1.12 0-2.03.22-2.03.5 0 .28.91.5 2.03.5s2.03-.22 2.03-.5c0-.28-.91-.5-2.03-.5zm-3.08-.26c-.4 0-.73.09-.73.2 0 .11.33.2.73.2.4 0 .73-.09.73-.2 0-.11-.33-.2-.73-.2zm4.5 1.76c-2.04 0-3.7.38-3.7.86 0 .47 1.66.85 3.7.85 2.03 0 3.69-.38 3.69-.85 0-.48-1.66-.86-3.69-.86zm-5.32-.42c-.51 0-.93.11-.93.25 0 .14.42.26.93.26.52 0 .94-.12.94-.26 0-.14-.42-.25-.94-.25zm5.72 2.37c-3.03 0-5.48.56-5.48 1.25 0 .69 2.45 1.25 5.48 1.25 3.02 0 5.48-.56 5.48-1.25 0-.69-2.46-1.25-5.48-1.25zm5.83-4.6c.49-.66.82-1.42.82-2.28 0-1.84-1.39-3.23-3.06-3.23-.29 0-.57.04-.84.12.38-.85.59-1.82.59-2.85C16.88 4.7 14.18 2 10.88 2c-.67 0-1.31.11-1.9.31C8.75 1.34 7.69.69 6.5.69 4.57.69 3 2.26 3 4.19c0 .76.24 1.47.65 2.05C2.65 7.16 2 8.5 2 10c0 1.94 1.05 3.63 2.62 4.54C4.24 14.8 4 15.14 4 15.5c0 .83.67 1.5 1.5 1.5.3 0 .58-.09.81-.24.78.46 1.7.74 2.69.74 1.43 0 2.72-.57 3.66-1.49.52.15 1.07.24 1.65.24 2.76 0 5-2.24 5-5 0-.96-.28-1.85-.77-2.62z"/></svg>
+                            Java (JDK 25)
+                        </span>
+                        <span class="custom-badge-icon badge-js" title="Multithreading & Concurrency">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 14.5v-3h3v-2h-3v-3h-2v3H8v2h3v3h2z"/></svg>
+                            Concurrency
+                        </span>
                     </div>
-                    <span>Java & OOP</span>
+                    <h3>Core & Advanced Java (JDK 17/21/25)</h3>
+                    <p class="skill-desc">Java Memory Model, Multithreading & Concurrency, Collections Framework, Streams API, OOP Principles, Exception Architecture, File I/O, Generics</p>
                 </div>
+
+                <!-- Skill Card 2: Backend & Microservices -->
                 <div class="skill-card">
-                    <div class="skill-icons">
-                        <i class="devicon-spring-original colored"></i>
+                    <span class="skill-category">Enterprise Backend</span>
+                    <div class="skill-icons-row">
+                        <span class="custom-badge-icon badge-spring" title="Spring Boot 3.3">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M21.7 8.2c-.2-.6-.7-1.1-1.3-1.3C18 6 12 6 12 6s-6 0-8.4.9c-.6.2-1.1.7-1.3 1.3C1.4 10.6 1.4 12 1.4 12s0 1.4.9 3.8c.2.6.7 1.1 1.3 1.3 2.4.9 8.4.9 8.4.9s6 0 8.4-.9c.6-.2 1.1-.7 1.3-1.3.9-2.4.9-3.8.9-3.8s0-1.4-.9-3.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+                            Spring Boot 3.3
+                        </span>
+                        <span class="custom-badge-icon badge-security" title="Spring Security (RBAC)">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                            Spring Security (RBAC)
+                        </span>
                     </div>
-                    <span>Spring Boot & MVC</span>
+                    <h3>Backend & Microservices (Spring Boot 3.3)</h3>
+                    <p class="skill-desc">Spring MVC, Spring Data JPA, Hibernate ORM, Spring AOP (Audit Logging), RESTful APIs, Clean Architecture, DAO Pattern, Role-Based Access Control</p>
                 </div>
+
+                <!-- Skill Card 3: Desktop & Systems Engineering -->
                 <div class="skill-card">
-                    <div class="skill-icons">
-                        <i class="devicon-html5-plain colored"></i>
-                        <i class="devicon-css3-plain colored"></i>
-                        <i class="devicon-javascript-plain colored"></i>
+                    <span class="skill-category">Desktop Architecture</span>
+                    <div class="skill-icons-row">
+                        <span class="custom-badge-icon badge-javafx" title="JavaFX (FXML)">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M4 3h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm0 4v12h16V7H4zm2-2a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>
+                            JavaFX (FXML)
+                        </span>
+                        <span class="custom-badge-icon badge-git" title="jpackage & WiX Toolset">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                            jpackage & WiX
+                        </span>
                     </div>
-                    <span>HTML, CSS, JS</span>
+                    <h3>Desktop & Systems Engineering (JavaFX)</h3>
+                    <p class="skill-desc">Scene Builder UI Design, JDBC Architecture, Non-blocking Platform.runLater Sync, Standalone Installers (.exe via WiX / Inno Setup, .dmg/.pkg via jpackage)</p>
                 </div>
+
+                <!-- Skill Card 4: Databases & Persistence -->
                 <div class="skill-card">
-                    <div class="skill-icons">
-                        <i class="devicon-postgresql-plain colored"></i>
-                        <i class="devicon-sqldeveloper-plain colored"></i>
+                    <span class="skill-category">Persistence & Optimization</span>
+                    <div class="skill-icons-row">
+                        <span class="custom-badge-icon badge-postgres" title="PostgreSQL">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12 3C7.58 3 4 4.79 4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7c0-2.21-3.58-4-8-4zm0 2c3.87 0 6 1.44 6 2s-2.13 2-6 2-6-1.44-6-2 2.13-2 6-2zm0 14c-3.87 0-6-1.44-6-2v-1.84c1.61.84 3.75 1.34 6 1.34s4.39-.5 6-1.34V17c0 .56-2.13 2-6 2zm0-4c-3.87 0-6-1.44-6-2v-1.84c1.61.84 3.75 1.34 6 1.34s4.39-.5 6-1.34V13c0 .56-2.13 2-6 2z"/></svg>
+                            PostgreSQL
+                        </span>
+                        <span class="custom-badge-icon badge-sqlite" title="SQLite">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M4 6a8 8 0 0 1 16 0v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6zm14 2H6v10h12V8z"/></svg>
+                            SQLite
+                        </span>
                     </div>
-                    <span>PostgreSQL & SQL</span>
+                    <h3>Databases & Persistence (SQL)</h3>
+                    <p class="skill-desc">Relational Schema Design, Complex SQL Query Optimization, Indexing Strategies, ACID Transactions, Offline Data Synchronization, Local Automated Backups</p>
                 </div>
+
+                <!-- Skill Card 5: Software Analysis & Architecture -->
                 <div class="skill-card">
-                    <div class="skill-icons">
-                        <i class="devicon-java-plain-wordmark colored"></i>
+                    <span class="skill-category">Systems Analysis & Workflows</span>
+                    <div class="skill-icons-row">
+                        <span class="custom-badge-icon badge-figma" title="BMC, RGD, SAD Documentation">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12 12a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm-3-9h3a3 3 0 1 1 0 6H9a3 3 0 1 1 0-6zm0 6h3v6H9a3 3 0 1 1 0-6zm0 6h3v3a3 3 0 1 1-3-3zm3 0h3a3 3 0 1 1 0 6h-3v-6z"/></svg>
+                            BMC &bull; RGD &bull; SAD
+                        </span>
+                        <span class="custom-badge-icon badge-whatsapp" title="Figma UI/UX & Jira">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+                            Figma &bull; Jira
+                        </span>
                     </div>
-                    <span>JavaFX & JDBC</span>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icons">
-                        <i class="devicon-git-plain colored"></i>
-                        <i class="devicon-github-original colored"></i>
-                        <i class="devicon-figma-plain colored"></i>
-                    </div>
-                    <span>Git, GitHub & Figma</span>
+                    <h3>Analysis & Architecture (SAD / BMC)</h3>
+                    <p class="skill-desc">Business Model Canvas (BMC), Requirement Gathering Documents (RGD), System Architecture Documents (SAD), 11-Screen Figma Prototypes, SDLC & Agile Workflows</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- FEATURED PROJECTS SECTION - 16:10 Tabbed Showcase -->
     <section id="projects" class="projects bg-dark">
-        <div class="project-content">
-            <h2>Featured Project: Offline Gym Management System</h2>
-            <p>Designed and developed an offline Java-based Gym Management System with a professional Figma UI. Features
-                include member and trainer management, attendance tracking, secure authentication, and dashboard
-                analytics.</p>
-            <p><strong>Tech Stack:</strong> Java, JavaFX, JDBC, SQL, SQLite, and WiX Toolset.</p>
-            <a href="https://github.com/nitheeeshh/Java.git" class="btn btn-primary" target="_blank">View Source Code
-                &rarr;</a>
-        </div>
+        <div class="projects-container">
+            <div class="projects-header">
+                <div class="section-tag light center">Production Portfolio</div>
+                <h2>Featured Engineering Systems</h2>
+                <p class="projects-subtitle">Production-grade offline desktop ERP architecture and commercial Spring Boot cloud platforms</p>
 
-        <div class="project-image">
-            <div class="project-slider-container">
-                <img src="./source/ui-image-1.webp" class="proj-slide" alt="Gym management dashboard interface" width="1400" height="905" loading="lazy" decoding="async">
-                <img src="./source/ui-image-2.webp" class="proj-slide" alt="Gym management member interface" width="1400" height="905" loading="lazy" decoding="async">
-                <img src="./source/image-4.webp" class="proj-slide" alt="Gym management application screen" width="1000" height="1091" loading="lazy" decoding="async">
+                <!-- Project Switcher Tabs -->
+                <div class="project-tabs" role="tablist" aria-label="Featured Projects Showcase">
+                    <button type="button" class="tab-btn active" id="tab-btn-gym" role="tab" aria-selected="true" aria-controls="project-gym" data-target="project-gym" tabindex="0">
+                        1. AIM Fitness Park (Offline Desktop ERP)
+                    </button>
+                    <button type="button" class="tab-btn" id="tab-btn-ecommerce" role="tab" aria-selected="false" aria-controls="project-ecommerce" data-target="project-ecommerce" tabindex="-1">
+                        2. Shasha Enterprises (B2B Inventory Platform)
+                    </button>
+                </div>
+            </div>
+
+            <!-- PROJECT 1: AIM FITNESS PARK (ENTERPRISE OFFLINE FITNESS ERP SYSTEM) -->
+            <div class="project-view active" id="project-gym" role="tabpanel" aria-labelledby="tab-btn-gym" tabindex="0">
+                <div class="project-content">
+                    <div class="project-meta-badge">
+                        <span class="badge-type">Offline Desktop ERP</span>
+                        <span class="badge-role">Lead Systems Engineer & Software Analyst (2026)</span>
+                    </div>
+                    <h3>AIM Fitness Park (Enterprise Offline Fitness ERP System)</h3>
+                    <p>
+                        Production-grade desktop ERP engineered for an active fitness facility managing <strong>1,200+ registered members</strong>, completely eliminating recurring SaaS fees. Spearheaded the full software engineering lifecycle from Business Model Canvas (BMC), Requirement Gathering (RGD), and System Architecture (SAD) to an 11-screen interactive Figma prototype and standalone runtime packaging.
+                    </p>
+
+                    <!-- Measurable Impact Metrics Grid -->
+                    <div class="project-impact-row">
+                        <div class="impact-pill">
+                            <strong>1,200+ Active Records</strong>
+                            <span>Eliminated recurring SaaS fees</span>
+                        </div>
+                        <div class="impact-pill">
+                            <strong>+35% Renewal Turnaround</strong>
+                            <span>Automated WhatsApp reminders</span>
+                        </div>
+                        <div class="impact-pill">
+                            <strong>Zero UI Thread Locks</strong>
+                            <span>Async Platform.runLater sync</span>
+                        </div>
+                        <div class="impact-pill">
+                            <strong>Zulu OpenJDK 25</strong>
+                            <span>Standalone .exe & .dmg bundles</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-features-list">
+                        <div class="proj-feature-item">
+                            <svg class="svg-inline-icon check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span><strong>Full Software Analysis & Figma Prototype:</strong> Authored complete BMC, RGD, and SAD documentation alongside an 11-screen intuitive custom GUI.</span>
+                        </div>
+                        <div class="proj-feature-item">
+                            <svg class="svg-inline-icon check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span><strong>10 Operational ERP Modules:</strong> Member Lifecycle, Daily Attendance, Trainer Assignment, Subscriptions, Invoicing, BMI Calculator, and Financial Analytics.</span>
+                        </div>
+                        <div class="proj-feature-item">
+                            <svg class="svg-inline-icon check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span><strong>Non-Blocking Multithreaded Engine:</strong> Leveraged <code>Platform.runLater</code> and concurrency threads for SQLite/PostgreSQL operations and external APIs without freezing UI.</span>
+                        </div>
+                        <div class="proj-feature-item">
+                            <svg class="svg-inline-icon check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span><strong>Meta WhatsApp Cloud API Reminders:</strong> Programmatic expiry notifications and payment alerts yielding a 35% surge in on-time renewals.</span>
+                        </div>
+                        <div class="proj-feature-item">
+                            <svg class="svg-inline-icon check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span><strong>Cross-Platform Native Bundling:</strong> Standalone Windows installers (.exe via WiX / Inno Setup) and macOS packages (.dmg via jpackage) bundling Zulu OpenJDK 25.</span>
+                        </div>
+                    </div>
+
+                    <div class="tech-pills">
+                        <span class="pill">Java (JDK 25)</span>
+                        <span class="pill">JavaFX (FXML)</span>
+                        <span class="pill">JDBC Architecture</span>
+                        <span class="pill">SQLite</span>
+                        <span class="pill">PostgreSQL</span>
+                        <span class="pill">Clean Architecture & DAO</span>
+                        <span class="pill">WhatsApp Cloud API</span>
+                        <span class="pill">WiX Toolset</span>
+                        <span class="pill">jpackage</span>
+                        <span class="pill">Apache Ant</span>
+                        <span class="pill">Figma UI/UX</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://github.com/Nitheesh-exe/Aim-Fitness-System-App.git" class="btn btn-primary" target="_blank" rel="noopener">
+                            View Source Code &rarr;
+                        </a>
+                        <a href="#contact" class="btn btn-outline">Inquire Architecture (SAD)</a>
+                    </div>
+                </div>
+
+                <div class="project-image">
+                    <!-- 16:10 Laptop Frame Mockup -->
+                    <div class="device-mockup-1610">
+                        <div class="mockup-header">
+                            <div class="mockup-dots">
+                                <span class="dot dot-red"></span>
+                                <span class="dot dot-yellow"></span>
+                                <span class="dot dot-green"></span>
+                            </div>
+                            <span class="mockup-title">AIM Fitness Park &bull; JavaFX Desktop ERP (16:10 Display)</span>
+                        </div>
+                        <div class="project-slider-container">
+                            <img src="./source/aim-gym-deploy.webp" class="proj-slide" alt="Nitheesh deploying AIM Fitness Park ERP system at facility desk" width="1200" height="1500" loading="lazy" decoding="async">
+                            <img src="./source/aim-gym-present.webp" class="proj-slide" alt="Nitheesh presenting JavaFX system settings on conference screen" width="1200" height="1350" loading="lazy" decoding="async">
+                            <img src="./source/ui-image-1.webp" class="proj-slide" alt="Gym management dashboard interface" width="1400" height="905" loading="lazy" decoding="async">
+                            <img src="./source/ui-image-2.webp" class="proj-slide" alt="Gym management member interface" width="1400" height="905" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 2: SHASHA ENTERPRISES (COMMERCIAL SHOWROOM & B2B INVENTORY PLATFORM) -->
+            <div class="project-view" id="project-ecommerce" role="tabpanel" aria-labelledby="tab-btn-ecommerce" tabindex="0">
+                <div class="project-content">
+                    <div class="project-meta-badge">
+                        <span class="badge-type">Commercial Showroom & B2B Platform</span>
+                        <span class="badge-role">Backend Architect & Systems Engineer (2026)</span>
+                    </div>
+                    <h3>Shasha Enterprises (Commercial Showroom & B2B Inventory Platform)</h3>
+                    <p>
+                        Live commercial platform modernizing offline inventory and B2B ordering for a building materials and power tools distributor. Engineered a high-throughput Spring Boot 3.3 REST backend with RBAC security, Spring AOP audit logging, and an instant client search engine managing <strong>2,624+ live SKU records</strong>.
+                    </p>
+
+                    <!-- Measurable Impact Metrics Grid -->
+                    <div class="project-impact-row">
+                        <div class="impact-pill">
+                            <strong>2,624+ Live SKUs</strong>
+                            <span>Commercial warehouse catalog</span>
+                        </div>
+                        <div class="impact-pill">
+                            <strong>-70% Payload Reduction</strong>
+                            <span>Python/Pillow WebP pipeline</span>
+                        </div>
+                        <div class="impact-pill">
+                            <strong>Sub-50ms Search Latency</strong>
+                            <span>Debounced client-side filtering</span>
+                        </div>
+                        <div class="impact-pill">
+                            <strong>Live Production System</strong>
+                            <span>shashaenterprise.in</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-features-list">
+                        <div class="proj-feature-item">
+                            <svg class="svg-inline-icon check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span><strong>Spring Boot 3.3 REST Backend & RBAC:</strong> Layered Clean Architecture with role-based access control, Spring AOP audit logging, and input validation.</span>
+                        </div>
+                        <div class="proj-feature-item">
+                            <svg class="svg-inline-icon check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span><strong>Spring Data JPA & PostgreSQL:</strong> Normalized relational schema with optimized queries, multi-criteria filtering, and ACID transaction safety.</span>
+                        </div>
+                        <div class="proj-feature-item">
+                            <svg class="svg-inline-icon check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span><strong>Zero-Dependency Client Search Engine:</strong> Sub-50ms client-side catalog search with input debouncing and deep URL state synchronization.</span>
+                        </div>
+                        <div class="proj-feature-item">
+                            <svg class="svg-inline-icon check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span><strong>Automated Python/Pillow Pipeline:</strong> Custom media processing converting multi-gigabyte warehouse catalog imagery into responsive WebP formats (-70% payload size).</span>
+                        </div>
+                        <div class="proj-feature-item">
+                            <svg class="svg-inline-icon check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span><strong>Programmatic WhatsApp BOQ Funnel:</strong> Direct Bill of Quantities (BOQ) customer quotation funnels converting digital enquiries into direct commercial sales.</span>
+                        </div>
+                    </div>
+
+                    <div class="tech-pills">
+                        <span class="pill">Java 21</span>
+                        <span class="pill">Spring Boot 3.3</span>
+                        <span class="pill">Spring Security (RBAC)</span>
+                        <span class="pill">Spring Data JPA</span>
+                        <span class="pill">Hibernate</span>
+                        <span class="pill">PostgreSQL</span>
+                        <span class="pill">Spring AOP</span>
+                        <span class="pill">REST APIs</span>
+                        <span class="pill">Python (Pillow Pipeline)</span>
+                        <span class="pill">Vanilla JS (ES6+)</span>
+                        <span class="pill">Netlify</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://shashaenterprise.in" class="btn btn-primary" target="_blank" rel="noopener">
+                            Visit Live Platform &rarr;
+                        </a>
+                        <a href="https://github.com/Nitheesh-exe/portfolio-backend" class="btn btn-outline" target="_blank" rel="noopener">
+                            View GitHub Backend
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-image">
+                    <!-- 16:10 Web App Browser Mockup -->
+                    <div class="device-mockup-1610">
+                        <div class="mockup-header">
+                            <div class="mockup-dots">
+                                <span class="dot dot-red"></span>
+                                <span class="dot dot-yellow"></span>
+                                <span class="dot dot-green"></span>
+                            </div>
+                            <span class="mockup-title">Shasha Enterprises &bull; Live Commercial Platform (shashaenterprise.in)</span>
+                        </div>
+                        <div class="project-slider-container">
+                            <img src="./source/shasha-store.webp" class="proj-slide" alt="Nitheesh operating inventory system in commercial showroom" width="1400" height="842" loading="lazy" decoding="async">
+                            <img src="./source/shasha-catalog-ui.webp" class="proj-slide" alt="Product Catalog Pro interface with 2,624 products" width="1200" height="2133" loading="lazy" decoding="async">
+                            <img src="./source/shasha-showroom.webp" class="proj-slide" alt="Shasha Enterprises warehouse and commercial showroom display" width="1400" height="958" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="footer bg-dark-alt">
-        <h2>Let's Work Together </h2>
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications" class="certifications bg-white">
+        <div class="certifications-container">
+            <div class="section-tag center">Industry Credentials</div>
+            <h2>Certifications & Professional Qualifications</h2>
+            <p class="cert-subtitle">Recognized qualifications in enterprise Java engineering, powertrain systems architecture, and professional leadership</p>
+            
+            <div class="cert-grid">
+                <!-- Cert 1 -->
+                <div class="cert-card">
+                    <div class="cert-icon-wrapper">
+                        <svg class="svg-inline-icon cert-svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1z" clip-rule="evenodd"/></svg>
+                    </div>
+                    <div class="cert-info">
+                        <span class="cert-org">Magizhchi Software &bull; Madurai</span>
+                        <h3>Enterprise Java & Systems Engineering Certification</h3>
+                        <p>Specialized enterprise training in Core Java, Spring Boot 3.3, Spring Security, Hibernate, PostgreSQL, REST APIs, and production deployment.</p>
+                        <span class="cert-year">Certified: 2026</span>
+                    </div>
+                </div>
 
-        <div class="contact-info">
-            <p><i class="fa-solid fa-envelope"></i> <a href="mailto:nitheesh.exe@gmail.com">nitheesh.exe@gmail.com</a>
-            </p>
-            <p><i class="fa-solid fa-phone"></i> +91 9345507516</p>
+                <!-- Cert 2 -->
+                <div class="cert-card">
+                    <div class="cert-icon-wrapper">
+                        <svg class="svg-inline-icon cert-svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+                    </div>
+                    <div class="cert-info">
+                        <span class="cert-org">L&T EduTech</span>
+                        <h3>Electric and Hybrid Vehicles — Systems Architecture</h3>
+                        <p>Comprehensive engineering certification covering electric powertrain architectures, battery management systems, and hybrid electric vehicles.</p>
+                        <span class="cert-year">Certified: 2024–2025</span>
+                    </div>
+                </div>
+
+                <!-- Cert 3 -->
+                <div class="cert-card">
+                    <div class="cert-icon-wrapper">
+                        <svg class="svg-inline-icon cert-svg" viewBox="0 0 20 20" fill="currentColor"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/></svg>
+                    </div>
+                    <div class="cert-info">
+                        <span class="cert-org">Focus 4D Career</span>
+                        <h3>Employability & Professional Presentation Skills</h3>
+                        <p>Professional communication, problem-solving methodologies, agile cross-functional teamwork, and technical presentation skills.</p>
+                        <span class="cert-year">Certified: 2023–2024</span>
+                    </div>
+                </div>
+
+                <!-- Cert 4 -->
+                <div class="cert-card">
+                    <div class="cert-icon-wrapper">
+                        <svg class="svg-inline-icon cert-svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 0v12h8V4H6z" clip-rule="evenodd"/></svg>
+                    </div>
+                    <div class="cert-info">
+                        <span class="cert-org">Microsoft</span>
+                        <h3>Microsoft Office Fundamentals & Technical Documentation</h3>
+                        <p>Foundational data management, documentation structuring, spreadsheet analytics, and enterprise productivity software workflows.</p>
+                        <span class="cert-year">Certified: 2022–2023</span>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="social-links">
-            <a href="https://linkedin.com/in/nitheeshkumar2003" target="_blank"><i class="fa-brands fa-linkedin"></i>
-                LinkedIn</a>
-            <a href="https://github.com/Nitheesh-exe" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-            <a href="https://wa.me/919345507516" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact" class="footer bg-dark-alt">
+        <div class="footer-container">
+            <div class="section-tag light center">Get In Touch</div>
+            <h2>Let's Engineer High-Impact Systems</h2>
+            <p class="footer-sub">Open to Java Software Developer roles, Backend Systems Engineer positions, and desktop ERP engineering projects.</p>
+
+            <div class="contact-info">
+                <a href="mailto:nitheesh.exe@gmail.com" class="contact-card">
+                    <svg class="svg-inline-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                    <span>nitheesh.exe@gmail.com</span>
+                </a>
+                <a href="tel:+919345507516" class="contact-card">
+                    <svg class="svg-inline-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/></svg>
+                    <span>+91 9345507516</span>
+                </a>
+                <div class="contact-card static">
+                    <svg class="svg-inline-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                    <span>Madurai, Tamil Nadu, India</span>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://linkedin.com/in/nitheeshkumar2003" target="_blank" rel="noopener">
+                    <svg class="svg-inline-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.69 1.69 0 0 0 1.7-1.68 1.7 1.7 0 0 0-1.7-1.71 1.7 1.7 0 0 0-1.7 1.71c0 .92.77 1.68 1.7 1.68m1.39 9.94v-8.37H5.07v8.37h2.78z"/></svg>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/Nitheesh-exe" target="_blank" rel="noopener">
+                    <svg class="svg-inline-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                    GitHub
+                </a>
+                <a href="https://wa.me/919345507516" target="_blank" rel="noopener">
+                    <svg class="svg-inline-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>
+                    WhatsApp
+                </a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nitheesh Kumar VSM. Engineered with Java, Spring Boot 3.3, and modern desktop ERP architecture.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- OPTIMIZED FAST-RESPONSE CHATBOT WIDGET -->
     <div class="chatbot-wrapper">
-        <button id="chat-toggle" class="chat-fab" type="button" aria-label="Open chat">
-            <i class="fa-solid fa-message"></i>
+        <button id="chat-toggle" class="chat-fab" type="button" aria-label="Open Nitheesh AI Assistant chat" title="Chat with Nitheesh's AI" aria-expanded="false" aria-controls="chat-window">
+            <svg class="chat-fab-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+            <span class="chat-pulse-ring" aria-hidden="true"></span>
         </button>
 
-        <div id="chat-window" class="chat-hidden">
+        <div id="chat-window" class="chat-hidden" role="dialog" aria-modal="true" aria-label="Nitheesh AI Chatbot">
             <div class="chat-header">
                 <div class="header-info">
-                    <h4>Nitheesh's AI</h4>
-                    <span class="status-indicator">Powered by Gemini 3.6</span>
+                    <div class="header-title-row">
+                        <span class="status-indicator" title="Connected and ready" aria-hidden="true"></span>
+                        <h4>Nitheesh's AI Assistant</h4>
+                    </div>
+                    <span class="status-sub" id="chat-status-sub">Online &bull; Java & Systems Intelligence</span>
                 </div>
-                <button id="chat-close" class="close-btn" type="button" aria-label="Close chat"><i class="fa-solid fa-xmark"></i></button>
+                <button id="chat-close" class="close-btn" type="button" aria-label="Close chat window">
+                    <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                </button>
             </div>
-            <div class="chat-messages" id="chat-messages">
+
+            <!-- Instant Quick Starter Chips -->
+            <div class="chat-chips" id="chat-chips" role="toolbar" aria-label="Quick questions">
+                <button type="button" class="chip" data-prompt="What core Java and backend skills does Nitheesh have?">💻 Core Java & Spring Boot</button>
+                <button type="button" class="chip" data-prompt="Tell me about the AIM Fitness Park desktop ERP system.">🏋️ AIM Fitness Park ERP</button>
+                <button type="button" class="chip" data-prompt="Tell me about the Shasha Enterprises B2B inventory platform.">🛒 Shasha B2B Platform</button>
+                <button type="button" class="chip" data-prompt="How does Nitheesh conduct Software Analysis (BMC, RGD, SAD)?">📐 Software Analysis (SAD)</button>
+                <button type="button" class="chip" data-prompt="What certifications does Nitheesh have?">🏆 Certifications</button>
+                <button type="button" class="chip" data-prompt="How can I contact Nitheesh?">📬 Contact & Resume</button>
+            </div>
+
+            <div class="chat-messages" id="chat-messages" aria-live="polite">
                 <div class="msg bot-msg">
-                    <i class="fa-solid fa-robot bot-icon"></i>
-                    <div class="msg-content">Hi! Ask me anything about Nitheesh's skills, experience, or projects.</div>
+                    <div class="bot-icon-wrapper">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2zM7.5 13A1.5 1.5 0 1 0 9 14.5 1.5 1.5 0 0 0 7.5 13zm9 0a1.5 1.5 0 1 0 1.5 1.5 1.5 1.5 0 0 0-1.5-1.5z"/></svg>
+                    </div>
+                    <div class="msg-content">Hi there! I'm Nitheesh Kumar VSM's AI Assistant. Ask me anything about his Java systems engineering, production projects (AIM Fitness Park ERP & Shasha Enterprises), technical stack (JDK 25, Spring Boot 3.3, JavaFX), or architecture!</div>
                 </div>
             </div>
+
             <div class="chat-input-area">
-                <input type="text" id="chat-input" placeholder="Type your question...">
-                <button id="chat-send" class="btn-send" type="button" aria-label="Send message"><i class="fa-solid fa-paper-plane"></i></button>
+                <input type="text" id="chat-input" placeholder="Ask about Java, Spring Boot 3.3, AIM Fitness Park, Shasha Enterprises..." autocomplete="off" aria-label="Type your message">
+                <button id="chat-send" class="btn-send" type="button" aria-label="Send message">
+                    <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg>
+                </button>
             </div>
         </div>
     </div>
