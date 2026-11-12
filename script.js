@@ -261,43 +261,61 @@
   }
 
   // ==========================================================================
-  // 7. TERMINAL CHATBOT (Spring AI Cloud + Instant Local Deterministic NLP)
+  // 7. UNIFIED CHATBOT ENGINE (Floating Widget + Inline Terminal Console)
   // ==========================================================================
   const BACKEND_URL = 'https://portfolio-api-mt7w.onrender.com';
+  let isBackendWarmed = false;
 
   const LOCAL_KNOWLEDGE = [
     {
-      keywords: ['who', 'about', 'nitheesh', 'developer', 'profile', 'introduce'],
-      answer: "I am **Nitheesh Kumar VSM** — a Java Software Developer, Systems Engineer, and Software Analyst. I specialize in Modern Java (JDK 17/21/25), Spring Boot 3.3 microservices, offline-first desktop ERP architecture (JavaFX/SQLite), and software analysis (BMC, RGD, SAD)."
+      keywords: ['aim', 'fitness', 'gym', 'erp', 'desktop', 'javafx', 'fxml', 'wix', 'jpackage', 'whatsapp'],
+      answer: "AIM Fitness Park is an **enterprise offline desktop ERP** built with Zulu OpenJDK 25, JavaFX, FXML, JDBC, and SQLite. It manages **1,200+ active members** on-site with zero recurring SaaS fees, uses non-blocking multi-threaded sync (`Platform.runLater()`), bundles native `.exe`/`.dmg` installers via WiX & jpackage, and delivers a **+35% renewal turnaround** via Meta WhatsApp Cloud API webhooks."
     },
     {
-      keywords: ['aim', 'fitness', 'gym', 'erp', 'desktop', 'javafx', 'wix', 'jpackage'],
-      answer: "AIM Fitness Park is an **enterprise offline desktop ERP** built with Zulu OpenJDK 25, JavaFX, FXML, JDBC, and SQLite. It currently manages **1,200+ members** on-site with zero recurring SaaS fees, features non-blocking multi-threaded database updates (`Platform.runLater`), and delivers a **+35% renewal turnaround** via Meta WhatsApp Cloud API webhooks."
+      keywords: ['shasha', 'enterprise', 'b2b', 'inventory', 'sku', 'skus', 'showroom', 'boq'],
+      answer: "Shasha Enterprises is a live commercial B2B platform ([shashaenterprise.in](https://shashaenterprise.in)) managing **2,624+ live SKUs**. Backed by **Spring Boot 3.3**, Spring Security (RBAC), Spring AOP audit logging, and **PostgreSQL**, with a zero-dependency debounced search engine and an automated Python/Pillow WebP pipeline that cut payload size by **-70%**."
     },
     {
-      keywords: ['shasha', 'enterprise', 'b2b', 'inventory', 'sku', 'spring boot'],
-      answer: "Shasha Enterprises is a live commercial B2B platform managing **2,624+ live SKUs**. Backed by **Spring Boot 3.3** and **PostgreSQL** with Spring Security (RBAC) and AOP audit logging. The front-end features a zero-dependency debounced search engine and an automated Python/Pillow WebP pipeline that slashed image payloads by **-70%**."
+      keywords: ['analysis', 'sad', 'rgd', 'bmc', 'requirements', 'workflow', 'figma'],
+      answer: "Rigorous 3-tier Software Analysis methodology:\n1. **Business Model Canvas (BMC):** Aligns value propositions, cost structure, and operational workflows.\n2. **Requirement Gathering Document (RGD):** Defines functional/non-functional specs, actors, and validation constraints.\n3. **System Architecture Document (SAD):** Maps ERDs, UML diagrams, and 11-screen interactive Figma prototypes before implementation."
     },
     {
-      keywords: ['skill', 'stack', 'tech', 'technologies', 'tools', 'languages'],
-      answer: "My technical matrix spans 5 core engineering domains:\n1. **Core Java**: JDK 17/21/25, Concurrency, Memory Model, Streams, Clean Architecture.\n2. **Backend**: Spring Boot 3.3, Spring Data JPA, Spring Security (RBAC), Spring AOP, RESTful APIs.\n3. **Desktop & Systems**: JavaFX 25, FXML, JDBC, jpackage, WiX Toolset (.exe), Inno Setup.\n4. **Databases**: PostgreSQL, SQLite (WAL mode), MySQL, Relational Schema & Index Optimization.\n5. **Software Analysis**: BMC, RGD, SAD, Design Patterns, Figma Systems Prototyping."
+      keywords: ['education', 'college', 'degree', 'anna university', 'cgpa', 'school', 'university', 'certs', 'certification', 'certifications', 'certificate', 'credentials'],
+      answer: "Academic & Certification credentials:\n• **B.E. Electrical & Electronics Engineering:** Anna University, Dindigul — **CGPA: 7.2** (Class of 2025)\n• **Enterprise Java & Systems Engineering Certification:** Magizhchi Software, Madurai (2026)\n• **Electric & Hybrid Vehicles Architecture:** L&T EduTech (2024–2025)\n• **Microsoft Office & Technical Documentation:** Microsoft (2022–2023)"
     },
     {
-      keywords: ['contact', 'email', 'phone', 'hire', 'reach', 'message'],
-      answer: "You can reach me directly at **nitheesh.exe@gmail.com**, phone/WhatsApp at **+91 93455 07516**, or connect via LinkedIn at [linkedin.com/in/nitheeshkumar2003](https://linkedin.com/in/nitheeshkumar2003)."
+      keywords: ['contact', 'email', 'phone', 'call', 'hire', 'reach', 'message', 'resume', 'cv', 'location', 'madurai'],
+      answer: "Reach Nitheesh Kumar VSM directly:\n• **Email:** nitheesh.exe@gmail.com\n• **Phone / WhatsApp:** +91 93455 07516\n• **Location:** Madurai, Tamil Nadu, India\n• **LinkedIn:** [linkedin.com/in/nitheeshkumar2003](https://linkedin.com/in/nitheeshkumar2003)\n• **GitHub:** [github.com/Nitheesh-exe](https://github.com/Nitheesh-exe)"
     },
     {
-      keywords: ['github', 'repo', 'source', 'code'],
-      answer: "Explore my source code repositories:\n• **AIM Fitness Park ERP**: [github.com/Nitheesh-exe/Aim-Fitness-System-App.git](https://github.com/Nitheesh-exe/Aim-Fitness-System-App.git)\n• **Portfolio & Backend**: [github.com/Nitheesh-exe/portfolio-backend](https://github.com/Nitheesh-exe/portfolio-backend)\n• **GitHub Profile**: [github.com/Nitheesh-exe](https://github.com/Nitheesh-exe)"
+      keywords: ['github', 'repo', 'repos', 'source', 'code'],
+      answer: "Source repositories:\n• **AIM Fitness Park ERP:** [github.com/Nitheesh-exe/Aim-Fitness-System-App.git](https://github.com/Nitheesh-exe/Aim-Fitness-System-App.git)\n• **Portfolio & Spring AI Backend:** [github.com/Nitheesh-exe/portfolio-backend](https://github.com/Nitheesh-exe/portfolio-backend)"
+    },
+    {
+      keywords: ['skill', 'skills', 'stack', 'tech', 'technologies', 'languages', 'spring', 'spring boot', 'java', 'database', 'databases', 'sql', 'postgresql', 'sqlite'],
+      answer: "Core engineering matrix across 5 domains:\n1. **Core Java:** JDK 17/21/25, Multithreading, Memory Model, Streams API, Clean Architecture.\n2. **Backend:** Spring Boot 3.3, Spring Data JPA, Hibernate, Spring Security (RBAC), Spring AOP, REST APIs.\n3. **Desktop & Systems:** JavaFX 25, FXML, JDBC, jpackage, WiX Toolset (.exe), Inno Setup.\n4. **Databases:** PostgreSQL, SQLite (WAL mode), MySQL, Schema & Index Optimization.\n5. **Software Analysis:** BMC, RGD, SAD, Design Patterns, 11-Screen Figma Prototyping."
+    },
+    {
+      keywords: ['tools', 'tooling', 'maven', 'postman', 'jira', 'ant'],
+      answer: "Daily engineering toolchain:\n• **Build & Native Packaging:** Maven, Apache Ant, jpackage, WiX Toolset, Inno Setup\n• **VCS & API Testing:** Git, GitHub, Postman, cURL\n• **Design & Docs:** Figma, JavaFX Scene Builder, Jira, BMC/RGD/SAD"
+    },
+    {
+      keywords: ['who is nitheesh', 'who are you', 'about nitheesh', 'tell me about yourself', 'introduce', 'bio', 'summary', 'overview', 'profile'],
+      answer: "I am **Nitheesh Kumar VSM** — a Java Software Developer, Systems Engineer, and Software Analyst based in Madurai, India. I hold a **B.E. in Electrical & Electronics Engineering from Anna University (CGPA: 7.2, 2025)** and specialize in JDK 17/21/25, Spring Boot 3.3 microservices, offline-first JavaFX/SQLite desktop ERP architecture, and software analysis (BMC, RGD, SAD)."
+    },
+    {
+      keywords: ['hi', 'hello', 'hey', 'greetings', 'namaste', 'hola', 'start', 'help'],
+      answer: "Hello! I am Nitheesh Kumar VSM's AI Assistant. Ask me about his **Core Java & Systems Skills** (JDK 25, Spring Boot 3.3, JavaFX), **Flagship Systems** (AIM Fitness Park ERP & Shasha Enterprises), **Education & Certifications**, or **Software Analysis (BMC, RGD, SAD)**!"
     }
   ];
 
   function findLocalAnswer(query) {
-    const clean = query.toLowerCase().trim();
-    const tokens = new Set(clean.split(/[^a-z0-9+#_]+/));
+    if (!query) return null;
+    const clean = query.toLowerCase().replace(/[^\w\s+#-]/g, ' ').replace(/\s+/g, ' ').trim();
+    const tokens = new Set(clean.split(' '));
 
-    for (let item of LOCAL_KNOWLEDGE) {
-      for (let kw of item.keywords) {
+    for (const item of LOCAL_KNOWLEDGE) {
+      for (const kw of item.keywords) {
         if (kw.includes(' ')) {
           if (clean.includes(kw)) return item.answer;
         } else if (tokens.has(kw)) {
@@ -308,55 +326,57 @@
     return null;
   }
 
-  function initTerminalChat() {
-    const input = document.getElementById('terminal-input');
-    const sendBtn = document.getElementById('terminal-send-btn');
-    const body = document.getElementById('terminal-chat-body');
-    const chips = document.querySelectorAll('.chat-chip');
-
-    if (!input || !sendBtn || !body) return;
-
-    async function sendMessage(text) {
-      const q = text.trim();
-      if (!q) return;
-
-      appendMessage(q, 'user');
-      input.value = '';
-
-      // Check local answer first for instant latency
-      const localAns = findLocalAnswer(q);
-      if (localAns) {
-        appendMessage(localAns, 'bot');
-        return;
-      }
-
-      // Show typing indicator
-      const typingId = appendTyping();
-
-      try {
-        const res = await fetch(`${BACKEND_URL}/api/chat`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: q })
+  function preWarmBackend() {
+    if (isBackendWarmed) return;
+    try {
+      fetch(`${BACKEND_URL}/api/ping`, { method: 'GET', mode: 'cors' })
+        .then(res => {
+          if (res.ok) isBackendWarmed = true;
+        })
+        .catch(() => {
+          fetch(`${BACKEND_URL}/api/chat`, { method: 'OPTIONS' }).catch(() => {});
         });
+    } catch (_) {}
+  }
 
-        removeTyping(typingId);
+  function formatBotHtml(text) {
+    return text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+      .replace(/\n/g, '<br>');
+  }
 
-        if (res.ok) {
-          const data = await res.json();
-          appendMessage(data.reply || data.response || "Message processed.", 'bot');
-        } else {
-          fallbackResponse(q);
-        }
-      } catch (err) {
-        removeTyping(typingId);
-        fallbackResponse(q);
+  async function queryAssistant(text) {
+    const instant = findLocalAnswer(text);
+    if (instant) return instant;
+
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000);
+      const res = await fetch(`${BACKEND_URL}/api/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body: text,
+        signal: controller.signal
+      });
+      clearTimeout(timeoutId);
+
+      if (res.ok) {
+        isBackendWarmed = true;
+        const reply = (await res.text()).trim();
+        if (reply) return reply;
       }
-    }
+    } catch (_) {}
 
-    function fallbackResponse(q) {
-      appendMessage("I am Nitheesh's systems assistant. I specialize in Java 25, Spring Boot 3.3, and offline-first desktop ERP architecture. Feel free to ask about AIM Fitness Park, Shasha Enterprises, or my technical skills matrix!", 'bot');
-    }
+    return "I'm operating in fast offline mode. Nitheesh Kumar VSM specializes in Java (JDK 17/21/25), Spring Boot 3.3, PostgreSQL, and offline JavaFX ERP architecture. Ask about AIM Fitness Park, Shasha Enterprises, skills, or contact details (nitheesh.exe@gmail.com)!";
+  }
+
+  function bindChatSurface({ inputEl, sendEl, bodyEl, chipSelector }) {
+    if (!inputEl || !sendEl || !bodyEl) return;
+    let isBusy = false;
 
     function appendMessage(text, sender) {
       const row = document.createElement('div');
@@ -364,15 +384,19 @@
 
       const bubble = document.createElement('div');
       bubble.className = 'msg-bubble';
-      bubble.innerHTML = text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      if (sender === 'bot') {
+        bubble.innerHTML = formatBotHtml(text);
+      } else {
+        bubble.textContent = text;
+      }
 
       row.appendChild(bubble);
-      body.appendChild(row);
-      body.scrollTop = body.scrollHeight;
+      bodyEl.appendChild(row);
+      bodyEl.scrollTop = bodyEl.scrollHeight;
     }
 
     function appendTyping() {
-      const id = 'typing-' + Date.now();
+      const id = 'typing-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6);
       const row = document.createElement('div');
       row.className = 'chat-msg chat-bot';
       row.id = id;
@@ -382,25 +406,113 @@
       bubble.textContent = 'Analyzing query...';
 
       row.appendChild(bubble);
-      body.appendChild(row);
-      body.scrollTop = body.scrollHeight;
+      bodyEl.appendChild(row);
+      bodyEl.scrollTop = bodyEl.scrollHeight;
       return id;
     }
 
-    function removeTyping(id) {
-      const el = document.getElementById(id);
-      if (el) el.remove();
+    async function handleSend(customText) {
+      if (isBusy) return;
+      const q = (customText != null ? customText : inputEl.value).trim();
+      if (!q) return;
+
+      appendMessage(q, 'user');
+      if (customText == null) inputEl.value = '';
+
+      isBusy = true;
+      sendEl.disabled = true;
+      const typingId = appendTyping();
+
+      const reply = await queryAssistant(q);
+      const typingEl = document.getElementById(typingId);
+      if (typingEl) typingEl.remove();
+
+      appendMessage(reply, 'bot');
+      isBusy = false;
+      sendEl.disabled = false;
+      inputEl.focus();
     }
 
-    sendBtn.addEventListener('click', () => sendMessage(input.value));
-    input.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') sendMessage(input.value);
+    sendEl.addEventListener('click', () => handleSend());
+    inputEl.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        handleSend();
+      }
     });
 
-    chips.forEach(chip => {
-      chip.addEventListener('click', function () {
-        sendMessage(this.textContent);
+    if (chipSelector) {
+      document.querySelectorAll(chipSelector).forEach(chip => {
+        chip.addEventListener('click', function () {
+          const prompt = this.dataset.prompt || this.textContent;
+          handleSend(prompt);
+        });
       });
+    }
+  }
+
+  function initChatSystems() {
+    preWarmBackend();
+    setInterval(() => {
+      if (!document.hidden) preWarmBackend();
+    }, 9 * 60 * 1000);
+
+    // 1. Inline Systems Terminal
+    bindChatSurface({
+      inputEl: document.getElementById('terminal-input'),
+      sendEl: document.getElementById('terminal-send-btn'),
+      bodyEl: document.getElementById('terminal-chat-body'),
+      chipSelector: '.chat-chip'
+    });
+
+    // 2. Floating Cyberpunk Chatbot Popup
+    const chatToggle = document.getElementById('chat-toggle');
+    const chatClose = document.getElementById('chat-close');
+    const chatWindow = document.getElementById('chat-window');
+    const chatInput = document.getElementById('chat-input');
+
+    bindChatSurface({
+      inputEl: chatInput,
+      sendEl: document.getElementById('chat-send'),
+      bodyEl: document.getElementById('chat-messages'),
+      chipSelector: '#chat-chips .chip'
+    });
+
+    function openChat() {
+      if (!chatWindow) return;
+      chatWindow.classList.remove('chat-hidden');
+      if (chatToggle) chatToggle.setAttribute('aria-expanded', 'true');
+      preWarmBackend();
+      setTimeout(() => chatInput && chatInput.focus(), 140);
+    }
+
+    function closeChat() {
+      if (!chatWindow) return;
+      chatWindow.classList.add('chat-hidden');
+      if (chatToggle) chatToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    window.__openChatbot = openChat;
+
+    if (chatToggle) {
+      chatToggle.addEventListener('mouseenter', preWarmBackend, { once: true });
+      chatToggle.addEventListener('click', () => {
+        if (chatWindow && chatWindow.classList.contains('chat-hidden')) {
+          openChat();
+        } else {
+          closeChat();
+        }
+      });
+    }
+
+    if (chatClose) {
+      chatClose.addEventListener('click', closeChat);
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && chatWindow && !chatWindow.classList.contains('chat-hidden')) {
+        closeChat();
+      }
     });
   }
 
@@ -429,7 +541,7 @@
     initMediaSwitcher();
     initBentoFilter();
     initEmailCopy();
-    initTerminalChat();
+    initChatSystems();
   });
 
 })();

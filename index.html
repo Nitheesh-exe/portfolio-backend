@@ -248,7 +248,7 @@
       <div class="glass-card about-grid">
         <div class="about-text-col">
           <p class="about-text">
-            I am <strong>Nitheesh Kumar VSM</strong> — a Java Software Developer and Systems Architect based in Madurai, Tamil Nadu. My formal engineering education began with a degree in <strong>Computer Science &amp; Engineering from Anna University</strong>.
+            I am <strong>Nitheesh Kumar VSM</strong> — a Java Software Developer and Systems Architect based in Madurai, Tamil Nadu. My formal engineering education began with a <strong>B.E. in Electrical &amp; Electronics Engineering from Anna University, Dindigul (CGPA: 7.2, Class of 2025)</strong>, followed by specialized training at <strong>Magizhchi Software, Madurai (2026)</strong>.
           </p>
           <p class="about-text">
             My defining engineering disciplines were forged in production: building mission-critical desktop ERP architectures with <strong>Java (JDK 17/21/25)</strong>, engineering scalable backends with <strong>Spring Boot 3.3</strong>, optimizing complex relational schemas in <strong>PostgreSQL and SQLite</strong>, and producing exhaustive <strong>Software Analysis specifications (BMC, RGD, SAD)</strong> with high-fidelity Figma prototypes.
@@ -460,7 +460,7 @@
                 <span class="tech-tag">Gemini 2.5</span>
                 <span class="tech-tag">Render Cloud</span>
               </div>
-              <a href="#terminal" class="btn btn-cyan" style="padding:6px 12px; font-size:11px;">LAUNCH CHAT ▾</a>
+              <button type="button" class="btn btn-cyan" onclick="window.__openChatbot && window.__openChatbot()" style="padding:6px 12px; font-size:11px;">LAUNCH AI CHAT ↗</button>
             </div>
           </article>
 
@@ -743,6 +743,54 @@
   <div id="toast" class="toast-notification" aria-live="polite">
     <span class="toast-icon">✓</span>
     <span class="toast-text" id="toast-message">Copied to clipboard</span>
+  </div>
+
+  <!-- Floating Cyberpunk AI Chatbot Widget -->
+  <div class="chatbot-wrapper">
+    <button id="chat-toggle" class="chat-fab" type="button" aria-label="Open Nitheesh AI Assistant chat" title="Chat with Nitheesh's AI" aria-expanded="false" aria-controls="chat-window">
+      <svg class="chat-fab-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+      <span class="chat-fab-label">AI CHAT</span>
+      <span class="chat-pulse-ring" aria-hidden="true"></span>
+    </button>
+
+    <div id="chat-window" class="chat-hidden" role="dialog" aria-modal="true" aria-label="Nitheesh AI Assistant">
+      <div class="chat-header">
+        <div class="header-info">
+          <div class="header-title-row">
+            <span class="status-dot" aria-hidden="true"></span>
+            <h4>NITHEESH_AI // ASSISTANT</h4>
+          </div>
+          <span class="status-sub" id="chat-status-sub">Spring AI + Offline NLP &bull; Ready</span>
+        </div>
+        <button id="chat-close" class="chat-close-btn" type="button" aria-label="Close chat window">
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        </button>
+      </div>
+
+      <div class="chat-chips" id="chat-chips" role="toolbar" aria-label="Quick prompts">
+        <button type="button" class="chip" data-prompt="What core Java and Spring Boot skills does Nitheesh have?">💻 Java &amp; Spring Boot</button>
+        <button type="button" class="chip" data-prompt="Tell me about the AIM Fitness Park desktop ERP system.">🏋️ AIM Fitness ERP</button>
+        <button type="button" class="chip" data-prompt="Tell me about the Shasha Enterprises B2B platform.">🛒 Shasha B2B</button>
+        <button type="button" class="chip" data-prompt="How does Nitheesh conduct Software Analysis (BMC, RGD, SAD)?">📐 Analysis (SAD)</button>
+        <button type="button" class="chip" data-prompt="What certifications and education does Nitheesh have?">🏆 Education &amp; Certs</button>
+        <button type="button" class="chip" data-prompt="How can I contact Nitheesh?">📬 Contact</button>
+      </div>
+
+      <div class="chat-messages" id="chat-messages" aria-live="polite">
+        <div class="chat-msg chat-bot">
+          <div class="msg-bubble">
+            Hi! I'm <strong>Nitheesh Kumar VSM's AI Assistant</strong>. Ask me about his JDK 25 desktop ERP architecture, Spring Boot 3.3 backends, software analysis (BMC/RGD/SAD), or contact details!
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Ask about Java 25, AIM ERP, Shasha..." autocomplete="off" aria-label="Type your message">
+        <button id="chat-send" class="chat-send-btn" type="button" aria-label="Send message">
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg>
+        </button>
+      </div>
+    </div>
   </div>
 
   <script src="./script.js" defer></script>
