@@ -170,27 +170,233 @@
   }
 
   // ==========================================================================
-  // 4. FLAGSHIP MEDIA SWITCHER
+  // 4. ALL-INCLUSIVE FULL-SIZE LIGHTBOX GALLERY DATA (14 Source Assets)
+  // ==========================================================================
+  const GALLERY_ITEMS = [
+    {
+      src: './source/aim-gym-deploy.webp',
+      badge: 'AIM FITNESS PARK ERP',
+      caption: 'On-Site Reception Desk Production Deployment',
+      desc: 'Active deployment at gym reception desk managing 1,200+ members on Zulu OpenJDK 25.'
+    },
+    {
+      src: './source/aim-gym-present.webp',
+      badge: 'AIM FITNESS PARK ERP',
+      caption: 'Conference Room System Architecture Presentation',
+      desc: 'Demonstrating JavaFX FXML system architecture and settings module on conference screen.'
+    },
+    {
+      src: './source/aim-gym-login.webp',
+      badge: 'AIM FITNESS PARK ERP',
+      caption: 'Security & Role-Based Access Control (RBAC) Login',
+      desc: 'Enterprise security authentication screen with BCrypt encryption and role-gated administration.'
+    },
+    {
+      src: './source/ui-image-1.webp',
+      badge: 'AIM FITNESS PARK ERP',
+      caption: 'Live Operations Dashboard Analytics UI',
+      desc: 'Hardware-accelerated JavaFX UI with real-time membership metrics and financial charts.'
+    },
+    {
+      src: './source/image-4.webp',
+      badge: 'AIM FITNESS PARK ERP',
+      caption: 'Member Directory & Attendance Management Screen',
+      desc: 'High-throughput receptionist view for member check-in, subscription renewals, and invoicing.'
+    },
+    {
+      src: './source/image-2.webp',
+      badge: 'AIM FITNESS PARK ERP',
+      caption: 'System Startup Screen & Branding Architecture',
+      desc: 'Standalone Zulu OpenJDK 25 desktop application splash and runtime initialization.'
+    },
+    {
+      src: './source/ui-image-2.webp',
+      badge: 'AIM FITNESS PARK ERP',
+      caption: 'Subscription Lifecycle & Financial Invoicing UI',
+      desc: 'Hardware-accelerated JavaFX UI tracking recurring memberships, invoicing, and validity metrics.'
+    },
+    {
+      src: './source/shasha-store.webp',
+      badge: 'SHASHA ENTERPRISES B2B',
+      caption: 'Showroom Counter Terminal Operations',
+      desc: 'Nitheesh operating the B2B inventory platform live at the commercial showroom counter.'
+    },
+    {
+      src: './source/shasha-catalog-ui.webp',
+      badge: 'SHASHA ENTERPRISES B2B',
+      caption: 'Product Catalog Pro UI (2,624 Live SKUs)',
+      desc: 'Zero-dependency debounced search engine managing 2,624+ products across 16 categories.'
+    },
+    {
+      src: './source/shasha-showroom.webp',
+      badge: 'SHASHA ENTERPRISES B2B',
+      caption: 'Commercial Power Tools & Warehouse Showroom',
+      desc: 'Commercial building material and hardware showroom backed by Spring Boot 3.3 and PostgreSQL.'
+    },
+    {
+      src: './source/presentation.jpg',
+      badge: 'SOFTWARE ANALYSIS (SAD)',
+      caption: 'System Architecture Document (SAD) Specification',
+      desc: 'Software Analysis presentation detailing system actors, ERDs, and 11-screen Figma prototype.'
+    },
+    {
+      src: './source/image-1.webp',
+      badge: 'SOFTWARE ANALYSIS (SAD)',
+      caption: 'Client Requirements Walkthrough Presentation',
+      desc: 'Presenting software engineering specifications and business requirements (BMC/RGD/SAD).'
+    },
+    {
+      src: './source/image-3.webp',
+      badge: 'SOFTWARE ANALYSIS (SAD)',
+      caption: 'Systems Engineering Workspace & Prototyping',
+      desc: 'Engineering workbench for database modeling, Figma UI prototyping, and JavaFX layout.'
+    },
+    {
+      src: './source/roadmap.webp',
+      badge: 'ACADEMIC & SYSTEMS ROADMAP',
+      caption: 'Verified Education & Systems Engineering Roadmap (2019–2026)',
+      desc: 'Timeline from Secondary school to Anna University B.E. (CGPA 7.2) to Magizhchi Software & Production.'
+    },
+    {
+      src: './source/nitheesh-profile.webp',
+      badge: 'ENGINEER PORTRAIT',
+      caption: 'Nitheesh Kumar VSM — Java Software Developer & Systems Architect',
+      desc: 'High-resolution official engineering portrait in royal blue shirt.'
+    },
+    {
+      src: './source/DP.webp',
+      badge: 'ENGINEER AVATAR',
+      caption: 'Nitheesh Kumar VSM — Systems Engineer Profile Avatar',
+      desc: 'Verified developer avatar badge representing Nitheesh Kumar VSM.'
+    }
+  ];
+
+  // ==========================================================================
+  // 4B. INTERACTIVE MEDIA SWITCHERS (AIM, Shasha, Software Analysis)
   // ==========================================================================
   function initMediaSwitcher() {
-    const tabs = document.querySelectorAll('.media-tab');
-    const imgEl = document.getElementById('flagship-media-img');
-    const captionEl = document.getElementById('flagship-media-caption');
+    const switcherContainers = document.querySelectorAll('.flagship-media-section, .subgrid-media-box');
 
-    if (!tabs.length || !imgEl || !captionEl) return;
+    switcherContainers.forEach(container => {
+      const tabs = container.querySelectorAll('.media-tab');
+      const viewport = container.querySelector('.media-viewport');
+      const imgEl = container.querySelector('.media-img');
+      const captionEl = container.querySelector('.media-caption');
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', function () {
-        tabs.forEach(t => t.classList.remove('active'));
-        this.classList.add('active');
+      if (!tabs.length || !viewport || !imgEl) return;
 
-        const src = this.dataset.src;
-        const caption = this.dataset.caption;
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function (e) {
+          e.stopPropagation();
+          tabs.forEach(t => t.classList.remove('active'));
+          this.classList.add('active');
 
-        if (src) imgEl.src = src;
-        if (caption) captionEl.textContent = caption;
+          const src = this.dataset.src;
+          const caption = this.dataset.caption;
+
+          if (src) {
+            imgEl.src = src;
+            viewport.dataset.src = src;
+          }
+          if (caption) {
+            if (captionEl) captionEl.textContent = caption;
+            viewport.dataset.caption = caption;
+          }
+        });
       });
     });
+  }
+
+  // ==========================================================================
+  // 4C. FULL-SIZE LIGHTBOX ENGINE (Keyboard, Zoom, Touch & Navigation)
+  // ==========================================================================
+  let currentLightboxIdx = 0;
+
+  function initLightbox() {
+    const modal = document.getElementById('image-lightbox');
+    const backdrop = document.getElementById('lightbox-backdrop');
+    const closeBtn = document.getElementById('lightbox-close');
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
+    const imgEl = document.getElementById('lightbox-img');
+    const captionEl = document.getElementById('lightbox-caption');
+    const badgeEl = document.getElementById('lightbox-badge');
+    const counterEl = document.getElementById('lightbox-counter');
+    const linkEl = document.getElementById('lightbox-original-link');
+
+    if (!modal || !imgEl) return;
+
+    function renderItem(idx) {
+      if (idx < 0) idx = GALLERY_ITEMS.length - 1;
+      if (idx >= GALLERY_ITEMS.length) idx = 0;
+      currentLightboxIdx = idx;
+
+      const item = GALLERY_ITEMS[currentLightboxIdx];
+      imgEl.classList.remove('zoomed');
+      imgEl.src = item.src;
+      imgEl.alt = item.caption;
+
+      if (captionEl) captionEl.textContent = item.caption;
+      if (badgeEl) badgeEl.textContent = item.badge;
+      if (counterEl) counterEl.textContent = `${currentLightboxIdx + 1} / ${GALLERY_ITEMS.length}`;
+      if (linkEl) linkEl.href = item.src;
+    }
+
+    function openLightbox(idxOrSrc) {
+      let targetIdx = 0;
+      if (typeof idxOrSrc === 'number') {
+        targetIdx = idxOrSrc;
+      } else if (typeof idxOrSrc === 'string') {
+        const cleanTarget = idxOrSrc.split('?')[0];
+        const found = GALLERY_ITEMS.findIndex(item => {
+          return item.src.endsWith(cleanTarget) || cleanTarget.endsWith(item.src.replace('./', ''));
+        });
+        if (found !== -1) targetIdx = found;
+      }
+
+      renderItem(targetIdx);
+      modal.classList.remove('lightbox-hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      modal.classList.add('lightbox-hidden');
+      imgEl.classList.remove('zoomed');
+      document.body.style.overflow = '';
+    }
+
+    function nextItem() { renderItem(currentLightboxIdx + 1); }
+    function prevItem() { renderItem(currentLightboxIdx - 1); }
+
+    // Toggle 1:1 Zoom
+    imgEl.addEventListener('click', function (e) {
+      e.stopPropagation();
+      this.classList.toggle('zoomed');
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+    if (backdrop) backdrop.addEventListener('click', closeLightbox);
+    if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextItem(); });
+    if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevItem(); });
+
+    // Keyboard navigation
+    window.addEventListener('keydown', function (e) {
+      if (modal.classList.contains('lightbox-hidden')) return;
+      if (e.key === 'Escape') closeLightbox();
+      else if (e.key === 'ArrowRight') nextItem();
+      else if (e.key === 'ArrowLeft') prevItem();
+    });
+
+    // Attach click listener to all elements marked with data-lightbox="true"
+    document.querySelectorAll('[data-lightbox="true"]').forEach(elem => {
+      elem.addEventListener('click', function () {
+        const src = this.dataset.src || (this.querySelector('img') ? this.querySelector('img').src : '');
+        openLightbox(src);
+      });
+    });
+
+    // Expose global helper
+    window.__openLightbox = openLightbox;
   }
 
   // ==========================================================================
@@ -542,6 +748,7 @@
     initBentoFilter();
     initEmailCopy();
     initChatSystems();
+    initLightbox();
   });
 
 })();
