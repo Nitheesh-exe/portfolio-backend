@@ -1659,13 +1659,20 @@
   <div class="dots"></div>
   <div class="txt"><span class="status">Scanning page…</span></div>
   <div class="bar"><i></i></div>
-  <button data-a="tour" title="Auto-scroll while the swarm builds">Tour</button>
-  <button data-a="speed" title="Build speed">1×</button>
+  <button data-a="tour" class="on" title="Auto-scroll while the swarm builds">Touring</button>
+  <button data-a="speed" title="Build speed">3×</button>
   <button data-a="sound" class="snd" title="Sound (M)"></button>
   <button data-a="live" class="pri" hidden title="Fade back to the real page">Go live</button>
   <button data-a="replay" hidden title="Wipe and rebuild again">Replay</button>
   <button data-a="close" class="x" title="Exit (Esc)">✕</button>
 </div>`;
+
+      // Copy all fonts and external stylesheets into shadow root so all logos and icon fonts render
+      try {
+        document.querySelectorAll('link[rel="stylesheet"], style').forEach(el => {
+          root.appendChild(el.cloneNode(true));
+        });
+      } catch (_) {}
       const $ = (s) => root.querySelector(s);
       this.bg = $(".bg");
       this.under = $(".under");
@@ -3481,11 +3488,11 @@
     constructor() {
       this.dead = false;
       this.t0 = performance.now();
-      this.tour = false;
+      this.tour = true;          // Tutor ALWAYS ON
       this.tourV = 0;
       this.tourAcc = 0;
       this.speeds = [1, 2, 3];
-      this.speedIx = 0;
+      this.speedIx = 2;          // 3x SPEED default
       this.complete = false;
       this.timing = {};
     }
@@ -3512,8 +3519,24 @@
       const shotP = this.loadShot();
       this.view = new View(this.env);
       this.engine = new Engine(this.view);
+      this.engine.speed = 3;
       this.sfx = new Sound();
       this.sfx.init();
+      this.sfx.setOn(true);
+      try {
+        if (this.sfx.ctx && this.sfx.ctx.state === "suspended") {
+          this.sfx.ctx.resume().catch(() => {});
+        }
+      } catch (_) {}
+      const unlockAudio = () => {
+        try {
+          if (this.sfx && this.sfx.ctx && this.sfx.ctx.state === "suspended") {
+            this.sfx.ctx.resume().catch(() => {});
+          }
+        } catch (_) {}
+      };
+      window.addEventListener("pointerdown", unlockAudio, { once: true });
+      window.addEventListener("keydown", unlockAudio, { once: true });
       this.engine.sfx = this.sfx;
       this.engine.onStart = () => this.view.intro.classList.add("gone");
       this.engine.onComplete = () => this.onComplete();
@@ -3688,14 +3711,21 @@
       if (!E.started) return;
       const g = this.env.geom();
       const maxY = this.env.scrollHeight() - g.vh;
-      if (g.sy >= maxY - 1) {
+      if (g.sy >= maxY - 2) {
         this.tourV = 0;
+        if (E.backlog() === 0 && !this.complete && !this._finishing) {
+          this._finishing = true;
+          setTimeout(() => {
+            if (!this.complete) this.onComplete();
+          }, 600);
+        }
         return;
       }
       const crew = Math.max(MIN_AGENTS, E.cursors.filter((c) => !c.leaving).length);
       const backlog = E.backlog();
-      const target = backlog <= Math.max(4, crew * 0.6) ? 230 : backlog <= crew * 1.5 ? 80 : 0;
-      this.tourV += (target - this.tourV) * Math.min(1, dt * 2.5);
+      const speedMult = E.speed || 3;
+      const target = (backlog <= Math.max(4, crew * 0.6) ? 380 : backlog <= crew * 1.5 ? 140 : 0) * (speedMult / 1.5);
+      this.tourV += (target - this.tourV) * Math.min(1, dt * 3.2);
       this.tourAcc += this.tourV * dt;
       if (this.tourAcc >= 1) {
         const d = Math.floor(this.tourAcc);
@@ -3744,6 +3774,11 @@
       v.root.querySelector('[data-a="tour"]').hidden = true;
       v.root.querySelector('[data-a="speed"]').hidden = true;
       this.tour = false;
+
+      // After the tutor finishes, automatically transition to Go Live
+      setTimeout(() => {
+        stop(true);
+      }, 950);
     }
 
     destroy(reveal) {
