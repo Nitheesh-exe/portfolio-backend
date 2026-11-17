@@ -4,909 +4,476 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nitheesh Kumar VSM — Java Software Developer & Systems Architect</title>
-  <meta name="description" content="Java Software Developer & Systems Architect engineering high-concurrency desktop ERP systems (JDK 25, JavaFX, SQLite), enterprise Spring Boot 3.3 backends, and full software analysis.">
-  <link rel="canonical" href="https://nitheesh-exe.github.io/portfolio-backend/">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#030712">
+  <title>Nitheesh Kumar VSM — Full Stack Java Developer</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23030712'/%3E%3Cpath d='M30 72V28h9.6l20.4 28.5V28H70v44h-9.6L40 43.5V72H30z' fill='%2338bdf8'/%3E%3Ccircle cx='75' cy='72' r='5' fill='%2310b981'/%3E%3C/svg%3E">
-  <link rel="apple-touch-icon" href="./source/nitheesh-profile.webp">
-
-  <!-- OpenGraph & Twitter -->
+  <!-- SEO & Social Graph -->
+  <meta name="description" content="Portfolio of Nitheesh Kumar VSM — Full Stack Java Developer specializing in Java, Spring Boot, PostgreSQL, JavaFX desktop applications, and offline systems architecture.">
+  <meta name="author" content="Nitheesh Kumar VSM">
+  <meta property="og:title" content="Nitheesh Kumar VSM — Full Stack Java Developer">
+  <meta property="og:description" content="Full Stack Java Developer passionate about building high-quality desktop and web applications.">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Nitheesh Kumar VSM">
-  <meta property="og:title" content="Nitheesh Kumar VSM — Java Software Developer & Systems Architect">
-  <meta property="og:description" content="Architecting offline-first desktop ERP systems, high-concurrency Spring Boot microservices, and software architecture documentation from first principles.">
-  <meta property="og:url" content="https://nitheesh-exe.github.io/portfolio-backend/">
-  <meta property="og:image" content="./source/nitheesh-profile.webp">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Nitheesh Kumar VSM — Java Software Developer & Systems Architect">
-  <meta name="twitter:description" content="Architecting offline-first desktop ERP systems, high-concurrency Spring Boot microservices, and software architecture documentation from first principles.">
-  <meta name="twitter:image" content="./source/nitheesh-profile.webp">
+  <meta property="og:image" content="./source/DP.jpeg">
+  <link rel="icon" type="image/jpeg" href="./source/DP.jpeg">
 
-  <!-- Typography Stack: Bebas Neue, Caveat, JetBrains Mono & Plus Jakarta Sans -->
+  <!-- Fonts & Icon Libraries (from Portfolio copy) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@600&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <link rel="stylesheet" href="./style.css">
-
-  <!-- Structured Data (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Person",
-        "@id": "https://nitheesh-exe.github.io/portfolio-backend/#person",
-        "name": "Nitheesh Kumar VSM",
-        "jobTitle": "Java Software Developer & Systems Architect",
-        "description": "Java Systems Engineer specializing in JDK 17/21/25, Spring Boot 3.3, JavaFX Desktop ERP Systems, PostgreSQL, REST APIs, and Software Analysis.",
-        "image": "./source/nitheesh-profile.webp",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Madurai",
-          "addressRegion": "Tamil Nadu",
-          "addressCountry": "India"
-        },
-        "email": "nitheesh.exe@gmail.com",
-        "telephone": "+919345507516",
-        "alumniOf": {
-          "@type": "EducationalOrganization",
-          "name": "Anna University"
-        },
-        "sameAs": [
-          "https://linkedin.com/in/nitheeshkumar2003",
-          "https://github.com/Nitheesh-exe"
-        ],
-        "knowsAbout": [
-          "Java (JDK 17/21/25)",
-          "Spring Boot 3.3",
-          "Spring Security (RBAC)",
-          "Spring Data JPA",
-          "PostgreSQL",
-          "JavaFX (FXML)",
-          "JDBC Architecture",
-          "Clean Architecture & DAO Pattern",
-          "SQLite WAL Mode",
-          "jpackage & WiX Toolset",
-          "Software Analysis (BMC, RGD, SAD)",
-          "Figma UI/UX Systems"
-        ]
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://nitheesh-exe.github.io/portfolio-backend/#website",
-        "name": "Nitheesh Kumar VSM Portfolio",
-        "url": "https://nitheesh-exe.github.io/portfolio-backend/",
-        "publisher": { "@id": "https://nitheesh-exe.github.io/portfolio-backend/#person" }
-      }
-    ]
-  }
-  </script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="home">
 
-  <!-- Ambient Noir & Cyber Sapphire Canvas -->
-  <canvas id="aurora-canvas" aria-hidden="true"></canvas>
-
-  <!-- Floating Glass Navigation Dock -->
-  <header class="dock-container">
-    <nav class="nav-dock" aria-label="Main Navigation">
-      <a href="#hero" class="nav-brand" aria-label="Nitheesh Kumar VSM Home">
-        <span class="brand-monogram">NK</span>
-        <span class="brand-label">NITHEESH<span class="brand-dot">.</span></span>
+  <!-- Responsive Navigation Bar -->
+  <header class="navbar-wrapper">
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="#home" class="logo" aria-label="Nitheesh Portfolio Home">
+        Nitheesh<span>.Portfolio</span>
       </a>
 
-      <div class="nav-links">
-        <a href="#about" class="nav-item">About</a>
-        <a href="#flagships" class="nav-item">Flagships</a>
-        <a href="#projects" class="nav-item">Matrix</a>
-        <a href="#terminal" class="nav-item">Terminal</a>
-        <a href="#contact" class="nav-item">Contact</a>
-      </div>
+      <!-- Mobile Hamburger Toggle -->
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
 
-      <div class="dock-right">
-        <button class="dock-rebuild-btn" onclick="window.__triggerSwarm && window.__triggerSwarm()" title="Trigger Autonomous Swarm Rebuild Mode">⚡ REBUILD</button>
-        <div class="dock-status" title="Open for Java Backend & Desktop Systems Engineering Roles">
-          <span class="status-dot"></span>
-          <span class="status-text">Available</span>
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+        </ul>
+
+        <div class="nav-buttons">
+          <a href="#contact" class="btn btn-secondary">Contact Me</a>
         </div>
-        <a href="#contact" class="dock-cta">DISPATCH →</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-      <div class="hero-bg-grid" aria-hidden="true">
-        <div class="grid-line line-1"></div>
-        <div class="grid-line line-2"></div>
-        <div class="grid-line line-3"></div>
+    <!-- ======================================================================
+         HERO SECTION (from Portfolio copy)
+         ====================================================================== -->
+    <section id="hero" class="hero bg-dark">
+      <div class="hero-content">
+        <div class="profile-badge-wrap" data-lightbox="true" data-src="./source/DP.jpeg" data-caption="Nitheesh Kumar VSM — Profile Portrait" data-badge="ENGINEER BADGE" title="Click to view full size">
+          <picture>
+            <source srcset="./source/DP.webp" type="image/webp">
+            <img src="./source/DP.jpeg" alt="Nitheesh Kumar" class="profile-badge" width="240" height="240">
+          </picture>
+          <span class="badge-zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> View Full</span>
+        </div>
+
+        <h1>Hi, I'm Nitheesh Kumar</h1>
+        <p class="hero-tagline">Full Stack Java Developer passionate about building high-quality desktop and web applications.</p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View My Work &rarr;</a>
+          <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
       </div>
 
-      <!-- Standalone SVG Wordmark -->
-      <div class="hero-wordmark-svg" aria-hidden="true">
-        <svg viewBox="0 0 1000 215" preserveAspectRatio="xMidYMid meet">
-          <text x="0" y="205" font-size="270" textLength="1000" lengthAdjust="spacingAndGlyphs">SYSTEMS</text>
-        </svg>
+      <div class="slider-container" aria-label="Hero Image Carousel">
+        <div class="hero-track" id="hero-track">
+          <div class="slide-item" data-lightbox="true" data-src="./source/image-1.jpg" data-caption="Enterprise Systems Architecture &amp; Development — Slide 1" data-badge="SYSTEMS WORKSPACE">
+            <picture>
+              <source srcset="./source/image-1.webp" type="image/webp">
+              <img src="./source/image-1.jpg" class="slide" alt="Hero Slide 1" loading="eager">
+            </picture>
+            <div class="slide-zoom-pill"><i class="fa-solid fa-expand"></i> Click Full Size</div>
+          </div>
+
+          <div class="slide-item" data-lightbox="true" data-src="./source/image-2.webp" data-caption="Desktop Application Engineering &amp; UI Architecture — Slide 2" data-badge="APPLICATION ARCHITECTURE">
+            <picture>
+              <source srcset="./source/image-2.webp" type="image/webp">
+              <img src="./source/image-2.webp" class="slide" alt="Hero Slide 2" loading="lazy">
+            </picture>
+            <div class="slide-zoom-pill"><i class="fa-solid fa-expand"></i> Click Full Size</div>
+          </div>
+
+          <div class="slide-item" data-lightbox="true" data-src="./source/image-3.jpg" data-caption="Software Engineering Modeling &amp; Prototyping — Slide 3" data-badge="ENGINEERING LAB">
+            <picture>
+              <source srcset="./source/image-3.webp" type="image/webp">
+              <img src="./source/image-3.jpg" class="slide" alt="Hero Slide 3" loading="lazy">
+            </picture>
+            <div class="slide-zoom-pill"><i class="fa-solid fa-expand"></i> Click Full Size</div>
+          </div>
+        </div>
+
+        <!-- Slider Progress Indicators -->
+        <div class="slider-dots" id="hero-dots" role="tablist" aria-label="Hero slider indicators">
+          <button class="dot active" data-index="0" aria-label="Go to slide 1"></button>
+          <button class="dot" data-index="1" aria-label="Go to slide 2"></button>
+          <button class="dot" data-index="2" aria-label="Go to slide 3"></button>
+        </div>
+
+        <div class="slider-text-overlay">
+          <h3>Building Scalable Solutions</h3>
+          <p>Java &bull; Spring Boot &bull; PostgreSQL</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ABOUT SECTION: EDUCATION & EXPERIENCE (from Portfolio copy)
+         ====================================================================== -->
+    <section id="about" class="about bg-white">
+      <div class="about-image">
+        <div class="image-placeholder" data-lightbox="true" data-src="./source/roadmap.PNG" data-caption="Nitheesh Kumar VSM — Systems &amp; Education Trajectory Roadmap" data-badge="ACADEMIC &amp; CAREER ROADMAP" title="Click to view full size">
+          <picture>
+            <source srcset="./source/roadmap.webp" type="image/webp">
+            <img src="./source/roadmap.PNG" id="bg-road" alt="Education &amp; Experience Roadmap" loading="lazy">
+          </picture>
+          <div class="placeholder-overlay">
+            <span class="zoom-pill"><i class="fa-solid fa-magnifying-glass-plus"></i> CLICK TO ENLARGE ROADMAP</span>
+          </div>
+        </div>
       </div>
 
-      <!-- 3-Column Hero Stage Grid -->
-      <div class="hero-stage-grid">
-        <!-- Left Flank -->
-        <div class="hero-flank left-flank">
-          <div class="hero-script">Hello, I'm</div>
-          <h1 class="hero-name">NITHEESH<span class="accent-dot">.</span></h1>
-          <div class="hero-role-pill">
-            <span class="pill-dot">●</span>
-            <span>JAVA SOFTWARE DEVELOPER &amp; SYSTEMS ARCHITECT</span>
-          </div>
-          <p class="hero-desc">
-            Architecting <strong>offline-first desktop ERP systems</strong>, high-concurrency Spring Boot microservices, and <strong>software architecture documentation (BMC / RGD / SAD)</strong> from first principles — zero SaaS lock-in, total operational autonomy.
-          </p>
-          <div class="hero-actions">
-            <a href="#contact" class="btn btn-cyan">
-              <span>INITIATE DISPATCH</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <a href="#flagships" class="btn btn-glass">
-              <span>EXPLORE ARCHITECTURE</span>
-            </a>
-          </div>
-          <div class="hero-stats-row">
-            <div class="hero-stat-box">
-              <span class="stat-val">1,200+</span>
-              <span class="stat-lbl">Active Records</span>
+      <div class="about-content">
+        <div class="section-badge">CAREER PROFILE</div>
+        <h2>Education & Experience</h2>
+        <p class="about-bio">
+          "Hi, I'm a web developer focused on crafting responsive, user-centric applications. From solving complex logic puzzles to deploying interactive web projects, I love the entire process of building software. I am currently looking for an opportunity to apply my hands-on technical training and dedication to continuous learning to help a team build great products."
+        </p>
+
+        <!-- Credentials from Portfolio copy / ChatController.java -->
+        <div class="credentials-grid">
+          <div class="credential-item">
+            <div class="credential-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
             </div>
-            <div class="hero-stat-box">
-              <span class="stat-val">2,624+</span>
-              <span class="stat-lbl">Commercial SKUs</span>
+            <div class="credential-info">
+              <span class="credential-label">Academic Education</span>
+              <h4>B.E. in Electrical & Electronics Engineering</h4>
+              <p class="credential-meta">Anna University &bull; <strong>CGPA: 7.7</strong> &bull; Class of 2025</p>
             </div>
-            <div class="hero-stat-box">
-              <span class="stat-val">100%</span>
-              <span class="stat-lbl">Offline-First</span>
+          </div>
+
+          <div class="credential-item">
+            <div class="credential-icon">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <div class="credential-info">
+              <span class="credential-label">Industry Internship</span>
+              <h4>Systems Engineering Intern (3 Months)</h4>
+              <p class="credential-meta">Harting Technology Group &bull; Chennai, India</p>
             </div>
           </div>
         </div>
 
-        <!-- Center Column: Cutout Portrait Frame (Click to View Full Size) -->
-        <div class="hero-center-col">
-          <div class="hero-cutout-wrap" data-lightbox="true" data-src="./source/nitheesh-profile.webp" data-caption="Nitheesh Kumar VSM — Java Software Developer &amp; Systems Architect (Official Portrait)" data-badge="ENGINEER PORTRAIT">
-            <div class="hero-portrait-panel" aria-hidden="true"></div>
-            <img src="./source/nitheesh-profile.webp" alt="Nitheesh Kumar VSM - Java Systems Engineer" class="hero-cutout-img" width="380" height="475" fetchpriority="high">
-            <div class="cutout-status-badge">
-              <span class="status-pulse-cyan">●</span>
-              <span>JVM 25 RUNTIME ACTIVE</span>
-            </div>
-            <div class="media-zoom-overlay">
-              <span class="zoom-badge">🔍 VIEW FULL SIZE</span>
-            </div>
+        <div class="about-actions">
+          <a href="./source/DP.jpeg" download="Nitheesh_Kumar_Resume" class="btn btn-primary">Download Resume &rarr;</a>
+          <a href="#contact" class="btn btn-secondary">Connect with Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         TECHNICAL SKILLS SECTION (from Portfolio copy)
+         ====================================================================== -->
+    <section id="skills" class="skills bg-light">
+      <div class="skills-image">
+        <div class="skills-image-card" data-lightbox="true" data-src="./source/road.png" data-caption="Technical Skills Architecture &amp; Workflow Map" data-badge="TECHNICAL SKILLS WORKFLOW" title="Click to view full size">
+          <picture>
+            <source srcset="./source/road.webp" type="image/webp">
+            <img src="./source/road.png" alt="Technical Skills Workflow" class="side-image" loading="lazy">
+          </picture>
+          <div class="skills-zoom-overlay">
+            <span class="zoom-pill"><i class="fa-solid fa-magnifying-glass-plus"></i> CLICK TO ENLARGE WORKFLOW</span>
           </div>
         </div>
+      </div>
 
-        <!-- Right Flank: HUD Telemetry Stack -->
-        <div class="hero-flank right-flank">
-          <div class="hud-stack">
-            <div class="hud-card">
-              <div class="hud-card-header">
-                <span class="hud-idx">01.</span>
-                <span class="hud-tag">RUNTIME</span>
-              </div>
-              <div class="hud-card-title">Zulu OpenJDK 25.0.1</div>
-              <div class="hud-card-desc">Native standalone bundling (.exe &amp; .dmg) via WiX Toolset and jpackage. Zero manual JRE setup on client hardware.</div>
-            </div>
+      <div class="skills-content">
+        <div class="section-badge text-center">CORE COMPETENCIES</div>
+        <h2>Technical Skills</h2>
 
-            <div class="hud-card">
-              <div class="hud-card-header">
-                <span class="hud-idx">02.</span>
-                <span class="hud-tag">CONCURRENCY</span>
-              </div>
-              <div class="hud-card-title">Sub-16ms Event Loop</div>
-              <div class="hud-card-desc">Asynchronous DB reads &amp; background reporting decoupled via JavaFX Platform.runLater(). Zero UI thread lockup.</div>
+        <div class="skills-grid">
+          <!-- 1. Java & OOP -->
+          <div class="skill-card">
+            <div class="skill-icons">
+              <i class="devicon-java-plain colored" title="Java"></i>
             </div>
+            <span>Java & OOP</span>
+          </div>
 
-            <div class="hud-card">
-              <div class="hud-card-header">
-                <span class="hud-idx">03.</span>
-                <span class="hud-tag">PERSISTENCE</span>
-              </div>
-              <div class="hud-card-title">Offline-First WAL SQLite</div>
-              <div class="hud-card-desc">WAL-mode local persistence with explicit DAO interfaces, pooled connections, and automated WhatsApp Cloud API renewal bridge.</div>
+          <!-- 2. Spring Boot & MVC -->
+          <div class="skill-card">
+            <div class="skill-icons">
+              <i class="devicon-spring-original colored" title="Spring Boot & MVC"></i>
             </div>
+            <span>Spring Boot & MVC</span>
+          </div>
 
-            <div class="hud-tech-tags">
-              <span class="tech-tag">Java 25</span>
-              <span class="tech-tag">Spring Boot 3.3</span>
-              <span class="tech-tag">JavaFX</span>
-              <span class="tech-tag">SQLite WAL</span>
-              <span class="tech-tag">PostgreSQL</span>
-              <span class="tech-tag">jpackage</span>
-              <span class="tech-tag">WiX</span>
+          <!-- 3. HTML, CSS, JS -->
+          <div class="skill-card">
+            <div class="skill-icons">
+              <i class="devicon-html5-plain colored" title="HTML5"></i>
+              <i class="devicon-css3-plain colored" title="CSS3"></i>
+              <i class="devicon-javascript-plain colored" title="JavaScript"></i>
             </div>
+            <span>HTML, CSS, JS</span>
+          </div>
+
+          <!-- 4. PostgreSQL & SQL -->
+          <div class="skill-card">
+            <div class="skill-icons">
+              <i class="devicon-postgresql-plain colored" title="PostgreSQL"></i>
+              <i class="devicon-sqldeveloper-plain colored" title="SQL Developer"></i>
+            </div>
+            <span>PostgreSQL & SQL</span>
+          </div>
+
+          <!-- 5. JavaFX & JDBC -->
+          <div class="skill-card">
+            <div class="skill-icons">
+              <i class="devicon-java-plain-wordmark colored" title="JavaFX & JDBC"></i>
+            </div>
+            <span>JavaFX & JDBC</span>
+          </div>
+
+          <!-- 6. Git, GitHub & Figma -->
+          <div class="skill-card">
+            <div class="skill-icons">
+              <i class="devicon-git-plain colored" title="Git"></i>
+              <i class="devicon-github-original colored" title="GitHub"></i>
+              <i class="devicon-figma-plain colored" title="Figma"></i>
+            </div>
+            <span>Git, GitHub & Figma</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Technical Section Divider -->
-    <div class="section-divider-bar" aria-hidden="true">
-      <span class="divider-coord">// 01.00 SEC_ABOUT</span>
-      <span class="divider-line"></span>
-      <span class="divider-index">INDEX [01 / 05]</span>
-    </div>
+    <!-- ======================================================================
+         FEATURED PROJECT SECTION (from Portfolio copy)
+         ====================================================================== -->
+    <section id="projects" class="projects bg-dark">
+      <div class="project-content">
+        <div class="project-tag">FEATURED WORK</div>
+        <h2>Featured Project: Offline Gym Management System</h2>
+        <p>
+          Designed and developed an offline Java-based Gym Management System with a professional Figma UI. Features include member and trainer management, attendance tracking, secure authentication, and dashboard analytics.
+        </p>
 
-    <!-- Background, Bio & Philosophy Section -->
-    <section id="about" class="section">
-      <div class="section-header">
-        <div class="section-tag">ENGINEER PROFILE</div>
-        <h2 class="section-title">Background &amp; Philosophy</h2>
-        <p class="section-desc">Engineering resilient, zero-bloat systems with disciplined architecture, non-blocking execution, and absolute operational autonomy.</p>
-      </div>
-
-      <div class="glass-card about-grid">
-        <div class="about-text-col">
-          <p class="about-text">
-            I am <strong>Nitheesh Kumar VSM</strong> — a Java Software Developer and Systems Architect based in Madurai, Tamil Nadu. My formal engineering education began with a <strong>B.E. in Electrical &amp; Electronics Engineering from Anna University, Dindigul (CGPA: 7.2, Class of 2025)</strong>, followed by specialized training at <strong>Magizhchi Software, Madurai (2026)</strong>.
-          </p>
-          <p class="about-text">
-            My defining engineering disciplines were forged in production: building mission-critical desktop ERP architectures with <strong>Java (JDK 17/21/25)</strong>, engineering scalable backends with <strong>Spring Boot 3.3</strong>, optimizing complex relational schemas in <strong>PostgreSQL and SQLite</strong>, and producing exhaustive <strong>Software Analysis specifications (BMC, RGD, SAD)</strong> with high-fidelity Figma prototypes.
-          </p>
-          <div class="quote-box">
-            "I view software engineering not as assembling framework boilerplate, but as orchestrating deterministic memory hierarchies, non-blocking concurrency loops, and durable persistence. Real systems must thrive in zero-connectivity offline environments without recurring SaaS taxes."
+        <div class="tech-stack-wrap">
+          <span class="tech-pill-header"><strong>Tech Stack:</strong></span>
+          <div class="tech-badges">
+            <span class="badge">Java</span>
+            <span class="badge">JavaFX</span>
+            <span class="badge">JDBC</span>
+            <span class="badge">SQL</span>
+            <span class="badge">SQLite</span>
+            <span class="badge">WiX Toolset</span>
           </div>
         </div>
 
-        <div class="about-principles-col">
-          <ul class="principles-list">
-            <li class="principle-item">
-              <span class="principle-num">01</span>
-              <div>
-                <div class="principle-title">Sovereign Local Execution</div>
-                <div class="principle-desc">Zero dependence on recurring cloud subscription fees for core operational facility workflows. Local-first computing by design.</div>
-              </div>
-            </li>
-            <li class="principle-item">
-              <span class="principle-num">02</span>
-              <div>
-                <div class="principle-title">First-Principles Architecture</div>
-                <div class="principle-desc">Explicit DAO layers, strict separation of concerns, and defensive data validation rather than brittle third-party abstraction magic.</div>
-              </div>
-            </li>
-            <li class="principle-item">
-              <span class="principle-num">03</span>
-              <div>
-                <div class="principle-title">Deterministic Persistence</div>
-                <div class="principle-desc">Offline-first SQLite WAL modes delivering memory-mapped sub-millisecond lookups, guaranteed ACID transactions, and crash-resilient storage.</div>
-              </div>
-            </li>
-            <li class="principle-item">
-              <span class="principle-num">04</span>
-              <div>
-                <div class="principle-title">Non-Blocking Concurrency</div>
-                <div class="principle-desc">Background worker pools dispatching delta UI updates via JavaFX Platform.runLater(), maintaining smooth 60fps responsiveness during heavy indexing.</div>
-              </div>
-            </li>
-          </ul>
+        <div class="project-actions">
+          <a href="https://github.com/nitheeeshh/Java.git" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i> View Source Code &rarr;
+          </a>
         </div>
       </div>
 
-      <!-- Systems & Education Trajectory Roadmap Showcase -->
-      <div class="glass-card roadmap-card" style="margin-top: 28px;">
-        <div class="roadmap-header">
-          <div class="flagship-badge">
-            <span>●</span> VERIFIED SYSTEMS &amp; ACADEMIC ROADMAP // 2019–2026
-          </div>
-          <span class="roadmap-meta">Pushpalatha (2019) &bull; KVS Matric (2021) &bull; Anna University B.E. (2025) &bull; Magizhchi Software (2026)</span>
-        </div>
-        <div class="roadmap-viewport" data-lightbox="true" data-src="./source/roadmap.webp" data-caption="Nitheesh Kumar VSM — Academic Milestones &amp; Systems Engineering Roadmap (2019–2026)" data-badge="ACADEMIC &amp; SYSTEMS ROADMAP">
-          <img src="./source/roadmap.webp" alt="Nitheesh Kumar VSM's Systems Engineering Roadmap" class="roadmap-img" loading="lazy">
-          <div class="media-zoom-overlay">
-            <span class="zoom-badge">🔍 CLICK TO VIEW FULL SIZE</span>
-          </div>
-        </div>
-        <div class="roadmap-footer">
-          <span>Click roadmap to inspect full-resolution milestone details, academic CGPA (7.2), and systems engineering curriculum.</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Technical Section Divider -->
-    <div class="section-divider-bar" aria-hidden="true">
-      <span class="divider-coord">// 02.00 SEC_FLAGSHIPS</span>
-      <span class="divider-line"></span>
-      <span class="divider-index">INDEX [02 / 05]</span>
-    </div>
-
-    <!-- Flagship Deployments Section -->
-    <section id="flagships" class="section">
-      <div class="section-header">
-        <div class="section-tag">ARCHITECTURAL SHOWCASE</div>
-        <h2 class="section-title">Flagship Deployments</h2>
-        <p class="section-desc">Production-grade systems running across active facilities, commercial showrooms, and standalone native endpoints.</p>
-      </div>
-
-      <div class="flagship-container">
-
-        <!-- Flagship 1: AIM Fitness Park (Heroic Spotlight) -->
-        <article class="glass-card highlighted-card">
-          <div class="card-glow-blue"></div>
-
-          <div class="flagship-header">
-            <div class="flagship-badge">
-              <span>●</span> CORE DESKTOP ERP
-            </div>
-            <div class="flagship-meta">Hardware: On-Premise Workstation • Fully Local Zulu JDK 25 Execution</div>
-          </div>
-
-          <div class="flagship-body">
-            <h3 class="flagship-title">AIM Fitness Park — Enterprise Offline Fitness ERP</h3>
-            <p class="flagship-desc">
-              Production-grade desktop ERP built from scratch for an active facility managing 1,200+ members, completely replacing recurring SaaS systems. Engineered with Zulu OpenJDK 25, JavaFX, FXML, JDBC, and SQLite with automated Meta WhatsApp Cloud API renewal triggers.
-            </p>
-
-            <div class="flagship-metrics-row">
-              <div class="metric-pill">
-                <div class="metric-num">1,200+</div>
-                <div class="metric-desc">Active Members</div>
-              </div>
-              <div class="metric-pill">
-                <div class="metric-num">+35%</div>
-                <div class="metric-desc">Renewal Turnaround</div>
-              </div>
-              <div class="metric-pill">
-                <div class="metric-num">Sub-16ms</div>
-                <div class="metric-desc">Frame Budget</div>
-              </div>
-              <div class="metric-pill">
-                <div class="metric-num">Zero</div>
-                <div class="metric-desc">Recurring SaaS Fees</div>
-              </div>
-            </div>
-
-            <!-- Flagship Media Showcase (6 Full Production Views) -->
-            <div class="flagship-media-section" id="aim-media-section">
-              <div class="media-tabs" role="tablist">
-                <button class="media-tab active" data-src="./source/aim-gym-deploy.webp" data-caption="On-site production deployment at gym reception desk managing live member registrations.">01 // Reception Desk Deploy</button>
-                <button class="media-tab" data-src="./source/aim-gym-present.webp" data-caption="Presenting JavaFX system architecture and settings module on conference room display.">02 // Conference Presentation</button>
-                <button class="media-tab" data-src="./source/aim-gym-login.webp" data-caption="Enterprise security &amp; role-based access control authentication view.">03 // Security &amp; RBAC Login</button>
-                <button class="media-tab" data-src="./source/ui-image-1.webp" data-caption="AIM Fitness Park JavaFX Desktop Application — Real-time Operations Dashboard Analytics UI.">04 // Dashboard Analytics UI</button>
-                <button class="media-tab" data-src="./source/image-4.webp" data-caption="AIM Fitness Park JavaFX Desktop Application — Member Directory, Attendance &amp; Invoicing Module.">05 // Member Operations Screen</button>
-                <button class="media-tab" data-src="./source/image-2.webp" data-caption="AIM Fitness Park JavaFX Desktop Application — Splash Screen &amp; System Startup Architecture.">06 // System Startup Screen</button>
-                <button class="media-tab" data-src="./source/ui-image-2.webp" data-caption="AIM Fitness Park JavaFX Desktop Application — Financial Invoicing &amp; Subscription Lifecycle Engine.">07 // Subscription Lifecycle UI</button>
-              </div>
-              <div class="media-viewport" id="aim-media-viewport" data-lightbox="true" data-src="./source/aim-gym-deploy.webp" data-caption="On-site production deployment at gym reception desk managing live member registrations." data-badge="AIM FITNESS PARK ERP">
-                <img id="flagship-media-img" src="./source/aim-gym-deploy.webp" alt="AIM Fitness Park Deployment" class="media-img" loading="lazy">
-                <div class="media-zoom-overlay">
-                  <span class="zoom-badge">🔍 CLICK TO VIEW FULL SIZE</span>
-                </div>
-              </div>
-              <div id="flagship-media-caption" class="media-caption">
-                On-site production deployment at gym reception desk managing live member registrations.
-              </div>
-            </div>
-
-            <!-- Interactive 7-Layer Architecture Explorer -->
-            <div class="saai-architecture-explorer">
-              <div class="explorer-header">
-                <div class="explorer-title">7-LAYER DESKTOP ERP CONSTITUTIONAL STACK</div>
-                <div class="explorer-sub">Click any architectural layer to inspect technical implementation</div>
-              </div>
-
-              <div class="layer-tabs" role="tablist">
-                <button class="layer-tab active" data-layer="1" role="tab" aria-selected="true">L1: Native JDK 25 Runtime</button>
-                <button class="layer-tab" data-layer="2" role="tab" aria-selected="false">L2: SQLite WAL &amp; JDBC Pool</button>
-                <button class="layer-tab" data-layer="3" role="tab" aria-selected="false">L3: JavaFX FXML UI Engine</button>
-                <button class="layer-tab" data-layer="4" role="tab" aria-selected="false">L4: Non-Blocking Concurrency</button>
-                <button class="layer-tab" data-layer="5" role="tab" aria-selected="false">L5: Meta WhatsApp Cloud API</button>
-                <button class="layer-tab" data-layer="6" role="tab" aria-selected="false">L6: RBAC &amp; Ledger</button>
-                <button class="layer-tab" data-layer="7" role="tab" aria-selected="false">L7: WiX &amp; Native Bundler</button>
-              </div>
-
-              <div class="layer-inspector-pane">
-                <div class="layer-inspect-badge" id="layer-inspect-id">LAYER 01 // RUNTIME ENGINE</div>
-                <h4 class="layer-inspect-title" id="layer-inspect-title">Native Zulu OpenJDK 25 Standalone Runtime</h4>
-                <p class="layer-inspect-desc" id="layer-inspect-desc">
-                  Zero runtime dependencies on client machines. Standalone native packaging bundling the 64-bit Zulu OpenJDK 25 Server VM directly via jpackage, delivering deterministic low-latency execution and advanced generational memory management.
-                </p>
-                <div class="layer-inspect-tags" id="layer-inspect-tags">
-                  <span class="inspect-tag">Zulu OpenJDK 25</span>
-                  <span class="inspect-tag">Zero-SaaS Standalone</span>
-                  <span class="inspect-tag">jpackage Native Image</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="flagship-actions">
-              <a href="https://github.com/Nitheesh-exe/Aim-Fitness-System-App.git" class="btn btn-cyan" target="_blank" rel="noopener">
-                <span>VIEW SOURCE CODE (GITHUB)</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-              </a>
-              <a href="./source/presentation.jpg" class="btn btn-glass" target="_blank" rel="noopener">
-                <span>INSPECT SYSTEM SPECIFICATIONS</span>
-              </a>
+      <div class="project-image">
+        <!-- Interactive Project Showcase with Navigation and Fullscreen Zoom -->
+        <div class="project-slider-container" id="project-slider-container">
+          <div class="proj-slide-wrap active" data-index="0" data-lightbox="true" data-src="./source/ui-image-1.png" data-caption="Offline Gym Management System — Operations Dashboard Analytics UI" data-badge="OFFLINE GYM ERP">
+            <picture>
+              <source srcset="./source/ui-image-1.webp" type="image/webp">
+              <img src="./source/ui-image-1.png" class="proj-slide" alt="Gym UI 1 - Dashboard Analytics" loading="lazy">
+            </picture>
+            <div class="proj-slide-overlay">
+              <span class="slide-caption">01 // Dashboard Analytics UI</span>
+              <span class="zoom-tag"><i class="fa-solid fa-expand"></i> Click Full Size</span>
             </div>
           </div>
-        </article>
 
-        <!-- Secondary Flagships Grid -->
-        <div class="flagship-subgrid">
-
-          <!-- Flagship 2: Shasha Enterprises -->
-          <article class="glass-card subgrid-card">
-            <div class="subgrid-top">
-              <div class="subgrid-badge-row">
-                <div class="flagship-badge">ENTERPRISE BACKEND // B2B COMMERCIAL</div>
-              </div>
-              <h3 class="subgrid-title">Shasha Enterprises — Commercial Showroom Platform</h3>
-              <p class="subgrid-desc">
-                Live commercial platform modernizing offline inventory and B2B ordering for a building material and power tool supplier, managing 2,624+ live SKU records with deep filtering.
-              </p>
-
-              <!-- Interactive Media Showcase for Shasha -->
-              <div class="subgrid-media-box">
-                <div class="media-tabs subgrid-tabs" role="tablist">
-                  <button class="media-tab active" data-src="./source/shasha-store.webp" data-caption="Nitheesh operating the B2B inventory platform live at the commercial showroom counter.">01 // Showroom Counter</button>
-                  <button class="media-tab" data-src="./source/shasha-catalog-ui.webp" data-caption="Product Catalog Pro interface indexing 2,624 live SKU records with instant debounced search.">02 // Catalog (2,624 SKUs)</button>
-                  <button class="media-tab" data-src="./source/shasha-showroom.webp" data-caption="Commercial power tools and building materials warehouse inventory display.">03 // Tool Warehouse</button>
-                </div>
-                <div class="media-viewport subgrid-viewport" id="shasha-viewport" data-lightbox="true" data-src="./source/shasha-store.webp" data-caption="Nitheesh operating the B2B inventory platform live at the commercial showroom counter." data-badge="SHASHA ENTERPRISES B2B">
-                  <img id="shasha-media-img" src="./source/shasha-store.webp" alt="Shasha Enterprises Showroom" class="media-img" loading="lazy">
-                  <div class="media-zoom-overlay">
-                    <span class="zoom-badge">🔍 CLICK TO VIEW FULL SIZE</span>
-                  </div>
-                </div>
-                <div id="shasha-media-caption" class="media-caption">
-                  Nitheesh operating the B2B inventory platform live at the commercial showroom counter.
-                </div>
-              </div>
-
-              <ul class="spec-list">
-                <li class="spec-item">2,624+ Live Commercial SKUs Indexed</li>
-                <li class="spec-item">Zero-Dependency Debounced Client Search Engine</li>
-                <li class="spec-item">Automated Python/Pillow WebP Pipeline (-70% Payload)</li>
-                <li class="spec-item">Spring Boot 3.3 REST Backend &amp; AOP Audit Logging</li>
-              </ul>
+          <div class="proj-slide-wrap" data-index="1" data-lightbox="true" data-src="./source/ui-image-2.png" data-caption="Offline Gym Management System — Membership &amp; Billing Management UI" data-badge="OFFLINE GYM ERP">
+            <picture>
+              <source srcset="./source/ui-image-2.webp" type="image/webp">
+              <img src="./source/ui-image-2.png" class="proj-slide" alt="Gym UI 2 - Subscription Lifecycle" loading="lazy">
+            </picture>
+            <div class="proj-slide-overlay">
+              <span class="slide-caption">02 // Subscription &amp; Billing UI</span>
+              <span class="zoom-tag"><i class="fa-solid fa-expand"></i> Click Full Size</span>
             </div>
-            <div class="subgrid-footer">
-              <div class="hud-tech-tags">
-                <span class="tech-tag">Spring Boot 3.3</span>
-                <span class="tech-tag">PostgreSQL</span>
-                <span class="tech-tag">Java 21</span>
-              </div>
-              <div style="display:flex; gap:8px;">
-                <a href="https://shashaenterprise.in" class="btn btn-cyan" target="_blank" rel="noopener" style="padding:6px 12px; font-size:11px;">LIVE SITE ↗</a>
-                <a href="https://github.com/Nitheesh-exe/portfolio-backend" class="btn btn-glass" target="_blank" rel="noopener" style="padding:6px 12px; font-size:11px;">REPO ↗</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Flagship 3: Spring AI Google GenAI Microservice -->
-          <article class="glass-card subgrid-card">
-            <div class="subgrid-top">
-              <div class="subgrid-badge-row">
-                <div class="flagship-badge">AI MICROSERVICE // GENERATIVE STREAMING</div>
-              </div>
-              <h3 class="subgrid-title">Spring AI Google GenAI Chatbot Microservice</h3>
-              <p class="subgrid-desc">
-                Containerized Spring Boot 3.3 conversational backend powered by Spring AI and Gemini 2.5 Flash, providing contextual candidate query streaming with high-reliability offline fallback.
-              </p>
-              <ul class="spec-list">
-                <li class="spec-item">Spring AI Google GenAI (Gemini 2.5 Flash) Engine</li>
-                <li class="spec-item">RESTful Streaming Endpoints with CORS Governance</li>
-                <li class="spec-item">Docker Container Deployment on Render Cloud</li>
-                <li class="spec-item">Zero-Downtime Deterministic Client Regex Fallback</li>
-              </ul>
-            </div>
-            <div class="subgrid-footer">
-              <div class="hud-tech-tags">
-                <span class="tech-tag">Spring AI</span>
-                <span class="tech-tag">Gemini 2.5</span>
-                <span class="tech-tag">Render Cloud</span>
-              </div>
-              <button type="button" class="btn btn-cyan" onclick="window.__openChatbot && window.__openChatbot()" style="padding:6px 12px; font-size:11px;">LAUNCH AI CHAT ↗</button>
-            </div>
-          </article>
-
-          <!-- Flagship 4: Software Analysis Suite -->
-          <article class="glass-card subgrid-card">
-            <div class="subgrid-top">
-              <div class="subgrid-badge-row">
-                <div class="flagship-badge">SOFTWARE ANALYSIS // SYSTEM DESIGN</div>
-              </div>
-              <h3 class="subgrid-title">Enterprise Software Analysis Suite (BMC, RGD &amp; SAD)</h3>
-              <p class="subgrid-desc">
-                Full software analysis lifecycle applied to production desktop and enterprise web architectures before code implementation, ensuring architectural integrity and traceability.
-              </p>
-
-              <!-- Interactive Media Showcase for Software Analysis -->
-              <div class="subgrid-media-box">
-                <div class="media-tabs subgrid-tabs" role="tablist">
-                  <button class="media-tab active" data-src="./source/presentation.jpg" data-caption="Software Architecture Document (SAD) — Technical specification and architectural design presentation.">01 // SAD Architecture Spec</button>
-                  <button class="media-tab" data-src="./source/image-1.webp" data-caption="Client requirements gathering and software analysis walkthrough presentation.">02 // Client Walkthrough</button>
-                  <button class="media-tab" data-src="./source/image-3.webp" data-caption="Software engineering workspace, entity modeling, and prototyping station.">03 // Systems Workspace</button>
-                </div>
-                <div class="media-viewport subgrid-viewport" id="analysis-viewport" data-lightbox="true" data-src="./source/presentation.jpg" data-caption="Software Architecture Document (SAD) — Technical specification and architectural design presentation." data-badge="SOFTWARE ANALYSIS (SAD)">
-                  <img id="analysis-media-img" src="./source/presentation.jpg" alt="Software Architecture Spec" class="media-img" loading="lazy">
-                  <div class="media-zoom-overlay">
-                    <span class="zoom-badge">🔍 CLICK TO VIEW FULL SIZE</span>
-                  </div>
-                </div>
-                <div id="analysis-media-caption" class="media-caption">
-                  Software Architecture Document (SAD) — Technical specification and architectural design presentation.
-                </div>
-              </div>
-
-              <ul class="spec-list">
-                <li class="spec-item">Business Model Canvas (BMC) Commercial Feasibility</li>
-                <li class="spec-item">Requirements Gathering Document (RGD) Specification</li>
-                <li class="spec-item">Software Architecture Document (SAD) with UML &amp; ERD</li>
-                <li class="spec-item">11-Screen Figma Interactive High-Fidelity Prototype</li>
-              </ul>
-            </div>
-            <div class="subgrid-footer">
-              <div class="hud-tech-tags">
-                <span class="tech-tag">BMC</span>
-                <span class="tech-tag">RGD</span>
-                <span class="tech-tag">SAD</span>
-                <span class="tech-tag">Figma</span>
-              </div>
-              <a href="#about" class="btn btn-glass" style="padding:6px 12px; font-size:11px;">SPEC DOCS ↗</a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Technical Section Divider -->
-    <div class="section-divider-bar" aria-hidden="true">
-      <span class="divider-coord">// 03.00 SEC_MATRIX</span>
-      <span class="divider-line"></span>
-      <span class="divider-index">INDEX [03 / 05]</span>
-    </div>
-
-    <!-- The Systems Matrix (Bento Grid) -->
-    <section id="projects" class="section">
-      <div class="section-header">
-        <div class="section-tag">ENGINEERING INDEX</div>
-        <h2 class="section-title">The Systems Matrix</h2>
-        <p class="section-desc">Specialized engineering architectures spanning offline desktop persistence, enterprise backends, and full-lifecycle software analysis.</p>
-
-        <!-- Category Filter Controls -->
-        <div class="bento-controls">
-          <button class="filter-btn active" data-filter="all">All Systems (6)</button>
-          <button class="filter-btn" data-filter="desktop">Desktop &amp; ERP</button>
-          <button class="filter-btn" data-filter="backend">Backend &amp; Cloud</button>
-          <button class="filter-btn" data-filter="architecture">Architecture &amp; Data</button>
-        </div>
-      </div>
-
-      <div class="bento-grid">
-        <!-- System 1 -->
-        <div class="glass-card bento-card" data-category="desktop">
-          <div class="bento-top">
-            <span class="category-chip">Desktop Persistence</span>
-            <span class="bento-id">#SYS-01</span>
           </div>
-          <h3 class="bento-title">Offline-First SQLite WAL &amp; JDBC Connection Pool</h3>
-          <p class="bento-desc">
-            High-reliability local database operating with Write-Ahead Logging (WAL) and memory-mapped I/O, ensuring sub-millisecond queries and zero corruption during unexpected power cuts.
-          </p>
-          <div class="bento-footer">
-            <div class="bento-tags">
-              <span class="bento-tag">SQLite WAL</span>
-              <span class="bento-tag">JDBC Pool</span>
-              <span class="bento-tag">DAO Pattern</span>
+
+          <div class="proj-slide-wrap" data-index="2" data-lightbox="true" data-src="./source/image-4.jpg" data-caption="Offline Gym Management System — Trainer &amp; Member Operations UI" data-badge="OFFLINE GYM ERP">
+            <picture>
+              <source srcset="./source/image-4.webp" type="image/webp">
+              <img src="./source/image-4.jpg" class="proj-slide" alt="Gym UI 3 - Member Operations" loading="lazy">
+            </picture>
+            <div class="proj-slide-overlay">
+              <span class="slide-caption">03 // Member Operations Screen</span>
+              <span class="zoom-tag"><i class="fa-solid fa-expand"></i> Click Full Size</span>
             </div>
           </div>
         </div>
 
-        <!-- System 2 -->
-        <div class="glass-card bento-card" data-category="backend">
-          <div class="bento-top">
-            <span class="category-chip">Enterprise Backend</span>
-            <span class="bento-id">#SYS-02</span>
+        <!-- Project Slider Controls -->
+        <div class="proj-controls" aria-label="Project slider controls">
+          <button class="proj-nav-btn prev" id="proj-prev" type="button" aria-label="Previous slide">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div class="proj-dots" id="proj-dots">
+            <button class="p-dot active" data-index="0" aria-label="Show screen 1"></button>
+            <button class="p-dot" data-index="1" aria-label="Show screen 2"></button>
+            <button class="p-dot" data-index="2" aria-label="Show screen 3"></button>
           </div>
-          <h3 class="bento-title">Spring Boot 3.3 REST Backend &amp; AOP Audit Logging</h3>
-          <p class="bento-desc">
-            Production RESTful service with role-based Spring Security (RBAC), declarative validation, and Aspect-Oriented Programming (AOP) audit logging for sensitive transaction monitoring.
-          </p>
-          <div class="bento-footer">
-            <div class="bento-tags">
-              <span class="bento-tag">Spring Boot 3.3</span>
-              <span class="bento-tag">Spring AOP</span>
-              <span class="bento-tag">PostgreSQL</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- System 3 -->
-        <div class="glass-card bento-card" data-category="backend">
-          <div class="bento-top">
-            <span class="category-chip">Client Optimization</span>
-            <span class="bento-id">#SYS-03</span>
-          </div>
-          <h3 class="bento-title">Zero-Dependency SKU Search &amp; State Router</h3>
-          <p class="bento-desc">
-            High-speed client-side search engine indexing 2,624+ commercial inventory items with debounced input and bidirectional URL query sync, operating with zero external JS frameworks.
-          </p>
-          <div class="bento-footer">
-            <div class="bento-tags">
-              <span class="bento-tag">Vanilla JS</span>
-              <span class="bento-tag">URL State</span>
-              <span class="bento-tag">2,624 SKUs</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- System 4 -->
-        <div class="glass-card bento-card" data-category="architecture">
-          <div class="bento-top">
-            <span class="category-chip">Data &amp; Media Pipeline</span>
-            <span class="bento-id">#SYS-04</span>
-          </div>
-          <h3 class="bento-title">Automated Media WebP Optimization Engine</h3>
-          <p class="bento-desc">
-            Automated Python/Pillow batch pipeline converting multi-gigabyte commercial warehouse photography into responsive WebP formats, reducing initial media payload by over 70%.
-          </p>
-          <div class="bento-footer">
-            <div class="bento-tags">
-              <span class="bento-tag">Python Pillow</span>
-              <span class="bento-tag">-70% Payload</span>
-              <span class="bento-tag">WebP Pipeline</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- System 5 -->
-        <div class="glass-card bento-card" data-category="desktop">
-          <div class="bento-top">
-            <span class="category-chip">Event Dispatch</span>
-            <span class="bento-id">#SYS-05</span>
-          </div>
-          <h3 class="bento-title">Meta WhatsApp Cloud API Automated Renewal Dispatcher</h3>
-          <p class="bento-desc">
-            Event-driven notification bridge monitoring membership expiration thresholds and dispatching programmatic renewal alerts via Meta Cloud API webhooks, driving a +35% turnaround.
-          </p>
-          <div class="bento-footer">
-            <div class="bento-tags">
-              <span class="bento-tag">WhatsApp Cloud API</span>
-              <span class="bento-tag">Webhook Dispatch</span>
-              <span class="bento-tag">Automation</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- System 6 -->
-        <div class="glass-card bento-card" data-category="architecture">
-          <div class="bento-top">
-            <span class="category-chip">Relational Architecture</span>
-            <span class="bento-id">#SYS-06</span>
-          </div>
-          <h3 class="bento-title">Relational Data Modeling &amp; Index Optimization</h3>
-          <p class="bento-desc">
-            Relational schema design across PostgreSQL and SQLite with 3NF normalization, composite B-tree indexing, query plan profiling (EXPLAIN QUERY PLAN), and foreign key integrity.
-          </p>
-          <div class="bento-footer">
-            <div class="bento-tags">
-              <span class="bento-tag">PostgreSQL</span>
-              <span class="bento-tag">SQLite</span>
-              <span class="bento-tag">B-Tree Indexes</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Technical Section Divider -->
-    <div class="section-divider-bar" aria-hidden="true">
-      <span class="divider-coord">// 04.00 SEC_TERMINAL</span>
-      <span class="divider-line"></span>
-      <span class="divider-index">INDEX [04 / 05]</span>
-    </div>
-
-    <!-- Terminal Chatbot Assistant -->
-    <section id="terminal" class="section">
-      <div class="section-header">
-        <div class="section-tag">AI TELEMETRY</div>
-        <h2 class="section-title">Interactive Systems Terminal</h2>
-        <p class="section-desc">Query my architectural stack, inspect project implementations, or check systems credentials via live conversational telemetry.</p>
-      </div>
-
-      <div class="terminal-window">
-        <div class="terminal-header">
-          <div class="terminal-controls">
-            <span class="t-dot t-red"></span>
-            <span class="t-dot t-yellow"></span>
-            <span class="t-dot t-green"></span>
-          </div>
-          <div class="terminal-title">NITHEESH_SYSTEMS_AI // v2.5</div>
-          <div class="terminal-status">
-            <span class="status-dot"></span>
-            <span>LIVE ASSISTANT</span>
-          </div>
-        </div>
-
-        <div class="chat-chips-row">
-          <button class="chat-chip">Tell me about AIM Fitness Park ERP</button>
-          <button class="chat-chip">What is your experience with JDK 25?</button>
-          <button class="chat-chip">Explain Shasha Enterprises architecture</button>
-          <button class="chat-chip">What are your core engineering skills?</button>
-        </div>
-
-        <div class="terminal-body" id="terminal-chat-body">
-          <div class="chat-msg chat-bot">
-            <div class="msg-bubble">
-              Terminal initialized. I am Nitheesh's AI systems assistant backed by Spring AI and local deterministic NLP. Ask me about **AIM Fitness Park Desktop ERP**, **Shasha Enterprises**, or my **5-category technical skills matrix**!
-            </div>
-          </div>
-        </div>
-
-        <div class="terminal-input-bar">
-          <span class="terminal-prompt">&gt;</span>
-          <input type="text" id="terminal-input" class="terminal-input" placeholder="Type query (e.g., 'What databases do you use?') and press Enter..." autocomplete="off">
-          <button id="terminal-send-btn" class="terminal-send-btn">SEND ↵</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Technical Section Divider -->
-    <div class="section-divider-bar" aria-hidden="true">
-      <span class="divider-coord">// 05.00 SEC_CONNECT</span>
-      <span class="divider-line"></span>
-      <span class="divider-index">INDEX [05 / 05]</span>
-    </div>
-
-    <!-- Direct Connect Section -->
-    <section id="contact" class="section">
-      <div class="glass-card contact-card">
-        <div class="card-glow-blue"></div>
-
-        <div class="contact-content">
-          <div class="section-tag">DIRECT CONNECT</div>
-          <h2 class="contact-title">Let's Architect Something Extraordinary.</h2>
-          <p class="contact-subtitle">
-            Available for full-time Java Software Developer &amp; Systems Engineer roles, backend microservice design, offline desktop ERP architecture, and technical consulting worldwide.
-          </p>
-
-          <div class="email-action-box">
-            <span class="email-address">nitheesh.exe@gmail.com</span>
-            <button class="copy-btn" data-copy="nitheesh.exe@gmail.com" aria-label="Copy Email Address">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-              <span>Copy Email</span>
-            </button>
-          </div>
-
-          <div class="social-links-row">
-            <a href="https://github.com/Nitheesh-exe" target="_blank" rel="noopener noreferrer" class="social-pill" aria-label="GitHub">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-              <span>github.com/Nitheesh-exe</span>
-            </a>
-            <a href="https://linkedin.com/in/nitheeshkumar2003" target="_blank" rel="noopener noreferrer" class="social-pill" aria-label="LinkedIn">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-              <span>linkedin.com/in/nitheeshkumar2003</span>
-            </a>
-            <a href="https://wa.me/919345507516" target="_blank" rel="noopener noreferrer" class="social-pill" aria-label="WhatsApp">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-              <span>+91 93455 07516</span>
-            </a>
-          </div>
-
-          <div class="footer-meta">
-            <span>© 2026 Nitheesh Kumar VSM. Java Software Development &amp; Systems Architecture.</span>
-            <span>Built from first principles. Zero corporate fluff.</span>
-          </div>
+          <button class="proj-nav-btn next" id="proj-next" type="button" aria-label="Next slide">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Floating Toast Notification -->
-  <div id="toast" class="toast-notification" aria-live="polite">
-    <span class="toast-icon">✓</span>
-    <span class="toast-text" id="toast-message">Copied to clipboard</span>
-  </div>
+  <!-- ======================================================================
+       FOOTER / CONTACT SECTION (from Portfolio copy)
+       ====================================================================== -->
+  <footer id="contact" class="footer bg-dark-alt">
+    <div class="footer-container">
+      <h2>Let's Work Together !</h2>
+      <p class="footer-sub">Have a project, opportunity, or question? Feel free to reach out directly.</p>
 
-  <!-- Floating Cyberpunk AI Chatbot Widget -->
+      <div class="contact-info">
+        <p>
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:nitheesh.exe@gmail.com" class="contact-link">nitheesh.exe@gmail.com</a>
+          <button class="copy-email-btn" id="copy-email-btn" type="button" title="Copy email address" aria-label="Copy email">
+            <i class="fa-regular fa-copy"></i>
+          </button>
+        </p>
+        <p>
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:+919345507516" class="contact-link">+91 9345507516</a>
+        </p>
+      </div>
+
+      <div class="social-links">
+        <a href="https://linkedin.com/in/nitheeshkumar2003" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/Nitheesh-exe" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="https://wa.me/919345507516" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nitheesh Kumar VSM. Built with Clean Java Architecture &bull; All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       FLOATING AI CHATBOT WIDGET (from Portfolio copy + ChatController.java)
+       ====================================================================== -->
   <div class="chatbot-wrapper">
-    <button id="chat-toggle" class="chat-fab" type="button" aria-label="Open Nitheesh AI Assistant chat" title="Chat with Nitheesh's AI" aria-expanded="false" aria-controls="chat-window">
-      <svg class="chat-fab-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
-      <span class="chat-fab-label">AI CHAT</span>
+    <button id="chat-toggle" class="chat-fab" type="button" aria-label="Open Nitheesh AI Assistant chat" aria-expanded="false" aria-controls="chat-window">
+      <i class="fa-solid fa-message"></i>
       <span class="chat-pulse-ring" aria-hidden="true"></span>
     </button>
 
     <div id="chat-window" class="chat-hidden" role="dialog" aria-modal="true" aria-label="Nitheesh AI Assistant">
       <div class="chat-header">
-        <div class="header-avatar-wrap" data-lightbox="true" data-src="./source/DP.webp" data-caption="Nitheesh Kumar VSM — Systems Engineer Avatar" data-badge="ENGINEER AVATAR" title="Click to view full size">
-          <img src="./source/DP.webp" alt="Nitheesh Avatar" class="chat-header-avatar" width="34" height="34">
+        <div class="header-avatar-wrap" data-lightbox="true" data-src="./source/DP.jpeg" data-caption="Nitheesh Kumar VSM — Avatar" data-badge="ENGINEER AVATAR">
+          <picture>
+            <source srcset="./source/DP.webp" type="image/webp">
+            <img src="./source/DP.jpeg" alt="Nitheesh Avatar" class="chat-header-avatar" width="36" height="36">
+          </picture>
         </div>
         <div class="header-info">
-          <div class="header-title-row">
-            <span class="status-dot" aria-hidden="true"></span>
-            <h4>NITHEESH_AI // ASSISTANT</h4>
-          </div>
-          <span class="status-sub" id="chat-status-sub">Spring AI + Offline NLP &bull; Ready</span>
+          <h4>Nitheesh's AI</h4>
+          <span class="status-indicator">Powered by Gemini 3.6</span>
         </div>
-        <button id="chat-close" class="chat-close-btn" type="button" aria-label="Close chat window">
-          <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        <button id="chat-close" class="close-btn" type="button" aria-label="Close chat window">
+          <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
 
-      <div class="chat-chips" id="chat-chips" role="toolbar" aria-label="Quick prompts">
-        <button type="button" class="chip" data-prompt="What core Java and Spring Boot skills does Nitheesh have?">💻 Java &amp; Spring Boot</button>
-        <button type="button" class="chip" data-prompt="Tell me about the AIM Fitness Park desktop ERP system.">🏋️ AIM Fitness ERP</button>
-        <button type="button" class="chip" data-prompt="Tell me about the Shasha Enterprises B2B platform.">🛒 Shasha B2B</button>
-        <button type="button" class="chip" data-prompt="How does Nitheesh conduct Software Analysis (BMC, RGD, SAD)?">📐 Analysis (SAD)</button>
-        <button type="button" class="chip" data-prompt="What certifications and education does Nitheesh have?">🏆 Education &amp; Certs</button>
-        <button type="button" class="chip" data-prompt="How can I contact Nitheesh?">📬 Contact</button>
+      <!-- Quick Suggestion Chips -->
+      <div class="chat-chips" id="chat-chips" role="toolbar" aria-label="Quick question suggestions">
+        <button class="chat-chip" type="button">Tell me about Offline Gym System</button>
+        <button class="chat-chip" type="button">What is your education &amp; CGPA?</button>
+        <button class="chat-chip" type="button">Harting Technology Group internship</button>
+        <button class="chat-chip" type="button">What are your core technical skills?</button>
       </div>
 
       <div class="chat-messages" id="chat-messages" aria-live="polite">
-        <div class="chat-msg chat-bot">
-          <div class="msg-bubble">
-            Hi! I'm <strong>Nitheesh Kumar VSM's AI Assistant</strong>. Ask me about his JDK 25 desktop ERP architecture, Spring Boot 3.3 backends, software analysis (BMC/RGD/SAD), or contact details!
-          </div>
+        <div class="msg bot-msg">
+          <i class="fa-solid fa-robot bot-icon"></i>
+          <div class="msg-content">Hi! Ask me anything about Nitheesh's skills, experience, or projects.</div>
         </div>
       </div>
 
       <div class="chat-input-area">
-        <input type="text" id="chat-input" placeholder="Ask about Java 25, AIM ERP, Shasha..." autocomplete="off" aria-label="Type your message">
-        <button id="chat-send" class="chat-send-btn" type="button" aria-label="Send message">
-          <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg>
+        <input type="text" id="chat-input" placeholder="Type your question..." autocomplete="off" aria-label="Type your question">
+        <button id="chat-send" class="btn-send" type="button" aria-label="Send message">
+          <i class="fa-solid fa-paper-plane"></i>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- FULL-SIZE IMAGE LIGHTBOX VIEWER -->
-  <div id="image-lightbox" class="lightbox-modal lightbox-hidden" role="dialog" aria-modal="true" aria-label="Full-Size Image Viewer">
+  <!-- ======================================================================
+       INTERACTIVE FULL-SIZE LIGHTBOX MODAL
+       ====================================================================== -->
+  <div id="image-lightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Full-Size Image Viewer" aria-hidden="true">
     <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
     <div class="lightbox-container">
-      <header class="lightbox-header">
-        <div class="lightbox-title-group">
-          <span class="lightbox-badge" id="lightbox-badge">FULL RESOLUTION</span>
-          <h3 class="lightbox-caption" id="lightbox-caption">Image Preview</h3>
+      <div class="lightbox-header">
+        <div class="lightbox-badge-wrap">
+          <span class="lightbox-badge" id="lightbox-badge">MEDIA PREVIEW</span>
+          <span class="lightbox-counter" id="lightbox-counter">1 / 9</span>
         </div>
         <div class="lightbox-actions">
-          <a id="lightbox-original-link" href="#" target="_blank" rel="noopener noreferrer" class="lightbox-btn" title="Open original asset in high resolution">
-            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            <span>FULL RES ↗</span>
+          <a id="lightbox-original-link" href="#" target="_blank" rel="noopener noreferrer" class="lightbox-btn" title="Open full resolution file in new tab">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Full-Res
           </a>
-          <button type="button" class="lightbox-btn lightbox-close" id="lightbox-close" aria-label="Close Lightbox (Esc)">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          <button id="lightbox-close" class="lightbox-btn close" type="button" aria-label="Close viewer">
+            <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
-      </header>
+      </div>
 
       <div class="lightbox-stage">
-        <button type="button" class="lightbox-nav-btn prev-btn" id="lightbox-prev" aria-label="Previous Image (Left Arrow)">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+        <button id="lightbox-prev" class="lightbox-nav-btn prev" type="button" aria-label="Previous image">
+          <i class="fa-solid fa-chevron-left"></i>
         </button>
-
-        <div class="lightbox-image-wrap" id="lightbox-image-wrap">
-          <img id="lightbox-img" src="" alt="Full-size preview" class="lightbox-img">
-          <div class="lightbox-zoom-hint">Click image to toggle zoom &bull; Use &larr; &rarr; arrows to browse &bull; Esc to close</div>
+        <div class="lightbox-viewport" id="lightbox-viewport" title="Click to toggle 1:1 zoom">
+          <img id="lightbox-img" src="" alt="Full view preview" class="lightbox-img">
         </div>
-
-        <button type="button" class="lightbox-nav-btn next-btn" id="lightbox-next" aria-label="Next Image (Right Arrow)">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        <button id="lightbox-next" class="lightbox-nav-btn next" type="button" aria-label="Next image">
+          <i class="fa-solid fa-chevron-right"></i>
         </button>
       </div>
 
-      <footer class="lightbox-footer">
-        <span class="lightbox-counter" id="lightbox-counter">1 / 14</span>
-        <span class="lightbox-subtext" id="lightbox-subtext">Click backdrop or press Esc to return</span>
-      </footer>
+      <div class="lightbox-footer">
+        <div class="lightbox-caption" id="lightbox-caption">Loading asset...</div>
+        <div class="lightbox-zoom-hint"><i class="fa-solid fa-hand-pointer"></i> Click image to toggle zoom &bull; Use &larr; &rarr; arrows to navigate &bull; Esc to exit</div>
+      </div>
     </div>
   </div>
 
-  <script src="./script.js" defer></script>
-  <script src="./swarm-init.js" defer></script>
+  <!-- Clipboard Toast Notification -->
+  <div id="copy-toast" class="copy-toast" role="status" aria-live="polite">
+    <i class="fa-solid fa-circle-check"></i> <span id="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
 </body>
 
 </html>
