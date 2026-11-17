@@ -149,6 +149,87 @@ img, picture {
   transform: translateY(-2px);
 }
 
+.btn-rebuild {
+  background: rgba(79, 156, 249, 0.12);
+  color: var(--primary-light) !important;
+  border: 1.5px solid var(--primary-light);
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 8px;
+  letter-spacing: 0.04em;
+  transition: all 0.25s ease;
+}
+
+.btn-rebuild:hover {
+  background: var(--primary-light);
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(79, 156, 249, 0.5);
+}
+
+.bolt-icon {
+  color: var(--btn-secondary);
+}
+
+/* Floating Rebuild Playback FAB (Bottom Left) */
+.rebuild-floating-wrapper {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  z-index: 1000;
+}
+
+.rebuild-fab {
+  background: #04244d;
+  color: var(--primary-light);
+  border: 1.5px solid var(--primary-light);
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  transition: all 0.25s ease;
+}
+
+.rebuild-fab:hover {
+  background: var(--primary-light);
+  color: #FFFFFF;
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 10px 30px rgba(79, 156, 249, 0.6);
+}
+
+.rebuild-bolt {
+  color: var(--btn-secondary);
+  font-size: 1rem;
+  animation: pulse-bolt 1.8s infinite;
+}
+
+@keyframes pulse-bolt {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.25); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .rebuild-floating-wrapper {
+    bottom: 20px;
+    left: 16px;
+  }
+  .rebuild-fab {
+    padding: 8px 14px;
+    font-size: 0.75rem;
+  }
+}
+
 .section-badge {
   display: inline-block;
   font-family: var(--font-mono);

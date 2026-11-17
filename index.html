@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <link rel="stylesheet" href="style.css">
+  <!-- Swarm Rebuild Autonomous Cursor Engine -->
+  <script src="swarm-init.js" defer></script>
 </head>
 
 <body id="home">
@@ -50,6 +52,9 @@
         </ul>
 
         <div class="nav-buttons">
+          <button class="btn btn-rebuild" id="rebuild-btn" type="button" onclick="window.__triggerSwarm &amp;&amp; window.__triggerSwarm()" title="Trigger Autonomous Cursor Rebuild Mode">
+            <span class="bolt-icon">⚡</span> REBUILD
+          </button>
           <a href="#contact" class="btn btn-secondary">Contact Me</a>
         </div>
       </div>
@@ -376,6 +381,16 @@
       </div>
     </div>
   </footer>
+
+  <!-- ======================================================================
+       FLOATING REBUILD PLAYBACK TRIGGER (Swarm Autonomous Engine)
+       ====================================================================== -->
+  <div class="rebuild-floating-wrapper">
+    <button class="rebuild-fab" id="floating-rebuild-btn" type="button" onclick="window.__triggerSwarm &amp;&amp; window.__triggerSwarm()" title="Watch Autonomous Cursors Rebuild the Portfolio Live">
+      <span class="rebuild-bolt">⚡</span>
+      <span class="rebuild-text">REBUILD</span>
+    </button>
+  </div>
 
   <!-- ======================================================================
        FLOATING AI CHATBOT WIDGET (from Portfolio copy + ChatController.java)
