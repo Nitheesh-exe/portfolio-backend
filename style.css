@@ -837,17 +837,20 @@ section {
   gap: 14px;
 }
 
-.tech-logo-svg {
+.tech-logo-svg,
+.skill-icon-img {
   display: inline-block;
   vertical-align: middle;
-  width: clamp(34px, 3.2vw, 44px);
-  height: clamp(34px, 3.2vw, 44px);
+  width: clamp(36px, 3.5vw, 48px);
+  height: clamp(36px, 3.5vw, 48px);
+  object-fit: contain;
   transition: transform 0.25s ease, filter 0.25s ease;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
   flex-shrink: 0;
 }
 
-.skill-card:hover .tech-logo-svg {
+.skill-card:hover .tech-logo-svg,
+.skill-card:hover .skill-icon-img {
   transform: scale(1.15);
   filter: drop-shadow(0 4px 10px rgba(79, 156, 249, 0.45));
 }
