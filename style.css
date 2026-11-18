@@ -39,15 +39,33 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--primary-dark);
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg-white);
+  background-color: var(--primary-dark);
   color: var(--text-dark);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
   -webkit-font-smoothing: antialiased;
+}
+
+main {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
 }
 
 h1, h2, h3, h4, h5 {
@@ -262,12 +280,13 @@ img, picture {
 }
 
 .navbar {
-  max-width: 1300px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 28px;
+  padding: 16px max(5%, calc((100% - 1440px) / 2));
 }
 
 .logo {
@@ -361,7 +380,10 @@ img, picture {
    SECTIONS LAYOUT
    ========================================================================== */
 section {
-  padding: 90px 5%;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 90px max(5%, calc((100% - 1440px) / 2));
 }
 
 .bg-dark {
@@ -388,19 +410,21 @@ section {
    HERO SECTION (from Portfolio copy)
    ========================================================================== */
 #hero {
+  width: 100%;
+  max-width: 100%;
   min-height: 85vh;
-  padding: 80px 5% 60px 5%;
+  padding: 80px max(5%, calc((100% - 1440px) / 2)) 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 50px;
-  max-width: 1360px;
-  margin: 0 auto;
+  gap: clamp(30px, 4vw, 60px);
+  margin: 0;
+  background-color: var(--primary-dark);
 }
 
 .hero-content {
   flex: 0 0 46%;
-  max-width: 580px;
+  max-width: 620px;
 }
 
 .profile-badge-wrap {
@@ -596,12 +620,15 @@ section {
    ABOUT SECTION: EDUCATION & EXPERIENCE (from Portfolio copy)
    ========================================================================== */
 .about {
+  width: 100%;
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 60px;
-  max-width: 1300px;
-  margin: 0 auto;
+  gap: clamp(30px, 4vw, 60px);
+  padding: 100px max(5%, calc((100% - 1440px) / 2));
+  margin: 0;
+  background-color: var(--bg-white);
 }
 
 .about-image {
@@ -738,12 +765,15 @@ section {
    TECHNICAL SKILLS SECTION (from Portfolio copy)
    ========================================================================== */
 .skills {
+  width: 100%;
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 60px;
-  max-width: 1300px;
-  margin: 0 auto;
+  gap: clamp(30px, 4vw, 60px);
+  padding: 100px max(5%, calc((100% - 1440px) / 2));
+  margin: 0;
+  background-color: var(--bg-light);
 }
 
 .skills-image {
@@ -886,14 +916,17 @@ section {
    FEATURED PROJECT SECTION (from Portfolio copy)
    ========================================================================== */
 #projects {
-  padding: 80px 5%;
-  max-width: 1360px;
-  margin: 0 auto;
-  border-radius: 20px;
+  width: 100%;
+  max-width: 100%;
+  padding: 100px max(5%, calc((100% - 1440px) / 2));
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 50px;
+  gap: clamp(30px, 4vw, 60px);
+  background-color: var(--primary-dark);
 }
 
 .project-content {
@@ -1096,11 +1129,14 @@ section {
    FOOTER / CONTACT SECTION (from Portfolio copy)
    ========================================================================== */
 .footer {
+  width: 100%;
+  max-width: 100%;
   background-color: var(--primary-dark-alt);
   color: var(--text-light);
   text-align: center;
-  padding: 85px 20px 40px;
+  padding: 85px max(5%, calc((100% - 1440px) / 2)) 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 0;
 }
 
 .footer-container {
