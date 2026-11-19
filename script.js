@@ -65,6 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
   const heroTrack = document.getElementById('hero-track');
   const heroDots = document.querySelectorAll('#hero-dots .dot');
+  const heroPrev = document.getElementById('hero-prev');
+  const heroNext = document.getElementById('hero-next');
   let currentHeroIndex = 0;
   const totalHeroSlides = 3;
   let heroInterval = null;
@@ -72,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function setHeroSlide(idx) {
     if (!heroTrack) return;
     currentHeroIndex = (idx + totalHeroSlides) % totalHeroSlides;
-    heroTrack.style.transform = `translateX(-${(currentHeroIndex * 100) / totalHeroSlides}%)`;
+    heroTrack.style.transform = `translateX(-${currentHeroIndex * 100}%)`;
 
     heroDots.forEach((dot, dIdx) => {
       dot.classList.toggle('active', dIdx === currentHeroIndex);
@@ -92,17 +94,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (heroTrack) {
     heroDots.forEach(dot => {
-      dot.addEventListener('click', () => {
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
         const targetIdx = parseInt(dot.getAttribute('data-index'), 10);
         setHeroSlide(targetIdx);
         startHeroAutoPlay();
       });
     });
 
+    if (heroPrev) {
+      heroPrev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setHeroSlide(currentHeroIndex - 1);
+        startHeroAutoPlay();
+      });
+    }
+
+    if (heroNext) {
+      heroNext.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setHeroSlide(currentHeroIndex + 1);
+        startHeroAutoPlay();
+      });
+    }
+
     const heroContainer = document.querySelector('.slider-container');
     if (heroContainer) {
       heroContainer.addEventListener('mouseenter', stopHeroAutoPlay);
       heroContainer.addEventListener('mouseleave', startHeroAutoPlay);
+
+      // Touch / Swipe support for Hero
+      let heroTouchStartX = 0;
+      let heroTouchEndX = 0;
+      heroContainer.addEventListener('touchstart', (e) => {
+        heroTouchStartX = e.touches[0].clientX;
+        stopHeroAutoPlay();
+      }, { passive: true });
+
+      heroContainer.addEventListener('touchend', (e) => {
+        heroTouchEndX = e.changedTouches[0].clientX;
+        const diff = heroTouchStartX - heroTouchEndX;
+        if (Math.abs(diff) > 40) {
+          if (diff > 0) setHeroSlide(currentHeroIndex + 1);
+          else setHeroSlide(currentHeroIndex - 1);
+        }
+        startHeroAutoPlay();
+      }, { passive: true });
     }
 
     startHeroAutoPlay();
@@ -114,16 +151,22 @@ document.addEventListener('DOMContentLoaded', () => {
   function initCarousel(containerId, slideClass, dotsId, prevId, nextId) {
     const container = document.getElementById(containerId);
     if (!container) return;
+    const track = container.querySelector('.project-slider-track');
     const slides = container.querySelectorAll(slideClass);
     const dots = document.querySelectorAll(`#${dotsId} .p-dot`);
     const prev = document.getElementById(prevId);
     const next = document.getElementById(nextId);
     let currentIndex = 0;
+    const total = slides.length;
     let timer = null;
 
+    if (!total) return;
+
     function showSlide(idx) {
-      if (!slides.length) return;
-      currentIndex = (idx + slides.length) % slides.length;
+      currentIndex = (idx + total) % total;
+      if (track) {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
       slides.forEach((slide, sIdx) => {
         slide.classList.toggle('active', sIdx === currentIndex);
       });
@@ -134,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function startAuto() {
       stopAuto();
-      timer = setInterval(() => showSlide(currentIndex + 1), 4500);
+      timer = setInterval(() => showSlide(currentIndex + 1), 4200);
     }
 
     function stopAuto() {
@@ -142,29 +185,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (prev) {
-      prev.addEventListener('click', () => {
+      prev.addEventListener('click', (e) => {
+        e.stopPropagation();
         showSlide(currentIndex - 1);
         startAuto();
       });
     }
 
     if (next) {
-      next.addEventListener('click', () => {
+      next.addEventListener('click', (e) => {
+        e.stopPropagation();
         showSlide(currentIndex + 1);
         startAuto();
       });
     }
 
     dots.forEach(dot => {
-      dot.addEventListener('click', () => {
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
         const targetIdx = parseInt(dot.getAttribute('data-index'), 10);
         showSlide(targetIdx);
         startAuto();
       });
     });
 
+    // Touch / Swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    container.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+      stopAuto();
+    }, { passive: true });
+
+    container.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].clientX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) showSlide(currentIndex + 1);
+        else showSlide(currentIndex - 1);
+      }
+      startAuto();
+    }, { passive: true });
+
     container.addEventListener('mouseenter', stopAuto);
     container.addEventListener('mouseleave', startAuto);
+    showSlide(0);
     startAuto();
   }
 
@@ -376,7 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       keywords: ['experience', 'intern', 'internship', 'harting', 'technology', 'chennai', 'company', 'work'],
-      answer: "Nitheesh completed a **3-month Systems Engineering internship** at **Harting Technology Group** in Chennai, focusing on industrial hardware-software systems and engineering workflows."
+      answer: "Nitheesh completed a **Systems Engineering internship** at **Harting Technology Group** in Chennai, contributing to industrial hardware-software systems, engineering workflows, and system automation."
     },
     {
       keywords: ['skill', 'skills', 'stack', 'tech', 'technology', 'java', 'spring', 'postgres', 'sql', 'figma'],

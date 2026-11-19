@@ -249,6 +249,19 @@
     return [...el.childNodes];
   }
 
+  function decodeContentString(c) {
+    if (!c || c === "none" || c === "normal") return "";
+    let s = c.trim();
+    if ((s.startsWith('"') && s.endsWith('"')) || (s.startsWith("'") && s.endsWith("'"))) {
+      s = s.slice(1, -1);
+    }
+    // Decode CSS hex escapes like \f0e0, \f08c, etc.
+    s = s.replace(/\\([0-9a-fA-F]{1,6})\s?/g, (_, hex) => String.fromCodePoint(parseInt(hex, 16)));
+    // Decode any remaining escaped characters
+    s = s.replace(/\\(.)/g, "$1");
+    return s;
+  }
+
   // Copy one element's computed style onto its clone, fix up media sources.
   // ::before / ::after become real spans so icons, chevrons and separators survive.
   function pseudoClone(src, which) {
@@ -256,9 +269,7 @@
     const c = ps.content;
     if (!c || c === "none" || c === "normal" || ps.display === "none") return null;
     const sp = document.createElement("span");
-    const str = c.match(/^"((?:[^"\\]|\\.)*)"/);
-    if (str) sp.textContent = str[1].replace(/\\(.)/g, "$1");
-    else if (/^url\(/.test(c)) {
+    if (/^url\(/.test(c)) {
       const u = c.match(/^url\(\s*["']?([^"')]+)["']?\s*\)/);
       if (u) {
         const im = document.createElement("img");
@@ -266,8 +277,11 @@
         im.setAttribute("style", "display:inline-block;vertical-align:middle;");
         sp.appendChild(im);
       }
+    } else {
+      const decoded = decodeContentString(c);
+      if (decoded) sp.textContent = decoded;
     }
-    sp.setAttribute("style", styleString(ps, ELEM_PROPS));
+    sp.setAttribute("style", styleString(ps, ELEM_PROPS) + "display:inline-block;");
     return sp;
   }
 
@@ -793,6 +807,31 @@
       if (!c || c === "none" || c === "normal" || ps.display === "none" || ps.visibility !== "visible") return;
       const pop = parseFloat(ps.opacity);
       if (!(pop > 0.03)) return;
+
+      // Detect icon glyphs (FontAwesome, Devicon, Unicode symbols)
+      if (!/^url\(/.test(c)) {
+        const glyph = decodeContentString(c);
+        if (glyph && glyph.trim().length > 0) {
+          const sp = document.createElement("span");
+          sp.textContent = glyph;
+          sp.setAttribute("style", styleString(ps, ELEM_PROPS) + "display:inline-block;");
+          const root = document.createElement("div");
+          root.setAttribute("style", rootStyle(cs, false) + "display:flex;align-items:center;justify-content:center;width:100%;height:100%;overflow:visible;");
+          root.appendChild(sp);
+          const box = conv(r, ctx.layer);
+          if (inDoc(box, ctx.layer)) {
+            textItem(
+              { ...box, layer: ctx.layer, key: ctx.key(), op: ctx.op * pop, clip: clipFor(r, ctx.clip, ctx.layer), parentBox: ctx.boxItem, blend: ctx.blend || "" },
+              root,
+              { ...box },
+              ps,
+              ctx.layer
+            );
+            return;
+          }
+        }
+      }
+
       const n = (v) => parseFloat(v) || 0;
       const w = parseFloat(ps.width);
       const h = parseFloat(ps.height);
@@ -1182,8 +1221,14 @@
         if (n.shadowRoot || nt === "slot") inl = false;
         else if (nt === "br" || nt === "wbr") inl = true;
         else if (d === "inline") inl = allInline(n);
-        else if (directText && d.startsWith("inline")) inl = true;
-        if (inl && !anyText && /\S/.test(n.textContent)) anyText = true;
+        else if (d.startsWith("inline")) inl = true;
+        const iconContent = (nt === "i" || (n.className && typeof n.className === "string" && /fa-|devicon/.test(n.className))) ? decodeContentString(getComputedStyle(n, "::before").content) : "";
+        if (iconContent) {
+          inl = true;
+          anyText = true;
+        } else if (inl && !anyText && /\S/.test(n.textContent)) {
+          anyText = true;
+        }
         kinds.push(inl ? 1 : 2);
         if (!inl) allRun = false;
       }
@@ -1669,6 +1714,16 @@
 
       // Copy all fonts and external stylesheets into shadow root so all logos and icon fonts render
       try {
+        const faLink = document.createElement("link");
+        faLink.rel = "stylesheet";
+        faLink.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css";
+        root.appendChild(faLink);
+
+        const devLink = document.createElement("link");
+        devLink.rel = "stylesheet";
+        devLink.href = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css";
+        root.appendChild(devLink);
+
         document.querySelectorAll('link[rel="stylesheet"], style').forEach(el => {
           root.appendChild(el.cloneNode(true));
         });
