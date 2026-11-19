@@ -29,6 +29,38 @@
 
 <body id="home">
 
+  <!-- Responsive Navigation Bar -->
+  <header class="navbar-wrapper">
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="#home" class="logo" aria-label="Nitheesh Portfolio Home">
+        Nitheesh<span>.Portfolio</span>
+      </a>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+        </ul>
+
+        <div class="nav-buttons">
+          <button class="btn btn-rebuild" id="rebuild-btn" type="button" onclick="window.__triggerSwarm && window.__triggerSwarm()" title="Trigger Autonomous Cursor Rebuild Mode">
+            <span class="bolt-icon">⚡</span> REBUILD
+          </button>
+          <a href="#contact" class="btn btn-secondary">Contact Me</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
   <main>
     <!-- ======================================================================
          HERO SECTION (from Portfolio copy)

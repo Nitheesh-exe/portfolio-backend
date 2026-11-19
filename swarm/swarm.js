@@ -1660,7 +1660,7 @@
   <div class="txt"><span class="status">Scanning page…</span></div>
   <div class="bar"><i></i></div>
   <button data-a="tour" class="on" title="Auto-scroll while the swarm builds">Touring</button>
-  <button data-a="speed" title="Build speed">2×</button>
+  <button data-a="speed" title="Build speed">1×</button>
   <button data-a="sound" class="snd" title="Sound (M)"></button>
   <button data-a="live" class="pri" hidden title="Fade back to the real page">Go live</button>
   <button data-a="replay" hidden title="Wipe and rebuild again">Replay</button>
@@ -2134,7 +2134,7 @@
       this.frontier = 0;
       this.vel = 0;
       this.tempo = 1;
-      this.speed = 2;
+      this.speed = 1;
       this.time = 0;
       this.rulers = { want: 0, t: 0, lastNeed: -10 };
       this.lastScroll = null;
@@ -3492,7 +3492,7 @@
       this.tourV = 0;
       this.tourAcc = 0;
       this.speeds = [1, 2, 3];
-      this.speedIx = 1;          // 2x SPEED default
+      this.speedIx = 0;          // 1x SPEED default
       this.complete = false;
       this.timing = {};
     }
@@ -3519,7 +3519,7 @@
       const shotP = this.loadShot();
       this.view = new View(this.env);
       this.engine = new Engine(this.view);
-      this.engine.speed = 2;
+      this.engine.speed = 1;
       this.sfx = new Sound();
       this.sfx.init();
       this.sfx.setOn(true);
@@ -3728,9 +3728,9 @@
       }
       const crew = Math.max(MIN_AGENTS, E.cursors.filter((c) => !c.leaving).length);
       const backlog = E.backlog();
-      const speedMult = E.speed || 2;
-      const target = (backlog <= Math.max(4, crew * 0.6) ? 260 : backlog <= crew * 1.5 ? 90 : 0) * (speedMult / 1.15);
-      this.tourV += (target - this.tourV) * Math.min(1, dt * 2.8);
+      const speedMult = E.speed || 1;
+      const target = (backlog <= Math.max(4, crew * 0.6) ? 230 : backlog <= crew * 1.5 ? 80 : 0) * speedMult;
+      this.tourV += (target - this.tourV) * Math.min(1, dt * 2.5);
       this.tourAcc += this.tourV * dt;
       if (this.tourAcc >= 1) {
         const d = Math.floor(this.tourAcc);
