@@ -1596,6 +1596,22 @@
 .hud button.snd.off{color:#8a8a8a}
 .hud button.snd.tap{background:#0D99FF;animation:hudpulse 1.6s ease-in-out infinite}
 @keyframes hudpulse{50%{box-shadow:0 0 0 4px rgba(13,153,255,.28)}}
+@media (max-width:640px){
+  .hud{bottom:12px;left:50%;transform:translate(-50%,18px);max-width:calc(100vw - 16px);gap:6px;padding:5px 8px;font-size:11px;box-sizing:border-box}
+  .hud.on{transform:translate(-50%,0)}
+  .hud button{padding:6px 8px;font-size:11px;min-height:30px;touch-action:manipulation}
+  .hud .dots{display:none}
+  .hud .bar{width:44px}
+  .badge{font-size:10px;line-height:14px;padding:1px 3px}
+  .cursor svg{transform:scale(0.85);transform-origin:top left}
+}
+@media (max-width:440px){
+  .hud{bottom:10px;max-width:calc(100vw - 12px);gap:4px;padding:4px 6px;font-size:10px}
+  .hud button{padding:5px 6px;font-size:10px;min-height:28px}
+  .hud .bar{display:none}
+  .hud .sep{display:none}
+  .hud .txt{max-width:76px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+}
 `;
 
   // -------------------------------------------------------------------- env
@@ -3666,15 +3682,23 @@
         if (!this.view.frozen) this.view.syncWorld();
       }, { passive: true });
       on(window, "resize", () => this.view.measure());
+      on(window, "orientationchange", () => setTimeout(() => this.view.measure(), 120));
       on(window, "wheel", () => {
         if (this.engine.ready) this.engine.start();
       }, { passive: true });
       on(window, "pointermove", (e) => {
         this.engine.mouse = { x: e.clientX, y: e.clientY };
       }, { passive: true });
+      on(window, "touchmove", (e) => {
+        if (this.engine.ready) this.engine.start();
+        if (e.touches && e.touches[0]) {
+          this.engine.mouse = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        }
+      }, { passive: true });
       on(document.documentElement, "pointerleave", () => {
         this.engine.mouse = null;
       });
+      on(window, "touchstart", () => this.unlockSound(), true);
       on(window, "keydown", (e) => {
         if (e.key === "Escape") {
           e.stopPropagation();

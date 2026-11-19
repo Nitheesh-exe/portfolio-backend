@@ -1968,6 +1968,18 @@ section {
     display: flex;
   }
 
+  .nav-toggle.open .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav-toggle.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.open .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
   .nav-menu {
     position: fixed;
     top: 65px;
@@ -2005,36 +2017,54 @@ section {
 
   .nav-buttons {
     width: 100%;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .nav-buttons .btn {
     width: 100%;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.35rem;
   }
 
   h2 {
-    font-size: 1.95rem;
+    font-size: 1.9rem;
   }
 
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 
-  @media (max-width: 540px) {
-    .skills-grid {
-      grid-template-columns: 1fr;
-    }
+  .footer {
+    padding-bottom: 95px;
+  }
+
+  .rebuild-floating-wrapper {
+    bottom: 18px;
+    left: 16px;
+  }
+
+  .chatbot-wrapper {
+    bottom: 18px;
+    right: 16px;
   }
 
   #chat-window {
+    position: fixed;
+    right: 16px;
+    bottom: 80px;
     width: calc(100vw - 32px);
-    height: 72vh;
-    bottom: 74px;
-    right: -10px;
+    max-width: 400px;
+    height: min(72vh, 560px);
   }
 
   .lightbox-container {
@@ -2047,5 +2077,295 @@ section {
     flex-direction: column;
     gap: 6px;
     text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  #hero, .about, .skills, #projects, .projects, .contact, .footer {
+    padding: 48px 16px;
+    gap: 30px;
+  }
+
+  .navbar {
+    padding: 14px 16px;
+  }
+
+  .logo {
+    font-size: 1.45rem;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 6.8vw, 2.3rem);
+    line-height: 1.18;
+  }
+
+  h2 {
+    font-size: clamp(1.55rem, 5.8vw, 1.95rem);
+    line-height: 1.22;
+  }
+
+  .hero-tagline {
+    font-size: 1.02rem;
+    line-height: 1.55;
+    margin-bottom: 1.4rem;
+  }
+
+  .profile-badge-wrap {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 18px;
+  }
+
+  .badge-zoom-hint {
+    opacity: 0.92;
+    transform: translateY(0);
+    font-size: 0.68rem;
+    padding: 4px 0;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slider-container,
+  .project-slider-container {
+    aspect-ratio: 16 / 9;
+    min-height: 200px;
+    max-height: 320px;
+    border-radius: 12px;
+  }
+
+  .slide-overlay,
+  .proj-slide-overlay {
+    padding: 8px 12px;
+  }
+
+  .slide-title,
+  .slide-caption {
+    font-size: 0.76rem;
+  }
+
+  .zoom-tag {
+    font-size: 0.68rem;
+    padding: 3px 8px;
+  }
+
+  .proj-nav-btn,
+  .hero-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  #bg-road {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .image-placeholder {
+    border-radius: 12px;
+  }
+
+  .credential-item {
+    padding: 12px 14px;
+    gap: 12px;
+    border-radius: 10px;
+  }
+
+  .credential-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+  }
+
+  .credential-info h4 {
+    font-size: 0.96rem;
+  }
+
+  .credential-meta {
+    font-size: 0.85rem;
+  }
+
+  .about-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .about-actions .btn {
+    width: 100%;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .skill-card {
+    aspect-ratio: auto;
+    min-height: 96px;
+    padding: 12px 8px;
+    gap: 6px;
+    border-radius: 10px;
+  }
+
+  .tech-logo-svg,
+  .skill-icon-img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .skill-card span {
+    font-size: 0.84rem;
+  }
+
+  .skills-image-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .workflow-badge {
+    font-size: 0.72rem;
+    padding: 5px 12px;
+  }
+
+  .project-content p {
+    font-size: 0.96rem;
+    line-height: 1.6;
+  }
+
+  .tech-badges .badge {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+
+  .project-actions {
+    width: 100%;
+  }
+
+  .project-actions .btn {
+    width: 100%;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-card {
+    padding: 22px 14px;
+    border-radius: 14px;
+  }
+
+  .social-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .social-links a {
+    justify-content: center;
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .rebuild-floating-wrapper {
+    bottom: 16px;
+    left: 12px;
+  }
+
+  .rebuild-fab {
+    padding: 8px 12px;
+    font-size: 0.74rem;
+  }
+
+  .chatbot-wrapper {
+    bottom: 16px;
+    right: 12px;
+  }
+
+  .chat-fab {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+
+  #chat-window {
+    right: 10px;
+    left: 10px;
+    width: auto;
+    max-width: none;
+    bottom: 74px;
+    height: min(74vh, 520px);
+    border-radius: 14px;
+  }
+
+  .lightbox-container {
+    width: 100vw;
+    height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
+    padding: 8px;
+  }
+
+  .lightbox-header {
+    padding-bottom: 8px;
+  }
+
+  .lightbox-stage {
+    padding: 4px 0;
+    gap: 6px;
+  }
+
+  .lightbox-nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+  }
+
+  .lightbox-btn {
+    padding: 5px 10px;
+    font-size: 0.76rem;
+  }
+}
+
+@media (max-width: 380px) {
+  h1 {
+    font-size: 1.68rem;
+  }
+
+  h2 {
+    font-size: 1.45rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 10px 14px;
+    gap: 14px;
+    min-height: 60px;
+  }
+
+  .rebuild-fab {
+    padding: 8px 10px;
   }
 }
