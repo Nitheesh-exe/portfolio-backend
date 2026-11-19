@@ -410,6 +410,7 @@ section {
    HERO SECTION (from Portfolio copy)
    ========================================================================== */
 #hero {
+  position: relative;
   width: 100%;
   max-width: 100%;
   min-height: 85vh;
@@ -420,6 +421,13 @@ section {
   gap: clamp(30px, 4vw, 60px);
   margin: 0;
   background-color: var(--primary-dark);
+  background-image: 
+    linear-gradient(135deg, rgba(3, 35, 74, 0.86) 0%, rgba(4, 56, 115, 0.78) 50%, rgba(2, 22, 47, 0.90) 100%),
+    url('./source/hero-bg.webp'),
+    url('./source/hero-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .hero-content {
@@ -474,12 +482,17 @@ section {
   transform: translateY(0);
 }
 
+.hero-content h1 {
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
+}
+
 .hero-tagline {
   font-size: 1.25rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
   margin-bottom: 2rem;
   line-height: 1.6;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
 .hero-actions {
