@@ -1131,7 +1131,8 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.proj-slide-wrap {
+.proj-slide-wrap,
+.shasha-slide-wrap {
   position: absolute;
   inset: 0;
   opacity: 0;
@@ -1140,7 +1141,8 @@ section {
   cursor: pointer;
 }
 
-.proj-slide-wrap.active {
+.proj-slide-wrap.active,
+.shasha-slide-wrap.active {
   opacity: 1;
   visibility: visible;
   z-index: 2;
@@ -1155,7 +1157,8 @@ section {
   transition: transform 0.5s ease;
 }
 
-.proj-slide-wrap:hover .proj-slide {
+.proj-slide-wrap:hover .proj-slide,
+.shasha-slide-wrap:hover .proj-slide {
   transform: scale(1.03);
 }
 

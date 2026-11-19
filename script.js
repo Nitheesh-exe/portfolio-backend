@@ -109,70 +109,67 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // 3. PROJECT SLIDER CAROUSEL (Offline Gym Management System)
+  // 3. PROJECT SLIDER CAROUSELS (Offline Gym System & ShaSha Enterprises)
   // ==========================================================================
-  const projSlides = document.querySelectorAll('.proj-slide-wrap');
-  const projDots = document.querySelectorAll('#proj-dots .p-dot');
-  const projPrev = document.getElementById('proj-prev');
-  const projNext = document.getElementById('proj-next');
-  let currentProjIndex = 0;
-  let projInterval = null;
+  function initCarousel(containerId, slideClass, dotsId, prevId, nextId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    const slides = container.querySelectorAll(slideClass);
+    const dots = document.querySelectorAll(`#${dotsId} .p-dot`);
+    const prev = document.getElementById(prevId);
+    const next = document.getElementById(nextId);
+    let currentIndex = 0;
+    let timer = null;
 
-  function showProjSlide(idx) {
-    if (!projSlides.length) return;
-    currentProjIndex = (idx + projSlides.length) % projSlides.length;
-
-    projSlides.forEach((slide, sIdx) => {
-      slide.classList.toggle('active', sIdx === currentProjIndex);
-    });
-
-    projDots.forEach((dot, dIdx) => {
-      dot.classList.toggle('active', dIdx === currentProjIndex);
-    });
-  }
-
-  function startProjAutoPlay() {
-    stopProjAutoPlay();
-    projInterval = setInterval(() => {
-      showProjSlide(currentProjIndex + 1);
-    }, 4000);
-  }
-
-  function stopProjAutoPlay() {
-    if (projInterval) clearInterval(projInterval);
-  }
-
-  if (projSlides.length > 0) {
-    if (projPrev) {
-      projPrev.addEventListener('click', () => {
-        showProjSlide(currentProjIndex - 1);
-        startProjAutoPlay();
+    function showSlide(idx) {
+      if (!slides.length) return;
+      currentIndex = (idx + slides.length) % slides.length;
+      slides.forEach((slide, sIdx) => {
+        slide.classList.toggle('active', sIdx === currentIndex);
+      });
+      dots.forEach((dot, dIdx) => {
+        dot.classList.toggle('active', dIdx === currentIndex);
       });
     }
 
-    if (projNext) {
-      projNext.addEventListener('click', () => {
-        showProjSlide(currentProjIndex + 1);
-        startProjAutoPlay();
+    function startAuto() {
+      stopAuto();
+      timer = setInterval(() => showSlide(currentIndex + 1), 4500);
+    }
+
+    function stopAuto() {
+      if (timer) clearInterval(timer);
+    }
+
+    if (prev) {
+      prev.addEventListener('click', () => {
+        showSlide(currentIndex - 1);
+        startAuto();
       });
     }
 
-    projDots.forEach(dot => {
+    if (next) {
+      next.addEventListener('click', () => {
+        showSlide(currentIndex + 1);
+        startAuto();
+      });
+    }
+
+    dots.forEach(dot => {
       dot.addEventListener('click', () => {
         const targetIdx = parseInt(dot.getAttribute('data-index'), 10);
-        showProjSlide(targetIdx);
-        startProjAutoPlay();
+        showSlide(targetIdx);
+        startAuto();
       });
     });
 
-    const projContainer = document.getElementById('project-slider-container');
-    if (projContainer) {
-      projContainer.addEventListener('mouseenter', stopProjAutoPlay);
-      projContainer.addEventListener('mouseleave', startProjAutoPlay);
-    }
-
-    startProjAutoPlay();
+    container.addEventListener('mouseenter', stopAuto);
+    container.addEventListener('mouseleave', startAuto);
+    startAuto();
   }
+
+  initCarousel('project-slider-container', '.proj-slide-wrap', 'proj-dots', 'proj-prev', 'proj-next');
+  initCarousel('shasha-slider-container', '.shasha-slide-wrap', 'shasha-dots', 'shasha-prev', 'shasha-next');
 
   // ==========================================================================
   // 4. FULL-SIZE LIGHTBOX GALLERY (All Assets from Portfolio copy)
@@ -201,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       src: './source/roadmap.PNG',
       badge: 'ACADEMIC & CAREER ROADMAP',
-      caption: 'Education & Experience Roadmap — Anna University B.E. (CGPA: 7.7) & Harting Technology Group'
+      caption: 'Education & Experience Roadmap — Anna University B.E. (CGPA: 7.2) & Harting Technology Group'
     },
     {
       src: './source/road.png',
@@ -222,6 +219,26 @@ document.addEventListener('DOMContentLoaded', () => {
       src: './source/image-4.jpg',
       badge: 'OFFLINE GYM ERP',
       caption: 'Offline Gym Management System — Member & Trainer Operations UI'
+    },
+    {
+      src: './source/shasha-storefront.jpg',
+      badge: 'COMMERCIAL SHOWROOM',
+      caption: 'ShaSha Enterprises — Complete Industrial Hardware, Electrical & Paints Storefront'
+    },
+    {
+      src: './source/shasha-catalog-ui.webp',
+      badge: 'E-COMMERCE PLATFORM UI',
+      caption: 'ShaSha Enterprises — Full-Stack Product Catalog & Online Ordering Platform'
+    },
+    {
+      src: './source/shasha-showroom.webp',
+      badge: 'ON-SITE ENGINEERING',
+      caption: 'ShaSha Enterprises — On-site Systems Engineering, Database Integration & Deployment'
+    },
+    {
+      src: './source/shasha-inventory.jpg',
+      badge: 'INVENTORY OPERATIONS',
+      caption: 'ShaSha Enterprises — Commercial Showroom & Wholesale Inventory Operations'
     }
   ];
 
@@ -350,8 +367,12 @@ document.addEventListener('DOMContentLoaded', () => {
       answer: "Nitheesh engineered the **Offline Gym Management System** using **Java, JavaFX, JDBC, SQL, SQLite, and WiX Toolset** with a custom Figma UI. It handles member and trainer management, attendance tracking, secure authentication, and dashboard analytics completely offline with zero SaaS dependencies.\n\nSource code: [github.com/nitheeeshh/Java.git](https://github.com/nitheeeshh/Java.git)"
     },
     {
+      keywords: ['shasha', 'ecommerce', 'e-commerce', 'hardware', 'store', 'shop', 'order', 'boq'],
+      answer: "Nitheesh architected and deployed **ShaSha Enterprises** (www.shashaenterprise.in), a full-stack B2B/B2C e-commerce platform for an industrial hardware and electrical supplies business using **Java 21, Spring Boot 3.3, Spring Security, Spring Data JPA, PostgreSQL, HTML5, CSS3, and Vanilla JavaScript** with direct WhatsApp BOQ inquiry ordering.\n\nLive Platform: [shashaenterprise.in](https://www.shashaenterprise.in)"
+    },
+    {
       keywords: ['education', 'degree', 'college', 'anna', 'university', 'cgpa', 'school', 'marks', 'academic'],
-      answer: "Nitheesh graduated with a **B.E. in Electrical and Electronics Engineering** from **Anna University** with a **CGPA of 7.7** (Class of 2025)."
+      answer: "Nitheesh graduated with a **B.E. in Electrical and Electronics Engineering** from **Anna University** with a **CGPA of 7.2** (Class of 2025)."
     },
     {
       keywords: ['experience', 'intern', 'internship', 'harting', 'technology', 'chennai', 'company', 'work'],
@@ -382,7 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Default polite redirection according to ChatController.java rules
-    return "I am Nitheesh's portfolio AI assistant. I can only answer questions related to Nitheesh Kumar's education (Anna University, CGPA 7.7), internship (Harting Technology Group), skills (Java, Spring Boot, JavaFX, PostgreSQL), and the Offline Gym Management System. How can I help you regarding his work?";
+    return "I am Nitheesh's portfolio AI assistant. I can only answer questions related to Nitheesh Kumar's education (Anna University, CGPA 7.2), internship (Harting Technology Group), skills (Java, Spring Boot, JavaFX, PostgreSQL), and his featured projects (Offline Gym System and ShaSha Enterprises). How can I help you regarding his work?";
   }
 
   // Append Chat Message
