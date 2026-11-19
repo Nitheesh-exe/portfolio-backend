@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       src: './source/roadmap.PNG',
       badge: 'ACADEMIC & CAREER ROADMAP',
-      caption: 'Education & Experience Roadmap — Anna University B.E. (CGPA: 7.2) & Harting Technology Group'
+      caption: 'Academic & Career Trajectory Roadmap — Anna University B.E. (CGPA: 7.2)'
     },
     {
       src: './source/road.png',
@@ -440,8 +440,8 @@ document.addEventListener('DOMContentLoaded', () => {
       answer: "Nitheesh graduated with a **B.E. in Electrical and Electronics Engineering** from **Anna University** with a **CGPA of 7.2** (Class of 2025)."
     },
     {
-      keywords: ['experience', 'intern', 'internship', 'harting', 'technology', 'chennai', 'company', 'work'],
-      answer: "Nitheesh completed a **Systems Engineering internship** at **Harting Technology Group** in Chennai, contributing to industrial hardware-software systems, engineering workflows, and system automation."
+      keywords: ['experience', 'work', 'background', 'profile', 'career'],
+      answer: "Nitheesh is a **Full Stack Java Developer** who has engineered and deployed robust full-stack and desktop systems, including the **Offline Gym Management System** (JavaFX, SQLite, WiX) and **ShaSha Enterprises** (Spring Boot 3.3, PostgreSQL, WhatsApp API)."
     },
     {
       keywords: ['skill', 'skills', 'stack', 'tech', 'technology', 'java', 'spring', 'postgres', 'sql', 'figma'],
@@ -468,7 +468,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Default polite redirection according to ChatController.java rules
-    return "I am Nitheesh's portfolio AI assistant. I can only answer questions related to Nitheesh Kumar's education (Anna University, CGPA 7.2), internship (Harting Technology Group), skills (Java, Spring Boot, JavaFX, PostgreSQL), and his featured projects (Offline Gym System and ShaSha Enterprises). How can I help you regarding his work?";
+    return "I am Nitheesh's portfolio AI assistant. I can only answer questions related to Nitheesh Kumar's education (Anna University, CGPA 7.2), skills (Java, Spring Boot, JavaFX, PostgreSQL), and his featured projects (Offline Gym System and ShaSha Enterprises). How can I help you regarding his work?";
   }
 
   // Append Chat Message

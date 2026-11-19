@@ -296,12 +296,6 @@ img, picture {
   color: var(--text-light);
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-}
-
-.logo i {
-  color: var(--primary-light);
-  font-size: 1.25rem;
 }
 
 .logo span {
@@ -334,22 +328,6 @@ img, picture {
   padding: 6px 4px;
   position: relative;
   transition: color 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.nav-link i {
-  font-size: 0.88rem;
-  color: var(--primary-light);
-  opacity: 0.85;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.nav-link:hover i,
-.nav-link.active i {
-  opacity: 1;
-  transform: translateY(-1px);
 }
 
 .nav-link:hover,
@@ -376,9 +354,6 @@ img, picture {
 .nav-buttons .btn {
   padding: 9px 20px;
   font-size: 0.92rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
 }
 
 /* Mobile Toggle */

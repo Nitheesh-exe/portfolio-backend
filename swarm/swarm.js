@@ -286,6 +286,12 @@
   }
 
   function addPseudos(src, dst) {
+    // If src is an icon (FontAwesome <i> or devicon), its ::before pseudo is already rendered by CSS in shadow root.
+    // Adding a child <span> creates duplicate icons.
+    const cls = (src.className && typeof src.className === "string") ? src.className : "";
+    if (src.localName === "i" || /fa-|devicon/.test(cls)) {
+      return;
+    }
     const b = pseudoClone(src, "::before");
     if (b) dst.insertBefore(b, dst.firstChild);
     const a = pseudoClone(src, "::after");
@@ -648,7 +654,12 @@
       const clone = inert().importNode(el, true);
       cloneDescendantsStyled(el, clone);
       while (clone.firstChild) root.appendChild(clone.firstChild);
-      addPseudos(el, root);
+      const isIcon = el.localName === "i" || (el.className && typeof el.className === "string" && /fa-|devicon/.test(el.className));
+      if (!root.firstChild && isIcon) {
+        root.appendChild(clone);
+      } else if (!isIcon) {
+        addPseudos(el, root);
+      }
       const rg = document.createRange();
       rg.selectNodeContents(el);
       const tr = rg.getBoundingClientRect();
@@ -807,31 +818,6 @@
       if (!c || c === "none" || c === "normal" || ps.display === "none" || ps.visibility !== "visible") return;
       const pop = parseFloat(ps.opacity);
       if (!(pop > 0.03)) return;
-
-      // Detect icon glyphs (FontAwesome, Devicon, Unicode symbols)
-      if (!/^url\(/.test(c)) {
-        const glyph = decodeContentString(c);
-        if (glyph && glyph.trim().length > 0) {
-          const sp = document.createElement("span");
-          sp.textContent = glyph;
-          sp.setAttribute("style", styleString(ps, ELEM_PROPS) + "display:inline-block;");
-          const root = document.createElement("div");
-          root.setAttribute("style", rootStyle(cs, false) + "display:flex;align-items:center;justify-content:center;width:100%;height:100%;overflow:visible;");
-          root.appendChild(sp);
-          const box = conv(r, ctx.layer);
-          if (inDoc(box, ctx.layer)) {
-            textItem(
-              { ...box, layer: ctx.layer, key: ctx.key(), op: ctx.op * pop, clip: clipFor(r, ctx.clip, ctx.layer), parentBox: ctx.boxItem, blend: ctx.blend || "" },
-              root,
-              { ...box },
-              ps,
-              ctx.layer
-            );
-            return;
-          }
-        }
-      }
-
       const n = (v) => parseFloat(v) || 0;
       const w = parseFloat(ps.width);
       const h = parseFloat(ps.height);
@@ -1233,6 +1219,10 @@
         if (!inl) allRun = false;
       }
 
+      if (tag === "i" || (el.className && typeof el.className === "string" && /fa-|devicon/.test(el.className))) {
+        anyText = true;
+      }
+
       if (allRun && anyText && !isScroller) {
         if (visible && sized && emit) emitLeaf(el, cs, r, { ...kctx, layer }, keyFn());
         node.end = items.length;
@@ -1286,8 +1276,9 @@
       for (const k of node.kids) {
         const n = k.end - k.start;
         if (n < 1 || n > 48) continue;
-        // long single paragraphs read better typed than duplicated
+        // long single paragraphs read better typed than duplicated, and icon fonts should never be duped
         if (n === 1 && items[k.start].kind === "text" && items[k.start].text.length > 40) continue;
+        if (n === 1 && (k.tag === "i" || /fa-|devicon/.test(k.cls))) continue;
         const sig = `${k.tag}|${k.cls}|${k.layer}|${kindsSig(k)}`;
         if (!buckets.has(sig)) buckets.set(sig, []);
         buckets.get(sig).push(k);
