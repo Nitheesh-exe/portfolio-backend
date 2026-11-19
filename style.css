@@ -768,23 +768,74 @@ section {
   width: 100%;
   max-width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: clamp(30px, 4vw, 60px);
+  gap: 45px;
   padding: 100px max(5%, calc((100% - 1440px) / 2));
   margin: 0;
   background-color: var(--bg-light);
 }
 
-.skills-image {
-  flex: 0 0 44%;
+.skills-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.skills-content .section-badge {
+  margin: 0 auto 12px auto;
+}
+
+.skills-content h2 {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  width: 100%;
+}
+
+.skills-workflow-wrap {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.skills-workflow-header {
+  margin-bottom: 16px;
+}
+
+.workflow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary-light-hover);
+  background: rgba(79, 156, 249, 0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(79, 156, 249, 0.25);
 }
 
 .skills-image-card {
   position: relative;
+  width: 100%;
   background: var(--bg-white);
   border-radius: 16px;
-  padding: 18px;
+  padding: 24px;
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border-light);
   cursor: pointer;
@@ -799,10 +850,11 @@ section {
 
 .side-image {
   width: 100%;
-  height: auto;
+  max-height: 480px;
   object-fit: contain;
   display: block;
   border-radius: 8px;
+  margin: 0 auto;
 }
 
 .skills-zoom-overlay {
@@ -819,21 +871,6 @@ section {
 
 .skills-image-card:hover .skills-zoom-overlay {
   opacity: 1;
-}
-
-.skills-content {
-  flex: 0 0 52%;
-}
-
-.skills-content h2 {
-  text-align: left;
-  margin-bottom: 30px;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
 }
 
 .skill-card {
@@ -915,6 +952,7 @@ section {
 /* ==========================================================================
    FEATURED PROJECT SECTION (from Portfolio copy)
    ========================================================================== */
+.projects,
 #projects {
   width: 100%;
   max-width: 100%;
@@ -927,6 +965,82 @@ section {
   justify-content: space-between;
   gap: clamp(30px, 4vw, 60px);
   background-color: var(--primary-dark);
+}
+
+.projects.project-second {
+  background-color: var(--primary-dark-alt);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  flex-direction: row-reverse;
+}
+
+.project-placeholder-box {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 380px;
+  max-height: 520px;
+  border-radius: 16px;
+  border: 2px dashed rgba(79, 156, 249, 0.35);
+  background: rgba(4, 36, 77, 0.6);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px;
+  color: var(--text-light);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.35);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.project-placeholder-box:hover {
+  border-color: var(--primary-light);
+  background: rgba(4, 36, 77, 0.75);
+}
+
+.placeholder-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(79, 156, 249, 0.15);
+  color: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+  border: 1px solid rgba(79, 156, 249, 0.3);
+}
+
+.project-placeholder-box h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+
+.project-placeholder-box p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 400px;
+  margin: 0;
+}
+
+.project-placeholder-text {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.badge-placeholder {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.btn.disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .project-content {
@@ -1743,8 +1857,8 @@ section {
    RESPONSIVE BREAKPOINTS (Mobile & Tablet)
    ========================================================================== */
 @media (max-width: 992px) {
-  #hero, .about, .skills, #projects {
-    flex-direction: column;
+  #hero, .about, .skills, #projects, .projects {
+    flex-direction: column !important;
     text-align: center;
     gap: 40px;
     padding: 70px 5%;
@@ -1753,10 +1867,15 @@ section {
   .hero-content, .slider-container,
   .about-image, .about-content,
   .skills-image, .skills-content,
+  .skills-workflow-wrap,
   .project-content, .project-image {
     flex: 1 1 100%;
     max-width: 100%;
     width: 100%;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .profile-badge-wrap {
@@ -1838,7 +1957,13 @@ section {
   }
 
   .skills-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 540px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   #chat-window {
