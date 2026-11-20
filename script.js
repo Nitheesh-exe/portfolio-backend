@@ -258,9 +258,9 @@ document.addEventListener('DOMContentLoaded', () => {
       caption: 'Desktop Application Engineering & UI Architecture (Hero Slide 2)'
     },
     {
-      src: './source/image-3.jpg',
+      src: './source/image-4.jpg',
       badge: 'ENGINEERING LAB',
-      caption: 'Software Engineering Modeling & Prototyping (Hero Slide 3)'
+      caption: 'Desktop Application Engineering & Prototyping (Hero Slide 3)'
     },
     {
       src: './source/roadmap.PNG',
@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
       caption: 'Offline Gym Management System — Membership & Subscription Billing UI'
     },
     {
-      src: './source/image-4.jpg',
+      src: './source/image-3.jpg',
       badge: 'OFFLINE GYM ERP',
       caption: 'Offline Gym Management System — Member & Trainer Operations UI'
     },
@@ -296,11 +296,6 @@ document.addEventListener('DOMContentLoaded', () => {
       src: './source/shasha-catalog-ui.webp',
       badge: 'E-COMMERCE PLATFORM UI',
       caption: 'ShaSha Enterprises — Full-Stack Product Catalog & Online Ordering Platform'
-    },
-    {
-      src: './source/shasha-showroom.webp',
-      badge: 'ON-SITE ENGINEERING',
-      caption: 'ShaSha Enterprises — On-site Systems Engineering, Database Integration & Deployment'
     },
     {
       src: './source/shasha-inventory.jpg',

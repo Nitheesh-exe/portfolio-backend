@@ -3165,12 +3165,23 @@
     }
 
     init(offline) {
-      if (this.ctx) return true;
+      if (this.ctx && this.ctx.state !== "closed") return true;
+      this.ctx = null;
       try {
         const Ctx = window.AudioContext || window.webkitAudioContext;
-        this.ctx = offline || new Ctx({ latencyHint: "interactive" });
+        if (offline) {
+          this.ctx = offline;
+        } else if (window.__swarmSharedAudioCtx && window.__swarmSharedAudioCtx.state !== "closed") {
+          this.ctx = window.__swarmSharedAudioCtx;
+        } else {
+          this.ctx = new Ctx({ latencyHint: "interactive" });
+          window.__swarmSharedAudioCtx = this.ctx;
+        }
       } catch (_) {
         return false;
+      }
+      if (this.ctx && this.ctx.state === "suspended") {
+        this.ctx.resume().catch(() => {});
       }
       const ctx = this.ctx;
       const out = ctx.createGain();
@@ -3240,7 +3251,11 @@
     }
 
     resume() {
-      if (this.ctx && this.ctx.state === "suspended" && this.ctx.resume) this.ctx.resume().catch(() => {});
+      if (this.ctx && this.ctx.state === "suspended" && this.ctx.resume) {
+        this.ctx.resume().then(() => {
+          if (typeof this.onStateChange === "function") this.onStateChange();
+        }).catch(() => {});
+      }
     }
 
     get blocked() {
@@ -3536,11 +3551,14 @@
     close(after = 0) {
       if (!this.ctx || this.fakeNow != null) return;
       const ctx = this.ctx;
+      if (window.__swarmSharedAudioCtx === ctx) window.__swarmSharedAudioCtx = null;
       const t = ctx.currentTime;
       this.out.gain.cancelScheduledValues(t);
       this.out.gain.setValueAtTime(this.out.gain.value, t);
       this.out.gain.linearRampToValueAtTime(0, t + Math.max(0.05, after));
-      setTimeout(() => ctx.close().catch(() => {}), (after + 0.2) * 1000);
+      setTimeout(() => {
+        try { ctx.close().catch(() => {}); } catch (_) {}
+      }, (after + 0.2) * 1000);
     }
   }
 
@@ -3585,6 +3603,8 @@
       this.sfx = new Sound();
       this.sfx.init();
       this.sfx.setOn(true);
+      this.sfx.onStateChange = () => this.renderSoundBtn();
+      this.sfx.resume();
       try {
         if (this.sfx.ctx && this.sfx.ctx.state === "suspended") {
           this.sfx.ctx.resume().catch(() => {});
@@ -3594,9 +3614,7 @@
         try {
           if (this.sfx) {
             this.sfx.setOn(true);
-            if (this.sfx.ctx && this.sfx.ctx.state === "suspended") {
-              this.sfx.ctx.resume().catch(() => {});
-            }
+            this.sfx.resume();
           }
         } catch (_) {}
       };
@@ -3699,6 +3717,10 @@
         this.engine.mouse = null;
       });
       on(window, "touchstart", () => this.unlockSound(), true);
+      on(window, "pointerdown", () => this.unlockSound(), true);
+      on(window, "click", () => this.unlockSound(), true);
+      on(window, "wheel", () => this.unlockSound(), { passive: true });
+      on(scrollTarget, "scroll", () => this.unlockSound(), { passive: true });
       on(window, "keydown", (e) => {
         if (e.key === "Escape") {
           e.stopPropagation();
@@ -3709,8 +3731,6 @@
         }
         this.unlockSound();
       }, true);
-      // browsers only let audio start after a click/keypress on the page
-      on(window, "pointerdown", () => this.unlockSound(), true);
       if (!this.env.isRoot) {
         on(this.view.host, "wheel", (e) => {
           e.preventDefault();
@@ -3742,7 +3762,8 @@
     }
 
     unlockSound() {
-      if (this.dead || !this.sfx || !this.sfx.blocked) return;
+      if (this.dead || !this.sfx) return;
+      this.sfx.setOn(true);
       this.sfx.resume();
       setTimeout(() => this.renderSoundBtn(), 80);
     }

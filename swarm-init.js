@@ -214,8 +214,28 @@
     boot();
   }
 
+  // Pre-prime audio context on earliest user interaction so sound is always on and active
+  function primeAudio() {
+    try {
+      var Ctx = window.AudioContext || window.webkitAudioContext;
+      if (Ctx) {
+        if (!window.__swarmSharedAudioCtx || window.__swarmSharedAudioCtx.state === "closed") {
+          window.__swarmSharedAudioCtx = new Ctx({ latencyHint: "interactive" });
+        }
+        if (window.__swarmSharedAudioCtx.state === "suspended") {
+          window.__swarmSharedAudioCtx.resume().catch(function () {});
+        }
+      }
+    } catch (_) {}
+  }
+  window.addEventListener("pointerdown", primeAudio, { capture: true, passive: true });
+  window.addEventListener("touchstart", primeAudio, { capture: true, passive: true });
+  window.addEventListener("click", primeAudio, { capture: true, passive: true });
+  window.addEventListener("keydown", primeAudio, { capture: true, passive: true });
+
   // Global Trigger Hook for Manual Rebuild Playback
   window.__triggerSwarm = async function () {
+    primeAudio();
     try {
       if (window[KEY]) {
         if (window[KEY].app) {
