@@ -1165,6 +1165,47 @@ section {
   font-size: 1.02rem;
 }
 
+.project-docs-wrap {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+.project-docs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.doc-download-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(79, 156, 249, 0.35);
+  color: #FFFFFF;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.22s ease;
+}
+
+.doc-download-pill i {
+  color: #ff5252;
+  font-size: 0.95rem;
+}
+
+.doc-download-pill:hover {
+  background: rgba(79, 156, 249, 0.2);
+  border-color: var(--primary-light);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(79, 156, 249, 0.3);
+}
+
 /* Project Slider */
 .project-image {
   flex: 0 0 50%;
@@ -2278,6 +2319,19 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .project-docs-list {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .doc-download-pill {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 10px 14px;
+    box-sizing: border-box;
   }
 
   .contact-card {

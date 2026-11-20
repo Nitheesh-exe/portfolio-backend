@@ -425,8 +425,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Strict Knowledge Base (From Portfolio copy/chatbot/src/main/java/com/nitheesh/chatbot/ChatController.java)
   const LOCAL_KNOWLEDGE = [
     {
-      keywords: ['project', 'gym', 'offline', 'management', 'wix', 'sqlite', 'attendance'],
-      answer: "Nitheesh engineered the **Offline Gym Management System** using **Java, JavaFX, JDBC, SQL, SQLite, and WiX Toolset** with a custom Figma UI. It handles member and trainer management, attendance tracking, secure authentication, and dashboard analytics completely offline with zero SaaS dependencies.\n\nSource code: [github.com/Nitheesh-exe/Aim-Fitness-System-App.git](https://github.com/Nitheesh-exe/Aim-Fitness-System-App.git)"
+      keywords: ['project', 'gym', 'offline', 'management', 'wix', 'sqlite', 'attendance', 'figma', 'bmc', 'rgd', 'document'],
+      answer: "Nitheesh engineered the **Offline Gym Management System** using **Java, JavaFX, JDBC, SQL, SQLite, and WiX Toolset** with a custom Figma UI. It handles member and trainer management, attendance tracking, secure authentication, and dashboard analytics completely offline with zero SaaS dependencies.\n\n• Source code: [github.com/Nitheesh-exe/Aim-Fitness-System-App.git](https://github.com/Nitheesh-exe/Aim-Fitness-System-App.git)\n• Figma UI Design: [figma.com/design/2bHWVhAJgcBsoNru1ozuUQ/First-Pro](https://www.figma.com/design/2bHWVhAJgcBsoNru1ozuUQ/First-Pro?node-id=0-1&t=24pBxTB5aatW68od-1)\n• Downloads: Business Model Canvas (BMC), Requirement Gathering Document (RGD), and Software Analyst Spec are downloadable directly from the project section."
     },
     {
       keywords: ['shasha', 'ecommerce', 'e-commerce', 'hardware', 'store', 'shop', 'order', 'boq'],
