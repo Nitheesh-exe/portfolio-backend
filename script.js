@@ -426,11 +426,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const LOCAL_KNOWLEDGE = [
     {
       keywords: ['project', 'gym', 'offline', 'management', 'wix', 'sqlite', 'attendance'],
-      answer: "Nitheesh engineered the **Offline Gym Management System** using **Java, JavaFX, JDBC, SQL, SQLite, and WiX Toolset** with a custom Figma UI. It handles member and trainer management, attendance tracking, secure authentication, and dashboard analytics completely offline with zero SaaS dependencies.\n\nSource code: [github.com/nitheeeshh/Java.git](https://github.com/nitheeeshh/Java.git)"
+      answer: "Nitheesh engineered the **Offline Gym Management System** using **Java, JavaFX, JDBC, SQL, SQLite, and WiX Toolset** with a custom Figma UI. It handles member and trainer management, attendance tracking, secure authentication, and dashboard analytics completely offline with zero SaaS dependencies.\n\nSource code: [github.com/Nitheesh-exe/Aim-Fitness-System-App.git](https://github.com/Nitheesh-exe/Aim-Fitness-System-App.git)"
     },
     {
       keywords: ['shasha', 'ecommerce', 'e-commerce', 'hardware', 'store', 'shop', 'order', 'boq'],
-      answer: "Nitheesh architected and deployed **ShaSha Enterprises** (www.shashaenterprise.in), a full-stack B2B/B2C e-commerce platform for an industrial hardware and electrical supplies business using **Java 21, Spring Boot 3.3, Spring Security, Spring Data JPA, PostgreSQL, HTML5, CSS3, and Vanilla JavaScript** with direct WhatsApp BOQ inquiry ordering.\n\nLive Platform: [shashaenterprise.in](https://www.shashaenterprise.in)"
+      answer: "Nitheesh architected and deployed **ShaSha Enterprises** (www.shashaenterprise.in), a full-stack B2B/B2C e-commerce platform for an industrial hardware and electrical supplies business using **Java 21, Spring Boot 3.3, Spring Security, Spring Data JPA, PostgreSQL, HTML5, CSS3, and Vanilla JavaScript** with direct WhatsApp BOQ inquiry ordering.\n\nSource code: [github.com/Nitheesh-exe/Shasha-backend.git](https://github.com/Nitheesh-exe/Shasha-backend.git)\nLive Platform: [shashaenterprise.in](https://www.shashaenterprise.in)"
     },
     {
       keywords: ['education', 'degree', 'college', 'anna', 'university', 'cgpa', 'school', 'marks', 'academic'],
